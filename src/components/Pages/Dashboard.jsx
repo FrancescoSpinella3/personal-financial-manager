@@ -1,10 +1,10 @@
 import Section from "../ui/Section";
 
 
- export default function Goals() {
+ export default function Dashboard() {
     return (
         <Section>
-            <h1 className="text-black">Goals</h1>
+            <h1 className="text-black">Dashboard</h1>
         </Section>
     );
 }   

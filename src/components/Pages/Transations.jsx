@@ -1,7 +1,10 @@
-import { Section } from "lucide-react";
+import Section from "../ui/Section";
+
 
  export default function Transactions() {
     return (
-        <Section></Section>
+        <Section>
+            <h1 className="text-black">Transactions</h1>
+        </Section>
     );
 }   

@@ -1,4 +1,3 @@
-import { Ellipsis } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function User() {
@@ -19,16 +18,13 @@ export default function User() {
                         Francesco Spinella
                     </p>
                     <Link
-                    to="/profile"
+                        to="/profile"
                         className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors duration-200 ease-in"
                     >
                         Vedi profilo
                     </Link>
                 </div>
             </div>
-            {/* <button className="text-white cursor-pointer">
-                <Ellipsis className="rotate-90" />
-            </button> */}
         </div>
     );
 }

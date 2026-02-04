@@ -1,6 +1,6 @@
 export default function Section({ children }) {
     return (
-        <section className="bg-zinc-500">
+        <section className="ml-82">
             {children}
         </section>
     );

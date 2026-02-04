@@ -6,7 +6,7 @@ export default function SideBar() {
     return (
         <div 
             id="sideBar"
-            className="bg-zinc-900 w-82 h-screen border-r border-zinc-800 p-8"
+            className="bg-zinc-900 w-82 fixed top-0 left-0 h-screen border-r border-zinc-800 p-8 z-40"
         >
             <div className="flex flex-col items-center h-full">
 
@@ -21,10 +21,8 @@ export default function SideBar() {
                 {/* Logout button */}
                 <Logout />
 
-
                 {/* User */}
                 <User />
-
             </div>
         </div>
     );

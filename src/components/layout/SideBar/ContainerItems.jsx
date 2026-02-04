@@ -11,13 +11,13 @@ export default function ContainerItems() {
             {/* Overview link */}
 
             <NavLink
-                to="/overview"
+                to="/dashboard"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + ' bg-indigo-500 font-medium'}` : `${defaultClasses + ' hover:bg-zinc-800'}`
                 }
             >            
                 <LayoutGrid />
-                Overview
+                Dashboard
             </NavLink>
 
 

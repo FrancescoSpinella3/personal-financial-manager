@@ -1,26 +1,36 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import DashboardLayout from './components/layout/DashboardLayout'
+import AuthLayout from './components/layout/AuthLayout'
 import './App.css'
-import SideBar from './components/layout/SideBar/SideBar'
-import Overview from './components/Pages/Overview'
+
 import Goals from './components/Pages/Goals'
 import Settings from './components/Pages/Settings'
 import Transactions from './components/Pages/Transations'
+import Dashboard from './components/Pages/Dashboard'
+import UserProfile from './components/Pages/UserProfile'
 import Login from './components/Pages/Login'
 
 function App() { 
   return (
     <>
-      <SideBar />
-
       {/* Pages Routes */}
-      <Routes>
-        <Route path="/overview" element={<Overview />}></Route>
-        <Route path="/transactions" element={<Transactions />}></Route>
-        <Route path="/goals" element={<Goals />}></Route>
-        <Route path="/settings" element={<Settings />}></Route>
-        <Route path='/login' element={<Login />} ></Route>
+        <Routes>
+          {/* Dashboard area */}
+          <Route element={<AuthLayout />}>
+            <Route path='/login' element={<Login />} />
+          </Route>
+
+
+          <Route element={<DashboardLayout />}>
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/transactions" element={<Transactions />} />
+            <Route path="/goals" element={<Goals />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/profile" element={<UserProfile /> } />
+          </Route>
       </Routes>
-    </>
+  </>
   )
 }
 
