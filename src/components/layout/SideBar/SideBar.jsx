@@ -1,6 +1,6 @@
-import { Ellipsis } from "lucide-react";
 import ContainerItems from "./ContainerItems";
 import Logout from "./Logout";
+import User from "./User";
 
 export default function SideBar() {
     return (
@@ -23,25 +23,8 @@ export default function SideBar() {
 
 
                 {/* User */}
-                <div id="user" className="w-full flex justify-between py-7 border-t border-zinc-700">
-                    <div className="flex items-center justify-center gap-3">
-                        <div 
-                            id="userAvatar"
-                            className="rounded-full bg-zinc-500 size-8 overflow-hidden"
-                        >
-                            <img src="/src/assets/images/profile-image.jpg" alt="Profile image" />
-                        </div>
-                        <p 
-                            id="userName"
-                            className="text-white"
-                        >
-                            Francesco Spinella
-                        </p>
-                    </div>
-                    <button className="text-white cursor-pointer">
-                        <Ellipsis className="rotate-90" />
-                    </button>
-                </div>
+                <User />
+
             </div>
         </div>
     );
