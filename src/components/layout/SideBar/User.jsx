@@ -1,4 +1,5 @@
 import { Ellipsis } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function User() {
     return (
@@ -17,16 +18,17 @@ export default function User() {
                     >
                         Francesco Spinella
                     </p>
-                    <span
-                        className="text-xs text-zinc-500"
+                    <Link
+                    to="/profile"
+                        className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors duration-200 ease-in"
                     >
                         Vedi profilo
-                    </span>
+                    </Link>
                 </div>
             </div>
-            <button className="text-white cursor-pointer">
+            {/* <button className="text-white cursor-pointer">
                 <Ellipsis className="rotate-90" />
-            </button>
+            </button> */}
         </div>
     );
 }
