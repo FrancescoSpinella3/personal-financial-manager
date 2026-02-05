@@ -1,4 +1,10 @@
+import { useState } from "react";
+
 export default function Input({ label, inputType, placeholder }) {
+
+
+
+
     return (
         <p className="flex flex-col">
             <label 
@@ -10,7 +16,8 @@ export default function Input({ label, inputType, placeholder }) {
             <input 
                 type={inputType}
                 placeholder={placeholder}
-                className="p-2 border border-gray-300 rounded-md bg-indigo-50"
+                required
+                className="p-2 border border-gray-300 rounded-md bg-indigo-50 focus:outline-indigo-500"
             />
         </p>
     );

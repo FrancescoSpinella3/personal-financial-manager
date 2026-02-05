@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import DashboardLayout from './components/layout/DashboardLayout'
-import AuthLayout from './components/layout/AuthLayout'
+// import AuthLayout from './components/layout/AuthLayout'
 import './App.css'
 
 import Goals from './components/Pages/Goals'
@@ -8,9 +8,9 @@ import Settings from './components/Pages/Settings'
 import Transactions from './components/Pages/Transations'
 import Dashboard from './components/Pages/Dashboard'
 import UserProfile from './components/Pages/UserProfile'
-import Login from './components/Pages/Login'
-import Register from './components/Pages/Register'
-import Home from './components/Pages/Home'
+// import Login from './components/Pages/Login'
+// import Register from './components/Pages/Register'
+// import Home from './components/Pages/Home'
 
 function App() { 
   return (
@@ -18,11 +18,11 @@ function App() {
       {/* Pages Routes */}
         <Routes>
           {/* Home, Login and register pages */}
-          <Route element={<AuthLayout />}>
+          {/* <Route element={<AuthLayout />}>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/' element={<Home />} />
-          </Route>
+          </Route> */}
 
           {/* Dashboard area */}
           <Route element={<DashboardLayout />}>
