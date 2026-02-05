@@ -9,20 +9,24 @@ import Transactions from './components/Pages/Transations'
 import Dashboard from './components/Pages/Dashboard'
 import UserProfile from './components/Pages/UserProfile'
 import Login from './components/Pages/Login'
+import Register from './components/Pages/Register'
+import Home from './components/Pages/Home'
 
 function App() { 
   return (
     <>
       {/* Pages Routes */}
         <Routes>
-          {/* Dashboard area */}
+          {/* Home, Login and register pages */}
           <Route element={<AuthLayout />}>
             <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/' element={<Home />} />
           </Route>
 
-
+          {/* Dashboard area */}
           <Route element={<DashboardLayout />}>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard" element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/goals" element={<Goals />} />
