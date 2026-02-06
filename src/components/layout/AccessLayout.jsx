@@ -13,7 +13,7 @@ export default function ({ accessType, description, message, link, text, childre
             {/* General container */}
             <div className="mx-auto max-w-lg flex flex-col items-center">
                 {/* App logo */}
-                <h1 className="text-indigo-600 text-5xl font-extrabold mb-22">
+                <h1 className="text-indigo-600 text-5xl font-extrabold mb-20">
                     <span className="font-extralight">my</span>Finance     
                 </h1>
 

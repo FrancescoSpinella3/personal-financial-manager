@@ -4,6 +4,12 @@ import Form from "../ui/Form";
 import AccessLayout from "../layout/AccessLayout";
 
 export default function Login(){
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        console.log("Login effettuato")
+    }
+
     return (
         <AccessLayout 
             accessType="Accedi al tuo account" 
@@ -13,7 +19,7 @@ export default function Login(){
             text="Registrati"
         >
             {/* Login Form */}
-            <Form>
+            <Form onSubmit={handleLogin}>
                 <Input inputType="email" label="Email" placeholder="email@example.com" />
                 <Input inputType="password" label="Password" placeholder="qwerty123"  />
         
