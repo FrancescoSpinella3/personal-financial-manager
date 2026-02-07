@@ -5,40 +5,6 @@ import AccessLayout from "../layout/AccessLayout";
 import useAuthForm from "../../hooks/useAuthForm";
 
 export default function Login(){
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
-    // const [errors, setError] = useState({})
-
-    // // Validation check email and password
-    // const validate = () => {
-    //     const newErrors = {};
-
-    //     // Email validation
-    //     if (!email) {
-    //         newErrors.email = "Inserire un'email"
-    //     } else if (!email.includes('@')) {
-    //         newErrors.email = "Inserisci un'email valida"
-    //     }
-
-    //     // Password validation
-    //     if (!password) {
-    //         newErrors.password = "Inserire una password"
-    //     } else if (password.length < 6) {
-    //         newErrors.password = "Inserire una password di minimo 6 caratteri"
-    //     }
-
-    //     setError(newErrors)
-    //     return Object.keys(newErrors).length === 0;
-    // }
-
-
-    // const handleLogin = (e) => {
-    //     e.preventDefault();
-
-    //     if (!validate()) return;
-    //     console.log("Login effettuato", { email, password });
-    // }
-
     const {
         values,
         errors,

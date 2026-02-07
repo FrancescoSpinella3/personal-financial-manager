@@ -48,27 +48,27 @@ export default function Register() {
                         error={submitted ? errors.lastName : null}
                     />
                 </div>
-                <div>
-                    {/* Email input */}
-                    <Input 
-                        inputType="email" 
-                        label="Email" 
-                        placeholder="mario.rossi@email.com" 
-                        value={values.email}
-                        onChange={handleChange("email")}
-                        error={submitted ? errors.email : null}
-                    />
 
-                    {/* Password input */}
-                    <Input 
-                        inputType="password" 
-                        label="Password" 
-                        placeholder="qwerty123"
-                        value={values.password}
-                        onChange={handleChange("password")}
-                        error={submitted ? errors.password : null}
-                    />
-                </div>
+                {/* Email input */}
+                <Input 
+                    inputType="email" 
+                    label="Email" 
+                    placeholder="mario.rossi@email.com" 
+                    value={values.email}
+                    onChange={handleChange("email")}
+                    error={submitted ? errors.email : null}
+                />
+
+                {/* Password input */}
+                <Input 
+                    inputType="password" 
+                    label="Password" 
+                    placeholder="qwerty123"
+                    value={values.password}
+                    onChange={handleChange("password")}
+                    error={submitted ? errors.password : null}
+                />
+
 
         
                 <FormButton>
