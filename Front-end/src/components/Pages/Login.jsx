@@ -1,12 +1,19 @@
 import Input from "../ui/Input";
 import FormButton from "../ui/FormButton";
 import Form from "../ui/Form";
+
 import AccessLayout from "../layout/AccessLayout";
 import useAuthForm from "../../hooks/useAuthForm";
+import { useAuth } from "../../context/AuthContext";
+
+import { useState } from "react";
 
 import { loginUser } from "../../services/fakeUserDB";
 
 export default function Login(){
+    const { login } = useAuth();
+    const[authError, setAuthError] = useState(null);
+
     const {
         values,
         errors,
@@ -16,16 +23,17 @@ export default function Login(){
         reset
     } = useAuthForm({ mode: 'login'})
 
-
+    // Login
     const onLogin = () => {
         const user = loginUser(values.email, values.password)
 
         if (!user) {
-            console.log("Email o password errate");
+            setAuthError("Email o password errate. Riprova");
             return;
         }
 
-        localStorage.setItem("loggedUser", JSON.stringify(user));
+        setAuthError(null);
+        login(values.email, values.password);
         alert(`Benvenuto ${user.name}`)
         // Clear input field after login
         reset();
@@ -60,6 +68,12 @@ export default function Login(){
                     onChange={handleChange("password")}
                     error={submitted ? errors.password : null}
                 />
+
+                {authError && (
+                    <p className="text-red-600 text-sm">
+                        {authError}
+                    </p>
+                )}
 
                 {/* Button */}
                 <FormButton>

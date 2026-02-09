@@ -5,7 +5,7 @@ import { HandCoins, Scale } from "lucide-react";
 export default function Home() {
     return(
         <div className="min-h-screen mx-auto flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl font-medium text-zinc-700 mb-14">Benvenuto in</h1>
+            <h1 className="text-2xl font-medium text-zinc-700 mb-12">Benvenuto in</h1>
             
             {/* App logo */}
             <h2 className="text-indigo-600 text-7xl font-extrabold mb-5">

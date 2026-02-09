@@ -1,7 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import DashboardLayout from './components/layout/DashboardLayout'
 import AuthLayout from './components/layout/AuthLayout'
-import './App.css'
+import { initFakeDB } from './services/fakeUserDB'
+import { AuthProvider } from './context/AuthContext'
 
 import Goals from './components/Pages/Goals'
 import Settings from './components/Pages/Settings'
@@ -12,7 +13,8 @@ import Login from './components/Pages/Login'
 import Register from './components/Pages/Register'
 import Home from './components/Pages/Home'
 import { useEffect } from 'react'
-import { initFakeDB } from './services/fakeUserDB'
+
+import './App.css'
 
 function App() { 
 
@@ -21,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <AuthProvider>
       {/* Pages Routes */}
         <Routes>
           {/* Home, Login and register pages */}
@@ -41,7 +43,7 @@ function App() {
             <Route path="/profile" element={<UserProfile /> } />
           </Route>
       </Routes>
-  </>
+    </AuthProvider>
   )
 }
 

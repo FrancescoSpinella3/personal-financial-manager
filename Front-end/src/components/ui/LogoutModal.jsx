@@ -12,7 +12,7 @@ export default function LogoutModal({ isOpen, onClose }) {
 
             <div className="relative flex flex-col items-center bg-yellow-50 border border-yellow-200 rounded-md p-6 w-full max-w-md z-50 gap-3 shadow-md">
                 <CircleAlert className="size-12 stroke-[1.5] text-yellow-400" />
-                <h2 className="text-yellow-800 text-lg font-medium">Sei sicuro di voler uscire dal tuo account?</h2>
+                <p className="text-yellow-800 text-lg font-medium">Sei sicuro di voler uscire dal tuo account?</p>
                 <div className="flex gap-3 justify-end">
                     <Link to="/login">
                         <Button variant="indigo">Esci</Button>

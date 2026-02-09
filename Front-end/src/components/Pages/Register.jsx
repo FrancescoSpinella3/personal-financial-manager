@@ -80,8 +80,6 @@ export default function Register() {
                     error={submitted ? errors.password : null}
                 />
 
-
-        
                 <FormButton>
                     Registrati
                 </FormButton>
