@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import useAuthForm from "../../../hooks/useAuthForm";
+import { useAuth } from "../../../context/AuthContext";
 
 export default function User() {
+    const { user } = useAuth();
 
     return (
         <div id="user" className="w-full flex justify-between py-7 border-t border-zinc-700">
@@ -17,7 +18,7 @@ export default function User() {
                         id="userName"
                         className="text-white text-sm"
                     >
-                        Francesco Spinella
+                        {user?.name} {user?.lastName}
                     </p>
                     <Link
                         to="/profile"
