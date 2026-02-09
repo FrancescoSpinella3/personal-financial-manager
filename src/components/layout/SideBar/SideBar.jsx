@@ -2,7 +2,7 @@ import ContainerItems from "./ContainerItems";
 import Logout from "./Logout";
 import User from "./User";
 
-export default function SideBar() {
+export default function SideBar({ onClick }) {
     return (
         <div 
             id="sideBar"
@@ -19,8 +19,8 @@ export default function SideBar() {
                 <ContainerItems />
 
                 {/* Logout button */}
-                <Logout />
-
+                <Logout onClick={onClick} />
+                
                 {/* User */}
                 <User />
             </div>

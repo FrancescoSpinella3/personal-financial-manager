@@ -11,8 +11,15 @@ import UserProfile from './components/Pages/UserProfile'
 import Login from './components/Pages/Login'
 import Register from './components/Pages/Register'
 import Home from './components/Pages/Home'
+import { useEffect } from 'react'
+import { initFakeDB } from './services/fakeUserDB'
 
 function App() { 
+
+  useEffect(() => {
+    initFakeDB(); // create test user if not exist
+  }, []);
+
   return (
     <>
       {/* Pages Routes */}

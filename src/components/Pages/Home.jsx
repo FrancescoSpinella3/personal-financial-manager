@@ -26,13 +26,13 @@ export default function Home() {
 
                 <div id="access" className="space-x-5">
                     <Link to="login">
-                        <Button variant="login">
+                        <Button variant="indigo">
                             Accedi
                         </Button>
                     </Link>
 
                     <Link to="/register">
-                        <Button variant="register">
+                        <Button variant="gray">
                             Registrati
                         </Button>
                     </Link>

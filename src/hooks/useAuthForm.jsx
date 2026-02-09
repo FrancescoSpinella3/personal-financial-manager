@@ -65,9 +65,23 @@ export default function useAuthForm({ mode }) {
         e.preventDefault();
         setSubmitted(true);
 
+        // If is validate, sends data and clear input fields
         if (validate()) {
             onSuccess(values);
+            // values.email = '';
+            // values.password = '';
         }
+    }
+
+    // Reset form values, errors and submitted state
+    const reset = () => {
+        setValues({
+            email: '',
+            password: '',
+            ...(isRegister && { name: '', lastName: '' })
+        });
+        setErrors({});
+        setSubmitted(false);
     }
 
     return {
@@ -75,6 +89,7 @@ export default function useAuthForm({ mode }) {
         errors,
         submitted,
         handleChange,
-        handleSubmit
+        handleSubmit,
+        reset
     };
 }

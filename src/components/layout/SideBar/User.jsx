@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import useAuthForm from "../../../hooks/useAuthForm";
 
 export default function User() {
+
     return (
         <div id="user" className="w-full flex justify-between py-7 border-t border-zinc-700">
             <div className="flex items-center justify-center gap-4">

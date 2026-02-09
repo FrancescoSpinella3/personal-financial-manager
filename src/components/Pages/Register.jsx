@@ -3,6 +3,7 @@ import FormButton from "../ui/FormButton";
 import Input from "../ui/Input";
 import AccessLayout from "../layout/AccessLayout";
 import useAuthForm from "../../hooks/useAuthForm";
+import { registerUser } from "../../services/fakeUserDB";
 
 export default function Register() {
     const {
@@ -10,11 +11,21 @@ export default function Register() {
         errors,
         submitted,
         handleChange,
-        handleSubmit
+        handleSubmit,
+        reset
     } = useAuthForm({ mode: 'register'})
 
         const onRegister = (data) => {
-        console.log("Registrazione effettuata", data);
+        // console.log("Registrazione effettuata", data);
+        try {
+            registerUser(data)  
+            alert("Registrazione effettuata")
+            // Clear input field after registration
+            reset();   
+        } catch (error) {
+            alert(error.message)
+        }
+
     }
 
 

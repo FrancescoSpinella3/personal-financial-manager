@@ -4,17 +4,31 @@ import Form from "../ui/Form";
 import AccessLayout from "../layout/AccessLayout";
 import useAuthForm from "../../hooks/useAuthForm";
 
+import { loginUser } from "../../services/fakeUserDB";
+
 export default function Login(){
     const {
         values,
         errors,
         submitted,
         handleChange,
-        handleSubmit
+        handleSubmit,
+        reset
     } = useAuthForm({ mode: 'login'})
 
-    const onLogin = (data) => {
-        console.log("Login effettuato", data);
+
+    const onLogin = () => {
+        const user = loginUser(values.email, values.password)
+
+        if (!user) {
+            console.log("Email o password errate");
+            return;
+        }
+
+        localStorage.setItem("loggedUser", JSON.stringify(user));
+        alert(`Benvenuto ${user.name}`)
+        // Clear input field after login
+        reset();
     }
 
     return (
