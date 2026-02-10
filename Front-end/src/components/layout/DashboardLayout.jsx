@@ -3,6 +3,7 @@ import SideBar from "./SideBar/SideBar";
 import LogoutModal from "../ui/LogoutModal";
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import NavBar from "./NavBar";
 
 export default function DashboardLayout() {
 
@@ -19,6 +20,7 @@ export default function DashboardLayout() {
         <div className="bg-zinc-800">
             {/* Sidebar */}
             <SideBar onClick={handleLogout} />
+            <NavBar />
 
             <LogoutModal isOpen={showModal} onLogout={logout} onClose={() => setShowModal(false)}/>
 

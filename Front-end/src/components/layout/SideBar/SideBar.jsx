@@ -4,12 +4,10 @@ import User from "./User";
 
 export default function SideBar({ onClick }) {
     return (
-        <div 
-            id="sideBar"
+        <div
             className="bg-zinc-900 w-82 fixed top-0 left-0 h-screen border-r border-zinc-800 p-8 z-40"
         >
             <div className="flex flex-col items-center h-full">
-
                 {/* App logo */}
                 <h1 className="text-white text-3xl font-extrabold">
                     <span className="font-extralight">my</span>Finance     
