@@ -7,7 +7,7 @@ export default function Dashboard() {
 
     return (
         <Section>
-            <h1 className="text-black">Ciao {user?.name}</h1>
+            <h1 className="text-black">Bentornato {user?.name}</h1>
         </Section>
     );
 }

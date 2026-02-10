@@ -1,10 +1,14 @@
+import Button from "./Button";
+
 export default function FormButton({ children }) {
     return (
-        <button
+        <Button
             type="submit"
-            className="bg-indigo-500 text-white font-medium px-4 py-2 rounded-md cursor-pointer hover:bg-indigo-600 duration-200 ease-in"
+            variant="modul"
+            size="lg"
+            
         >
             {children}
-        </button>
+        </Button>
     );
 }

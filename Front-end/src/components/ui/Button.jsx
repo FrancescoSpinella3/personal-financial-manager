@@ -1,18 +1,27 @@
 export default function Button({ 
     children,
-    variant = 'indigo',
+    variant = 'primary',
+    size = 'md',
     className = '',
     onClick
 }) {
 
-    const defaultClasses = "cursor-pointer px-6 py-2.5 font-medium text-lg rounded-md text-white duration-200 ease-in";
+    const defaultClasses = "cursor-pointer font-medium text-lg rounded-md duration-200 ease-in";
     const variants = {
-        indigo: 'bg-indigo-500 hover:bg-indigo-600',
-        gray: "bg-gray-500 hover:bg-zinc-600",
-        alert: "bg-red-400 hover:bg-red-600"
+        primary: 'bg-indigo-500 border-2 border-indigo-500 hover:bg-indigo-600 text-white hover:border-indigo-600',
+        secondary: 'bg-zinc-400 hover:bg-zinc-500 text-white',
+        border: 'border-2 border-indigo-500 text-indigo-500 hover:border-indigo-600 hover:text-indigo-600',
+        alert: 'bg-red-400 hover:bg-red-600',
+        modul: 'bg-indigo-500 text-white font-medium rounded-md cursor-pointer hover:bg-indigo-600 duration-200 ease-in'
     }
 
-    const classes = `${defaultClasses} ${variants[variant]} ${className}`;
+    const sizes = {
+        sm: 'w-22 py-1.5 text-[1em]',
+        md: 'w-33 py-2.5',
+        lg: 'w-full px-4 py-2'
+    }
+
+    const classes = `${defaultClasses} ${variants[variant]} ${sizes[size]} ${className}`;
 
     return (
         <button className={classes} onClick={onClick}>

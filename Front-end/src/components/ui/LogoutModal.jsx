@@ -15,9 +15,9 @@ export default function LogoutModal({ isOpen, onClose, onLogout }) {
                 <p className="text-yellow-800 text-lg font-medium">Sei sicuro di voler uscire dal tuo account?</p>
                 <div className="flex gap-3 justify-end">
                     <Link to="/login">
-                        <Button variant="indigo" onClick={onLogout}>Esci</Button>
+                        <Button variant="primary" size="sm" onClick={onLogout}>Esci</Button>
                     </Link>
-                    <Button variant="gray" onClick={onClose}>No</Button>
+                    <Button variant="secondary" size="sm" onClick={onClose}>Annulla</Button>
                 </div>
             </div>
         </div>

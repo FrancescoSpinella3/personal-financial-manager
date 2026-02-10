@@ -17,8 +17,6 @@ export default function Home() {
                 <HandCoins className="size-16 text-indigo-600 stroke-[1.5]" />
             </h3>
 
-
-
             <div className="flex flex-col items-center max-w-4xl">
                 <p className="text-xl text-zinc-600 mb-14">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
                     per avere un quadro completo della tua situazione finanziaria.
@@ -26,13 +24,13 @@ export default function Home() {
 
                 <div id="access" className="space-x-5">
                     <Link to="login">
-                        <Button variant="indigo">
+                        <Button variant="primary" size="md">
                             Accedi
                         </Button>
                     </Link>
 
                     <Link to="/register">
-                        <Button variant="gray">
+                        <Button variant="border" size="md">
                             Registrati
                         </Button>
                     </Link>
