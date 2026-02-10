@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import { CircleAlert } from "lucide-react";
 
-export default function LogoutModal({ isOpen, onClose }) {
+export default function LogoutModal({ isOpen, onClose, onLogout }) {
 
     if (!isOpen) return null;
 
@@ -15,7 +15,7 @@ export default function LogoutModal({ isOpen, onClose }) {
                 <p className="text-yellow-800 text-lg font-medium">Sei sicuro di voler uscire dal tuo account?</p>
                 <div className="flex gap-3 justify-end">
                     <Link to="/login">
-                        <Button variant="indigo">Esci</Button>
+                        <Button variant="indigo" onClick={onLogout}>Esci</Button>
                     </Link>
                     <Button variant="gray" onClick={onClose}>No</Button>
                 </div>

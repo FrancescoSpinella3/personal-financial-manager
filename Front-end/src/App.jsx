@@ -15,6 +15,7 @@ import Home from './components/Pages/Home'
 import { useEffect } from 'react'
 
 import './App.css'
+import Categories from './components/Pages/Categories'
 
 function App() { 
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/goals" element={<Goals />} />
+            <Route path="/categories" element={<Categories />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/profile" element={<UserProfile /> } />
           </Route>

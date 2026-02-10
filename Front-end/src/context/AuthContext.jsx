@@ -9,7 +9,7 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState(null);
+    let [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
 
     // Get logged user
@@ -33,13 +33,15 @@ export function AuthProvider({ children }) {
         // Otherwise add logged user to local storage
         localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
         setUser(loggedUser);
+        console.log('Login effettuato con successo')
     }
 
     // Logout
     const logout = () => {
         // Remove user from local storage and set to null
-        localStorage.removeItem(loggedUser);
+        localStorage.removeItem("loggedUser");
         setUser = null;
+        console.log('Logout effettuato con successo')
     }
 
     return (

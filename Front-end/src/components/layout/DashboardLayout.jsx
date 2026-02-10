@@ -2,8 +2,12 @@ import { Outlet } from "react-router-dom";
 import SideBar from "./SideBar/SideBar";
 import LogoutModal from "../ui/LogoutModal";
 import { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
 
 export default function DashboardLayout() {
+
+    const { logout } = useAuth();
+
     const [showModal, setShowModal] = useState(false);
 
     const handleLogout = () => {
@@ -16,7 +20,7 @@ export default function DashboardLayout() {
             {/* Sidebar */}
             <SideBar onClick={handleLogout} />
 
-            <LogoutModal isOpen={showModal} onClose={() => setShowModal(false)}/>
+            <LogoutModal isOpen={showModal} onLogout={logout} onClose={() => setShowModal(false)}/>
 
             {/* Main content */}
             <div className="flex-1 bg-zinc-200 min-h-screen w-full">
