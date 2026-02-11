@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import SideBar from "./SideBar/SideBar";
-import LogoutModal from "../ui/LogoutModal";
+import LogoutModal from "../ui/Modals/LogoutModal";
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import NavBar from "./NavBar";
@@ -20,8 +20,11 @@ export default function DashboardLayout() {
         <div className="bg-zinc-800">
             {/* Sidebar */}
             <SideBar onClick={handleLogout} />
+            
+            {/* Navbar */}
             <NavBar />
 
+            {/* Show logout modal if user want to logout */}
             <LogoutModal isOpen={showModal} onLogout={logout} onClose={() => setShowModal(false)}/>
 
             {/* Main content */}

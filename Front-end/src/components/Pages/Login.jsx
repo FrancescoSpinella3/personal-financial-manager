@@ -15,6 +15,7 @@ export default function Login(){
     const { login } = useAuth();
     const navigate = useNavigate();
     const[authError, setAuthError] = useState(null);
+    const [loading, setIsLoading] = useState(false);
 
     const {
         values,
@@ -36,6 +37,7 @@ export default function Login(){
 
         setAuthError(null);
         login(values.email, values.password);
+        setIsLoading(true);
         navigate('/dashboard'); // After login, go to user dashboard
         reset(); // Clear input field after login
     }
@@ -79,7 +81,7 @@ export default function Login(){
 
                 {/* Button */}
                 <FormButton>
-                    Accedi
+                    {loading ? <Loader2 /> : 'Accedi'}
                 </FormButton>
             </Form>
         </AccessLayout>

@@ -5,9 +5,12 @@ import AccessLayout from "../layout/AccessLayout";
 import useAuthForm from "../../hooks/useAuthForm";
 import { registerUser } from "../../services/fakeUserDB";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export default function Register() {
     const navigate = useNavigate();
+    const [loading, setIsLoading] = useState(false);
 
     const {
         values,
@@ -20,7 +23,8 @@ export default function Register() {
 
     const onRegister = (data) => {
         try {
-            registerUser(data)  
+            registerUser(data)
+            setIsLoading(true);
             alert("Registrazione effettuata")
             navigate('/dashboard');
             reset(); // Clear input field after registration
@@ -102,7 +106,7 @@ export default function Register() {
                 />
 
                 <FormButton>
-                    Registrati
+                    {loading ? <Loader2 /> : 'Registrati'}
                 </FormButton>
             </Form>
         </AccessLayout>

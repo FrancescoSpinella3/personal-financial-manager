@@ -1,3 +1,4 @@
+import { ChevronsRight } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 
 export default function NavBar() {
@@ -10,22 +11,30 @@ export default function NavBar() {
         weekday: 'long',
         day: 'numeric',
         month: 'short',
+        year: 'numeric'
     }).format(currentDate);
 
     // Finale date
     const date = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
 
     return(
-        <nav className="flex items-center bg-zinc-100 border-b border-zinc-300 shadow-md h-18 ml-82 px-5">
-            <div>
+        <nav className="flex items-center bg-zinc-100 border-b border-zinc-200 h-18 ml-82 px-5">
+            <div className="flex justify-between w-full">
                 <div className="flex items-center gap-5">
-                    <h1 className="font-semibold text-indigo-800 text-lg">
-                        <span className="text-zinc-600 font-medium">{user.gender === 'maschio' ? "Bentornato" : "Bentornata"} </span>
+                    <h1 className=" flex items-center gap-2 font-semibold text-indigo-800 text-lg">
+                        <ChevronsRight className="size-5 text-zinc-600" /> 
+                        <span className="text-zinc-600 font-medium">
+                            {user.gender === 'maschio' ? "Bentornato " : "Bentornata "} 
+                        </span>
                         {user?.name}
                     </h1>
                     <span className="text-zinc-400">|</span>
-                    <p className="text-sm font-medium text-zinc-500">{date}</p>
+                    <p className="flex  items-center gap-2 text-sm font-medium text-zinc-400">
+                        {date}
+                    </p>
                 </div>
+
+                <p>Light/Dark mode</p>
 
             </div>
         </nav>
