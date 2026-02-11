@@ -38,7 +38,7 @@ export default function Register() {
             link="/login"
             text="Accedi"
         >
-            {/* Login Form */}
+            {/* Register Form */}
             <Form onSubmit={handleSubmit(onRegister)}>
                 <div className="flex gap-3">
                     {/* Name input */}
