@@ -10,7 +10,6 @@ export default function NavBar() {
         weekday: 'long',
         day: 'numeric',
         month: 'short',
-        year: 'numeric'
     }).format(currentDate);
 
     // Finale date
@@ -21,7 +20,7 @@ export default function NavBar() {
             <div>
                 <div className="flex items-center gap-5">
                     <h1 className="font-semibold text-indigo-800 text-lg">
-                        <span className="text-zinc-600 font-medium">Bentornato </span>
+                        <span className="text-zinc-600 font-medium">{user.gender === 'maschio' ? "Bentornato" : "Bentornata"} </span>
                         {user?.name}
                     </h1>
                     <span className="text-zinc-400">|</span>

@@ -9,9 +9,11 @@ import { useAuth } from "../../context/AuthContext";
 import { useState } from "react";
 
 import { loginUser } from "../../services/fakeUserDB";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
     const { login } = useAuth();
+    const navigate = useNavigate();
     const[authError, setAuthError] = useState(null);
 
     const {
@@ -34,9 +36,8 @@ export default function Login(){
 
         setAuthError(null);
         login(values.email, values.password);
-        alert(`Benvenuto ${user.name}`)
-        // Clear input field after login
-        reset();
+        navigate('/dashboard'); // After login, go to user dashboard
+        reset(); // Clear input field after login
     }
 
     return (
@@ -69,6 +70,7 @@ export default function Login(){
                     error={submitted ? errors.password : null}
                 />
 
+                {/* If there is an error show a message */}
                 {authError && (
                     <p className="text-red-600 text-sm">
                         {authError}

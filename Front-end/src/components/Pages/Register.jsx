@@ -4,8 +4,11 @@ import Input from "../ui/Input";
 import AccessLayout from "../layout/AccessLayout";
 import useAuthForm from "../../hooks/useAuthForm";
 import { registerUser } from "../../services/fakeUserDB";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+    const navigate = useNavigate();
+
     const {
         values,
         errors,
@@ -15,17 +18,15 @@ export default function Register() {
         reset
     } = useAuthForm({ mode: 'register'})
 
-        const onRegister = (data) => {
-        // console.log("Registrazione effettuata", data);
+    const onRegister = (data) => {
         try {
             registerUser(data)  
             alert("Registrazione effettuata")
-            // Clear input field after registration
-            reset();   
+            navigate('/dashboard');
+            reset(); // Clear input field after registration
         } catch (error) {
             alert(error.message)
         }
-
     }
 
 
@@ -57,6 +58,26 @@ export default function Register() {
                         value={values.lastName}
                         onChange={handleChange("lastName")}
                         error={submitted ? errors.lastName : null}
+                    />
+                </div >
+
+                <div className="flex gap-3">
+                    {/* Birthday input */}
+                    <Input 
+                        inputType="date" 
+                        label="Data di nascita" 
+                        value={values.birthday}
+                        onChange={handleChange("birthday")}
+                        error={submitted ? errors.birthday : null}
+                    />
+
+                    {/* Gender input */}
+                    <Input 
+                        select
+                        label="Sesso" 
+                        value={values.gender}
+                        onChange={handleChange("gender")}
+                        error={submitted ? errors.gender : null}
                     />
                 </div>
 

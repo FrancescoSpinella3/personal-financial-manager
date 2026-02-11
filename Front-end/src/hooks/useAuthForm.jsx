@@ -8,7 +8,7 @@ export default function useAuthForm({ mode }) {
     const [values, setValues] = useState({
         email: '',
         password: '',
-        ...(isRegister && { name: '', lastName: '' })
+        ...(isRegister && { name: '', lastName: '', birthday: '', gender: '' })
     });
 
     // Error states
@@ -54,6 +54,16 @@ export default function useAuthForm({ mode }) {
             if (!values.lastName) {
                 newErrors.lastName = "Inserisci il tuo cognome";
             }
+
+            // Birthday validation
+            if (!values.birthday) {
+                newErrors.birthday = "Inserisci la tua data di nascita";
+            }
+
+            // Gender validation
+            if (!values.gender) {
+                newErrors.gender = "Seleziona un'opzione";
+            }
         }
         
         setErrors(newErrors);
@@ -68,8 +78,6 @@ export default function useAuthForm({ mode }) {
         // If is validate, sends data and clear input fields
         if (validate()) {
             onSuccess(values);
-            // values.email = '';
-            // values.password = '';
         }
     }
 
@@ -78,7 +86,7 @@ export default function useAuthForm({ mode }) {
         setValues({
             email: '',
             password: '',
-            ...(isRegister && { name: '', lastName: '' })
+            ...(isRegister && { name: '', lastName: '', birthday: '', gender: '' })
         });
         setErrors({});
         setSubmitted(false);

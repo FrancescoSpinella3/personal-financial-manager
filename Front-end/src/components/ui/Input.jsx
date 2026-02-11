@@ -1,9 +1,10 @@
-export default function Input({ label, inputType, placeholder, value, onChange, error }) {
+export default function Input({ label, inputType, select, placeholder, value, onChange, error, ...props }) {
 
-
+    // Default classes for label and input
     let labelClasses = "font-semibold text-sm mb-1";
     let inputClasses = "p-2 border border-gray-300 rounded-md bg-indigo-50 focus:outline-indigo-500";
 
+    // Add a class if there is an error
     if (error) {
         labelClasses += ' text-red-600';
     }
@@ -13,28 +14,39 @@ export default function Input({ label, inputType, placeholder, value, onChange, 
     }
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
             <label 
                 className={labelClasses}
             >
                 {label}
             </label>
-            
-            <input 
-                type={inputType}
-                placeholder={placeholder}
-                // required
-                value={value}
-                onChange={onChange}
-                className={inputClasses}
-            />
+
+            {select ? (
+                <select
+                    className={inputClasses}
+                    value={value}
+                    onChange={onChange}
+                    {...props}
+                >
+                    <option value="" disabled >Seleziona un'opzione</option>
+                    <option value="maschio">Maschio</option>
+                    <option value="femmina">Femmina</option>
+                </select>
+            ) : (
+                <input 
+                    type={inputType}
+                    placeholder={placeholder}
+                    value={value}
+                    onChange={onChange}
+                    className={inputClasses}
+                />
+            )}
 
             {error && (
                 <span className="text-red-600 text-xs mt-1">
                     {error}
                 </span>
             )}
-
         </div>
     );
 }

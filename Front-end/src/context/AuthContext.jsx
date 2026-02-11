@@ -9,8 +9,8 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-    let [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     // Get logged user
     useEffect(() => {        
@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
     const logout = () => {
         // Remove user from local storage and set to null
         localStorage.removeItem("loggedUser");
-        setUser = null;
+        setUser(null);
         console.log('Logout effettuato con successo')
     }
 

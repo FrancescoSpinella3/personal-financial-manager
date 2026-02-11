@@ -7,6 +7,8 @@ const defaultUsers = [
         id: 1,
         name: "Francesco",
         lastName: "Spinella",
+        birthday: "02/08/2000",
+        gender: 'maschio',
         email: "test@email.com",
         password: "test123"
     }
@@ -25,7 +27,7 @@ export function getUsers() {
 }
 
 // Register new user
-export function registerUser({ name, lastName, email, password }) {
+export function registerUser({ name, lastName, birthday, gender, email, password }) {
     const users = getUsers();
 
     // Check duplicated email
@@ -38,6 +40,8 @@ export function registerUser({ name, lastName, email, password }) {
         id: Date.now(),
         name,
         lastName,
+        birthday,
+        gender,
         email,
         password
     }

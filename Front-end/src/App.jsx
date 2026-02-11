@@ -4,6 +4,8 @@ import AuthLayout from './components/layout/AuthLayout'
 import { initFakeDB } from './services/fakeUserDB'
 import { AuthProvider } from './context/AuthContext'
 
+import ProtectedRoute from './components/routes/ProtectedRoute'
+
 import Goals from './components/Pages/Goals'
 import Settings from './components/Pages/Settings'
 import Transactions from './components/Pages/Transations'
@@ -12,13 +14,13 @@ import UserProfile from './components/Pages/UserProfile'
 import Login from './components/Pages/Login'
 import Register from './components/Pages/Register'
 import Home from './components/Pages/Home'
+import Categories from './components/Pages/Categories'
+
 import { useEffect } from 'react'
 
 import './App.css'
-import Categories from './components/Pages/Categories'
 
 function App() { 
-
   useEffect(() => {
     initFakeDB(); // create test user if not exist
   }, []);
@@ -35,8 +37,12 @@ function App() {
           </Route>
 
           {/* Dashboard area */}
-          <Route element={<DashboardLayout />}>
-            {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
+          {/* <Route element={<DashboardLayout />}> */}
+          <Route element={
+            <ProtectedRoute>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/goals" element={<Goals />} />
