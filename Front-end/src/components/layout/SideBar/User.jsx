@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
+import { UserRound } from "lucide-react";
 
 export default function User() {
     const { user } = useAuth();
@@ -9,9 +10,10 @@ export default function User() {
             <div className="flex items-center justify-center gap-4">
                 <div 
                     id="userAvatar"
-                    className="rounded-full bg-zinc-500 size-8 overflow-hidden"
+                    className="rounded-full bg-zinc-600 size-8 overflow-hidden flex items-center justify-center text-zinc-400"
                 >
-                    <img src="/src/assets/images/profile-image.jpg" alt="Profile image" />
+                    <UserRound className="size-5" />
+                    {/* <img src="/src/assets/images/profile-image.jpg" alt="Profile image" /> */}
                 </div>
                 <div className="leading-0">
                     <p 
@@ -21,7 +23,7 @@ export default function User() {
                         {user?.name} {user?.lastName}
                     </p>
                     <Link
-                        to="/profile"
+                        to="/settings"
                         className="text-xs text-zinc-500 hover:text-zinc-400 transition-colors duration-200 ease-in"
                     >
                         Vedi profilo

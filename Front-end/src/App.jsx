@@ -10,7 +10,6 @@ import Goals from './components/Pages/Goals'
 import Settings from './components/Pages/Settings'
 import Transactions from './components/Pages/Transations'
 import Dashboard from './components/Pages/Dashboard'
-import UserProfile from './components/Pages/UserProfile'
 import Login from './components/Pages/Login'
 import Register from './components/Pages/Register'
 import Home from './components/Pages/Home'
@@ -37,7 +36,6 @@ function App() {
           </Route>
 
           {/* Dashboard area */}
-          {/* <Route element={<DashboardLayout />}> */}
           <Route element={
             <ProtectedRoute>
               <DashboardLayout />
@@ -48,7 +46,6 @@ function App() {
             <Route path="/goals" element={<Goals />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="/profile" element={<UserProfile /> } />
           </Route>
       </Routes>
     </AuthProvider>

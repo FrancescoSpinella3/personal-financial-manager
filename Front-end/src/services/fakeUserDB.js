@@ -8,7 +8,7 @@ const defaultUsers = [
         name: "Francesco",
         lastName: "Spinella",
         birthday: "02/08/2000",
-        gender: 'maschio',
+        gender: 'Maschio',
         email: "test@email.com",
         password: "test123"
     }

@@ -10,6 +10,7 @@ import { useState } from "react";
 
 import { loginUser } from "../../services/fakeUserDB";
 import { useNavigate } from "react-router-dom";
+import { Loader2 } from "lucide-react";
 
 export default function Login(){
     const { login } = useAuth();
@@ -66,7 +67,7 @@ export default function Login(){
                 <Input 
                     inputType="password" 
                     label="Password" 
-                    placeholder="qwerty123"
+                    placeholder="••••••"
                     value={values.password}
                     onChange={handleChange("password")}
                     error={submitted ? errors.password : null}

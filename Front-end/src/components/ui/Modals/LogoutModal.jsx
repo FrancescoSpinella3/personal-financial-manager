@@ -9,13 +9,29 @@ export default function LogoutModal({ isOpen, onClose, onLogout }) {
     return (
         <Modal 
             variant="alert"
-            message="Sei sicuro di voler uscire dal tuo account?"
+            title="Sei sicuro di voler uscire dal tuo account?"
+            subText="In questo modo verrai reindirizzato all pagina di login"
         >
-            <div className="flex gap-3 justify-end">
+            <div className="flex gap-3">
+                {/* Logout button */}
                 <Link to="/login">
-                    <Button variant="primary" size="sm" onClick={onLogout}>Esci</Button>
+                    <Button 
+                        variant="primary" 
+                        size="xs" 
+                        onClick={onLogout}
+                    >
+                        Esci
+                    </Button>
                 </Link>
-                <Button variant="secondary" size="sm" onClick={onClose}>Annulla</Button>
+
+                {/* Close modal */}
+                <Button 
+                    variant="secondary" 
+                    size="xs" 
+                    onClick={onClose}
+                >
+                    Annulla
+                </Button>
             </div>
         </Modal>
     );

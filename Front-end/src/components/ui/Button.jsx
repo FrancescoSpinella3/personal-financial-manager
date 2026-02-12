@@ -6,7 +6,7 @@ export default function Button({
     onClick
 }) {
 
-    const defaultClasses = "cursor-pointer font-medium text-lg rounded-md duration-200 ease-in";
+    const defaultClasses = "cursor-pointer font-medium text-lg rounded-md duration-200 ease-in flex items-center justify-center";
     const variants = {
         primary: 'bg-indigo-500 border-2 border-indigo-500 hover:bg-indigo-600 text-white hover:border-indigo-600',
         secondary: 'bg-zinc-400 hover:bg-zinc-500 text-white',
@@ -16,9 +16,10 @@ export default function Button({
     }
 
     const sizes = {
-        sm: 'w-22 py-1.5 text-[1em]',
-        md: 'w-33 py-2.5',
-        lg: 'w-full px-4 py-2'
+        xs: 'w-20 py-1.5 text-[1em]',
+        sm: 'py-1.5 px-3',
+        md: 'w-32 py-2.5',
+        lg: 'w-full px-4 py-1.5'
     }
 
     const classes = `${defaultClasses} ${variants[variant]} ${sizes[size]} ${className}`;

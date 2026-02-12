@@ -1,4 +1,13 @@
-export default function Input({ label, inputType, select, placeholder, value, onChange, error, ...props }) {
+export default function Input({ 
+    label, 
+    inputType, 
+    select,
+    placeholder, 
+    value, 
+    onChange, 
+    error, 
+    ...props 
+}) {
 
     // Default classes for label and input
     let labelClasses = "font-semibold text-sm mb-1";
@@ -29,8 +38,8 @@ export default function Input({ label, inputType, select, placeholder, value, on
                     {...props}
                 >
                     <option value="" disabled >Seleziona un'opzione</option>
-                    <option value="maschio">Maschio</option>
-                    <option value="femmina">Femmina</option>
+                    <option value="Maschio">Maschio</option>
+                    <option value="Femmina">Femmina</option>
                 </select>
             ) : (
                 <input 

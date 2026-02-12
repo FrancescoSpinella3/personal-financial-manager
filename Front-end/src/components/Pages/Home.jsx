@@ -22,7 +22,8 @@ export default function Home() {
                     per avere un quadro completo della tua situazione finanziaria.
                 </p>
 
-                <div id="access" className="space-x-5">
+                {/* Login and Register buttons */}
+                <div id="access" className="flex gap-5">
                     <Link to="login">
                         <Button variant="primary" size="md">
                             Accedi

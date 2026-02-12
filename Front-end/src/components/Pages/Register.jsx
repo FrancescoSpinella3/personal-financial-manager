@@ -99,7 +99,7 @@ export default function Register() {
                 <Input 
                     inputType="password" 
                     label="Password" 
-                    placeholder="qwerty123"
+                    placeholder="••••••"
                     value={values.password}
                     onChange={handleChange("password")}
                     error={submitted ? errors.password : null}
