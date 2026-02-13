@@ -12,8 +12,11 @@ export default function User() {
                     id="userAvatar"
                     className="rounded-full bg-zinc-600 size-8 overflow-hidden flex items-center justify-center text-zinc-400"
                 >
-                    <UserRound className="size-5" />
-                    {/* <img src="/src/assets/images/profile-image.jpg" alt="Profile image" /> */}
+                    {user.profileImage ? (
+                        <img src={user.profileImage} alt="Profile image" /> 
+                    ) : (
+                        <UserRound className="size-5" />
+                    )}
                 </div>
                 <div className="leading-0">
                     <p 

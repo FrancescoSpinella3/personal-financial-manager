@@ -10,7 +10,8 @@ const defaultUsers = [
         birthday: "02/08/2000",
         gender: 'Maschio',
         email: "test@email.com",
-        password: "test123"
+        password: "test123",
+        profileImage: null,
     }
 ];
 
@@ -27,7 +28,7 @@ export function getUsers() {
 }
 
 // Register new user
-export function registerUser({ name, lastName, birthday, gender, email, password }) {
+export function registerUser({ name, lastName, birthday, gender, email, password, profileImage}) {
     const users = getUsers();
 
     // Check duplicated email
@@ -43,7 +44,8 @@ export function registerUser({ name, lastName, birthday, gender, email, password
         birthday,
         gender,
         email,
-        password
+        password,
+        profileImage
     }
 
     users.push(newUser);
@@ -56,6 +58,19 @@ export function registerUser({ name, lastName, birthday, gender, email, password
 export function loginUser(email, password) {
     const users = getUsers();
     return users.find(u => u.email === email && u.password === password) || null
+}
+
+// Update user by id
+export function updateUser(id, updates) {
+    const users = getUsers();
+    const idUser = users.findIndex(user => user.id === id);
+    if (idUser === -1 ) {
+        throw new Error("User not found");
+    }
+
+    users[idUser] = {...users[idUser], ...updates};
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    return users[idUser];
 }
 
 // Reset database (only for development)

@@ -4,15 +4,22 @@ import LogoutModal from "../ui/Modals/LogoutModal";
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import NavBar from "./NavBar";
+import Modal2 from "../ui/Modal";
+import SuccessModal from "../ui/Modals/SuccessModal";
 
 export default function DashboardLayout() {
-
     const { logout } = useAuth();
 
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
+
+    const [modalIsOpen, setModalIsOpen] = useState(false); // Prova
+
+    // const handleLogout = () => {
+    //     setShowModal(true);
+    // }
 
     const handleLogout = () => {
-        setShowModal(true);
+        setModalIsOpen(true);
     }
 
 
@@ -25,7 +32,7 @@ export default function DashboardLayout() {
             <NavBar />
 
             {/* Show logout modal if user want to logout */}
-            <LogoutModal isOpen={showModal} onLogout={logout} onClose={() => setShowModal(false)}/>
+            <LogoutModal onLogout={logout} open={modalIsOpen} onClose={() => setModalIsOpen(false)}/>
 
             {/* Main content */}
             <div className="flex-1 bg-zinc-200 min-h-screen w-full">

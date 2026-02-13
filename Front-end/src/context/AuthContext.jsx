@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { loginUser } from "../services/fakeUserDB";
+import { loginUser, updateUser } from "../services/fakeUserDB";
 
 const AuthContext = createContext();
 
@@ -44,12 +44,22 @@ export function AuthProvider({ children }) {
         console.log('Logout effettuato con successo')
     }
 
+    // Update profile
+    const updateProfile = (updates) => {
+        if (!user) throw new Error("Nessun utente loggato");
+        const updated = updateUser(user.id, updates);
+        localStorage.setItem("loggedUser", JSON.stringify(updated));
+        setUser(updated);
+        return updated;
+    }
+
     return (
         <AuthContext.Provider
                 value={{
                 user,
                 login,
                 logout,
+                updateProfile,
                 isAuthenticated: !!user,
                 loading
             }}

@@ -34,6 +34,7 @@ export default function NavBar() {
                     </p>
                 </div>
 
+                {/* Theme button */}
                 <p>Light/Dark mode</p>
 
             </div>

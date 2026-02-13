@@ -2,15 +2,14 @@ import { Link } from "react-router-dom";
 import Button from "../Button";
 import Modal from "../Modal";
 
-export default function LogoutModal({ isOpen, onClose, onLogout }) {
-
-    if (!isOpen) return null;
+export default function LogoutModal({ onLogout, onClose, ...props }) {
 
     return (
-        <Modal 
+        <Modal
             variant="alert"
             title="Sei sicuro di voler uscire dal tuo account?"
             subText="In questo modo verrai reindirizzato all pagina di login"
+            {...props}
         >
             <div className="flex gap-3">
                 {/* Logout button */}

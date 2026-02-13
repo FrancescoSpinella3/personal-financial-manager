@@ -1,6 +1,6 @@
 import Button from "../ui/Button";
 
-export default function SettingsLayout({ children, title, textButton }) {
+export default function SettingsLayout({ children, title, textButton, onAction }) {
     return (
         <div className="p-5 max-w-md">
             {/* Section title */}
@@ -17,6 +17,7 @@ export default function SettingsLayout({ children, title, textButton }) {
                     <Button 
                         variant="primary" 
                         size="sm"
+                        onClick={onAction}
                     >
                         {textButton}
                     </Button>

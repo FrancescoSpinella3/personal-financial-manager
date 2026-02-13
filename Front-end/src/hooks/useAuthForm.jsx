@@ -8,7 +8,7 @@ export default function useAuthForm({ mode }) {
     const [values, setValues] = useState({
         email: '',
         password: '',
-        ...(isRegister && { name: '', lastName: '', birthday: '', gender: '' })
+        ...(isRegister && { name: '', lastName: '', birthday: '', gender: '', profileImage: null, })
     });
 
     // Error states
@@ -86,7 +86,7 @@ export default function useAuthForm({ mode }) {
         setValues({
             email: '',
             password: '',
-            ...(isRegister && { name: '', lastName: '', birthday: '', gender: '' })
+            ...(isRegister && { name: '', lastName: '', birthday: '', gender: '', profileImage: null, })
         });
         setErrors({});
         setSubmitted(false);
