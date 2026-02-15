@@ -21,9 +21,26 @@ export default function Register() {
         reset
     } = useAuthForm({ mode: 'register'})
 
+
+    // Formating birthday
+    const formatBirthday = (dateStr) => {
+        if (!dateStr) return '';
+        const [year, month, day] = dateStr.split('-');
+        return `${day}/${month}/${year}`;
+    }
+
     const onRegister = (data) => {
+
+        // Trim values
+        const payload = {
+            ...data,
+            name: (data.name || '').trim(),
+            lastName: (data.lastName || '').trim(),
+            email: (data.email || '').trim(),
+            birthday: formatBirthday(data.birthday)
+        }
         try {
-            registerUser(data)
+            registerUser(payload)
             setIsLoading(true);
             alert("Registrazione effettuata")
             navigate('/dashboard');
