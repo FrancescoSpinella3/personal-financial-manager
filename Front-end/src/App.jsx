@@ -6,7 +6,7 @@ import { AuthProvider } from './context/AuthContext'
 
 import ProtectedRoute from './components/routes/ProtectedRoute'
 
-import Goals from './components/Pages/Goals'
+import Goals from './components/Pages/Goals/Goals'
 import Settings from './components/Pages/Settings'
 import Transactions from './components/Pages/Transations'
 import Dashboard from './components/Pages/Dashboard'

@@ -154,9 +154,9 @@ export default function Settings() {
     }
 
     return (
-        <Section>
+        <Section sectionTitle="Gestione Account">
             <div className="bg-white border border-indigo-400 rounded-2xl shadow-md p-8">
-                <h3 className="text-xl font-bold text-zinc-800 mb-13">Gestione Account</h3>
+                {/* <h3 className="text-2xl font-bold text-indigo-900 mb-13">Gestione Account</h3> */}
                 <div className="flex justify-center">
                     <div className="grid grid-cols-2 gap-60">
 

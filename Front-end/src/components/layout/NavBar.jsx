@@ -1,5 +1,6 @@
-import { ChevronsRight } from "lucide-react";
+import { BadgeCheck, ChevronsRight } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
+import ThemeButton from "../ui/ThemeButton";
 
 export default function NavBar() {
     const { user } = useAuth();
@@ -21,7 +22,8 @@ export default function NavBar() {
             <div className="flex justify-between w-full">
                 <div className="flex items-center gap-5">
                     <h2 className=" flex items-center gap-2 font-semibold text-indigo-800 text-lg">
-                        <ChevronsRight className="size-5 text-zinc-600" /> 
+                        {/* <ChevronsRight className="size-5 text-zinc-600" />  */}
+                        <BadgeCheck className="size-4 fill-indigo-500 text-white" />
                         <span className="text-zinc-600 font-medium">
                             {user.gender === 'Maschio' ? "Bentornato " : "Bentornata "} 
                         </span>
@@ -34,7 +36,7 @@ export default function NavBar() {
                 </div>
 
                 {/* Theme button */}
-                <p>Light/Dark mode</p>
+                <ThemeButton />
 
             </div>
         </nav>
