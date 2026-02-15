@@ -1,11 +1,10 @@
-import { ImagePlus } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import Section from "../ui/Section";
 import Input from "../ui/Input";
 import SettingsLayout from "../layout/SettingsLayout";
 import { useEffect, useState } from "react";
 import Modal from "../ui/Modal";
-import Button from "../ui/Button";
+import { Loader2 } from "lucide-react";
 
 export default function Settings() {
     const { user, updateProfile } = useAuth();
@@ -14,8 +13,16 @@ export default function Settings() {
     const [originalImage, setOriginalImage] = useState(null);
     const [replaceImage, setReplaceImage] = useState(false);
     const [fileError, setFileError] = useState('');
+
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [passworddError, setPasswordError] = useState('');
+
     const [showModal, setShowModal] = useState(false);
     const [modalConfig, setModalConfig] = useState({ variant: 'success', title: '', subText: '' });
+
+    const [loading, setLoading] = useState(false)
 
     // Set image
     useEffect(() => {
@@ -61,6 +68,7 @@ export default function Settings() {
         }
 
         try {
+            setLoading(true);
             await updateProfile({ profileImage: image });
             // Show success modal
             setModalConfig({
@@ -80,6 +88,68 @@ export default function Settings() {
                 subText: error?.message || 'Impossibile aggiornare il profilo.'
             });
             setShowModal(true);
+        } finally {
+            setLoading(false);
+        }
+    }
+
+
+    // Validate password
+    const validatePassword = () => {
+        if(!currentPassword || !newPassword || !confirmPassword) {
+            return "Tutti i campi sono obbligatori";
+        }
+
+        if (newPassword.length < 6) {
+            return "La nuova password deve contenere almeno 6 caratteri";
+        }
+
+        if (newPassword !== confirmPassword) {
+            return "Le password non coincidono";
+        }
+
+        return null;
+    }
+
+    // Update password
+    const handleUpdatePassword = async (e) => {
+        e.preventDefault();
+
+        const validationError = validatePassword();
+        if(validationError) {
+            setPasswordError(validationError);
+            return;
+        }
+
+        if (currentPassword !== user.password) {
+            setPasswordError("La vecchia password non è corretta");
+            return;
+        }
+
+        try {
+            setLoading(true);
+            await updateProfile({ password: newPassword });
+            setModalConfig({
+                variant: 'success',
+                title: 'Password aggiornata',
+                subText: 'La tua password è stata aggiornata con successo'
+            });
+            setShowModal(true);
+            setTimeout(() => setShowModal(false), 2000);
+
+            setCurrentPassword('');
+            setNewPassword('');
+            setConfirmPassword('');
+            setPasswordError('');
+            
+        } catch (error) {
+            setModalConfig({
+            variant: 'danger',
+            title: 'Errore',
+            subText: error?.message || 'Impossibile aggiornare la password.'
+        });
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -87,59 +157,84 @@ export default function Settings() {
         <Section>
             <div className="bg-white border border-indigo-400 rounded-2xl shadow-md p-8">
                 <h3 className="text-xl font-bold text-zinc-800 mb-13">Gestione Account</h3>
-                <div className="flex justify-around">
+                <div className="flex justify-center">
+                    <div className="grid grid-cols-2 gap-60">
 
-                    {/* Account */}
-                    <SettingsLayout title="Profilo" textButton="Aggiorna profilo" onAction={handleUpdateProfile}>
-                        <div className="space-y-4 mb-10">
-                            {/* Full name */}
-                            <p className={labelClasses}>Nome: 
-                                <span className={valueClasses}>{user.name} {user.lastName}</span>
-                            </p>
-                            {/* Email */}
-                            <p className={labelClasses}>Email: 
-                                <span className={valueClasses}>{user.email}</span>
-                            </p>
-                            {/* Birthday */}
-                            <p className={labelClasses}>Data di nascita: 
-                                <span className={valueClasses}>{user.birthday}</span>
-                            </p>
-                            {/* Gender */}
-                            <p className={labelClasses}>Sesso: 
-                                <span className={valueClasses}>{user.gender}</span>
-                            </p>
-                        </div>
-
-                        <div className="mb-10">
-                            <p className="font-medium text-lg text-zinc-700">Inserisci la tua immagine di profilo</p>
-                            <div className="flex items-center gap-2">
-                                <ImagePlus className="text-zinc-500 size-5" />
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    className="text-zinc-500 cursor-pointer"
-                                    onClick={() => {
-                                        setReplaceImage(true);
-                                        setFileError('');
-                                    }}
-                                    onChange={handleFileChange}
-                                />
+                        {/* Account */}
+                        <SettingsLayout title="Profilo" textButton={loading ? <Loader2 /> : 'Aggiorna profilo'} onAction={handleUpdateProfile}>
+                            <div className="space-y-4 mb-10">
+                                {/* Full name */}
+                                <p className={labelClasses}>Nome: 
+                                    <span className={valueClasses}>{user.name} {user.lastName}</span>
+                                </p>
+                                {/* Email */}
+                                <p className={labelClasses}>Email: 
+                                    <span className={valueClasses}>{user.email}</span>
+                                </p>
+                                {/* Birthday */}
+                                <p className={labelClasses}>Data di nascita: 
+                                    <span className={valueClasses}>{user.birthday}</span>
+                                </p>
+                                {/* Gender */}
+                                <p className={labelClasses}>Sesso: 
+                                    <span className={valueClasses}>{user.gender}</span>
+                                </p>
                             </div>
 
-                            {fileError && (
-                                <p className="text-sm text-red-600 mt-2">{fileError}</p>
-                            )}
-                        </div>
-                    </SettingsLayout>
+                            <div className="mb-10">
+                                <p className="font-medium text-lg text-zinc-700">Inserisci la tua immagine di profilo</p>
+                                <div className="flex items-center gap-2">
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        className="text-zinc-500 cursor-pointer"
+                                        onClick={() => {
+                                            setReplaceImage(true);
+                                            setFileError('');
+                                        }}
+                                        onChange={handleFileChange}
+                                    />
+                                </div>
+                                
+                                {/* Show an error message */}
+                                {fileError && (
+                                    <p className="text-sm text-red-600 mt-2">{fileError}</p>
+                                )}
+                            </div>
+                        </SettingsLayout>
 
-                    {/* Security */}
-                    <SettingsLayout title="Sicurezza" textButton="Modifica password">
-                        <div className="space-y-4 mb-10">
-                            <Input label="Vecchia password" inputType="password" placeholder="••••••" />
-                            <Input label="Nuova password" inputType="password" placeholder="••••••" />
-                            <Input label="Ripeti password" inputType="password" placeholder="••••••" />
-                        </div>
-                    </SettingsLayout>
+                        {/* Security */}
+                        <SettingsLayout title="Sicurezza" textButton={loading ? <Loader2 /> : 'Aggiorna password'} onAction={handleUpdatePassword}>
+                            <div className="space-y-4 mb-10">
+                                <Input 
+                                    label="Vecchia password" 
+                                    inputType="password" 
+                                    placeholder="••••••" 
+                                    value={currentPassword}
+                                    onChange={(e) => setCurrentPassword(e.target.value)}
+                                />
+                                <Input 
+                                    label="Nuova password" 
+                                    inputType="password"
+                                    placeholder="••••••" 
+                                    value={newPassword}
+                                    onChange={(e) => setNewPassword(e.target.value)}
+                                />
+                                <Input 
+                                    label="Ripeti password" 
+                                    inputType="password" 
+                                    placeholder="••••••" 
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                />
+                                
+                                {/* Show an error message */}
+                                {passworddError && (
+                                    <p className="text-sm text-red-600 mt-2">{passworddError}</p>
+                                )}
+                            </div>
+                        </SettingsLayout>
+                    </div>
                 </div>
             </div>
 
