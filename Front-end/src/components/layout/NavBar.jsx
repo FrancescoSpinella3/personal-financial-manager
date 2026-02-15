@@ -5,7 +5,6 @@ export default function NavBar() {
     const { user } = useAuth();
     
     // Today
-    // const currentDate = new Date().toLocaleDateString('it-IT');
     const currentDate = new Date();
     const formattedDate = new Intl.DateTimeFormat('it-IT', {
         weekday: 'long',

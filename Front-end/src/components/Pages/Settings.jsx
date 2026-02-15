@@ -5,6 +5,7 @@ import Input from "../ui/Input";
 import SettingsLayout from "../layout/SettingsLayout";
 import { useEffect, useState } from "react";
 import Modal from "../ui/Modal";
+import Button from "../ui/Button";
 
 export default function Settings() {
     const { user, updateProfile } = useAuth();
@@ -44,8 +45,9 @@ export default function Settings() {
         reader.readAsDataURL(file);
     }
 
-    // Save profile
-    const handleUpdateProfile = async () => {
+    // Update profile
+    const handleUpdateProfile = async (e) => {
+        e.preventDefault();
         // If there's no image at all
         if (!image) {
             setFileError("Nessuna immagine selezionata.");
@@ -123,6 +125,7 @@ export default function Settings() {
                                     onChange={handleFileChange}
                                 />
                             </div>
+
                             {fileError && (
                                 <p className="text-sm text-red-600 mt-2">{fileError}</p>
                             )}

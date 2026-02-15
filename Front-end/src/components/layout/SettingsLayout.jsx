@@ -10,7 +10,7 @@ export default function SettingsLayout({ children, title, textButton, onAction }
 
             {/* Conatiner content */}
             <div className="py-5">
-                <div className="space-y-4 mb-10">
+                <form onSubmit={onAction}>
                     {children}
 
                     {/* Button to update content */}
@@ -21,7 +21,7 @@ export default function SettingsLayout({ children, title, textButton, onAction }
                     >
                         {textButton}
                     </Button>
-                </div>
+                </form>
             </div>
 
 
