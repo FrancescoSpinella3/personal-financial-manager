@@ -10,8 +10,8 @@ export default function Input({
 }) {
 
     // Default classes for label and input
-    let labelClasses = "font-semibold text-sm mb-1";
-    let inputClasses = "p-2 border border-gray-300 rounded-md bg-gray-50 focus:outline-(--third-color)";
+    let labelClasses = "font-semibold text-sm mb-1 text-(--dark-main-color)";
+    let inputClasses = "p-2 border border-(--dark-fourth-color) rounded-md bg-gray-50 focus:outline-(--third-color)";
 
     // Add a class if there is an error
     if (error) {

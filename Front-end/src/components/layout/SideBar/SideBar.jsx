@@ -8,7 +8,7 @@ export default function SideBar() {
         >
             <div className="flex flex-col items-center h-full">
                 {/* App logo */}
-                <h1 className="text-gray-50 text-3xl font-extrabold">
+                <h1 className="text-(--light-color) text-3xl font-extrabold">
                     <span className="font-extralight">my</span>Finance     
                 </h1>
 

@@ -50,7 +50,7 @@ export default function Modal2({
                         className="h-5 cursor-pointer" 
                         onClick={onClose}
                     >
-                        <X className='text-gray-800' />
+                        <X className='text-(--dark-main-color)' />
                     </button>
                 </div>
 
@@ -61,8 +61,8 @@ export default function Modal2({
                 {/* Modal Content */}
                 <div className="w-full px-5 py-10 flex flex-col justify-center items-center gap-8">
                     <div className="text-center flex flex-col items-center gap-2">
-                        <p className="text-gray-800 font-medium">{title}</p>
-                        <p className="text-gray-600 text-sm w-60">{subText}</p>
+                        <p className="text-(--dark-main-color) font-medium">{title}</p>
+                        <p className="text-(--dark-second-color) text-sm w-60">{subText}</p>
                     </div>
 
                     {open ? children : null }

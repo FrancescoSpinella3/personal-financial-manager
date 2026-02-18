@@ -11,20 +11,20 @@ export default function Home() {
             </header>
 
             <main className="min-h-screen mx-auto flex flex-col items-center justify-start text-center p-10 gap-10">
-                <h3 className="text-2xl font-medium text-gray-700">Benvenuto in</h3>
+                <h3 className="text-2xl font-medium text-(--dark-second-color)">Benvenuto in</h3>
                 
                 {/* App logo */}
                 <h1 className="text-(--main-color) text-7xl font-extrabold">
                     <span className="font-extralight">my</span>Finance     
                 </h1>
 
-                <h2 className="text-gray-800 text-5xl font-bold flex items-center gap-5">
+                <h2 className="text-(--dark-main-color) text-5xl font-bold flex items-center gap-5">
                     Dashboard per la gestione finanziaria 
                     <HandCoins className="size-16 text-(--main-color) stroke-[1.5]" />
                 </h2>
 
                 <div className="flex flex-col items-center max-w-4xl gap-10">
-                    <p className="text-xl text-gray-600">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
+                    <p className="text-xl text-(--dark-second-color)">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
                         per avere un quadro completo della tua situazione finanziaria.
                     </p>
 

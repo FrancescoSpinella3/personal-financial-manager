@@ -8,6 +8,21 @@
     --second-color: #2872ee;
     --quarter-color: #052c85;
     --third-color: #6197f2;
+
+    --dark-main-color: #171717;
+    --dark-second-color: #555555;
+    --dark-third-color: #939393;
+    --dark-fourth-color: #D1D1D1;
+
+    --light-color: #F0F0F0;
+
+    --logout-button-color: #939393;
+    --logout-button-hover-color: #747474;
+
+    --danger-color: #C92100;
+    
+
+    
 }
 
 html {

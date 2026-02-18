@@ -33,8 +33,8 @@ export default function Settings() {
     }, [user])
 
     // Default user data classes
-    const labelClasses = "font-medium text-gray-700";
-    const valueClasses = "font-normal text-gray-500 pl-2";
+    const labelClasses = "font-medium text-(--dark-main-color)";
+    const valueClasses = "font-normal text-(--dark-second-color) pl-2";
 
 
     // Upload image
@@ -181,12 +181,12 @@ export default function Settings() {
                             </div>
 
                             <div className="mb-10">
-                                <p className="font-medium text-lg text-zinc-700">Inserisci la tua immagine di profilo</p>
+                                <p className="font-medium text-lg text-(--dark-main-color)">Inserisci la tua immagine di profilo</p>
                                 <div className="flex items-center gap-2">
                                     <input
                                         type="file"
                                         accept="image/*"
-                                        className="text-zinc-500 cursor-pointer"
+                                        className="text-(--dark-third-color) cursor-pointer"
                                         onClick={() => {
                                             setReplaceImage(true);
                                             setFileError('');

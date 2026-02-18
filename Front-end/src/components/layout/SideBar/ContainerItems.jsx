@@ -14,7 +14,7 @@ export default function ContainerItems() {
             <NavLink
                 to="/dashboard"
                 className={({ isActive }) => 
-                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-gray-400 hover:text-gray-50'}`
+                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-(--dark-third-color) hover:text-(--light-color)'}`
                 }
             >            
                 <LayoutGrid className={iconClasses} />
@@ -26,7 +26,7 @@ export default function ContainerItems() {
             <NavLink
                 to="/transactions"
                 className={({ isActive }) => 
-                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-gray-400 hover:text-gray-50'}`
+                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-(--dark-third-color) hover:text-(--light-color)'}`
                 }
             >            
                 <ArrowRightLeft className={iconClasses} />
@@ -37,7 +37,7 @@ export default function ContainerItems() {
             <NavLink
                 to="/goals"
                 className={({ isActive }) => 
-                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-gray-400 hover:text-gray-50'}`
+                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-(--dark-third-color) hover:text-(--light-color)'}`
                 }
             >
                 <Goal className={iconClasses} />
@@ -48,7 +48,7 @@ export default function ContainerItems() {
                 <NavLink
                     to="/categories"
                     className={({ isActive }) => 
-                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-gray-400 hover:text-gray-50'}`
+                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-(--dark-third-color) hover:text-(--light-color)'}`
                     }
                 >
                     <Tags className={iconClasses} />
@@ -59,7 +59,7 @@ export default function ContainerItems() {
             <NavLink
                 to="/settings"
                 className={({ isActive }) => 
-                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-gray-400 hover:text-gray-50'}`
+                    isActive ?  `${defaultClasses + ' bg-gray-800/75 text-(--second-color)'}` : `${defaultClasses + ' text-(--dark-third-color) hover:text-(--light-color)'}`
                 }
             >
                 <Settings className={iconClasses} />

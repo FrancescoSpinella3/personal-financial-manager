@@ -14,7 +14,7 @@ export default function User() {
             <div className="flex items-center justify-center gap-4">
                 <div 
                     id="userAvatar"
-                    className="rounded-full bg-gray-700 border border-gray-600 size-8 overflow-hidden flex items-center justify-center text-gray-300"
+                    className="rounded-full bg-gray-700 border border-gray-600 size-8 overflow-hidden flex items-center justify-center text-(--dark-third-color)"
                 >
                     {user.profileImage ? (
                         <img src={user.profileImage} alt="Profile image" /> 
@@ -25,13 +25,13 @@ export default function User() {
                 <div className="leading-0">
                     <p 
                         id="userName"
-                        className="text-gray-200 text-sm font-normal"
+                        className="text-(--light-color) text-sm font-normal"
                     >
                         {user?.name} {user?.lastName}
                     </p>
                     <Link
                         to="/settings"
-                        className="text-xs text-gray-400 hover:text-gray-500 transition-colors duration-200 ease-in"
+                        className="text-xs text-(--dark-third-color) hover:text-(--dark-fourth-color) transition-colors duration-200 ease-in"
                     >
                         Vedi profilo
                     </Link>
