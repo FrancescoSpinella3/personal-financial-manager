@@ -50,7 +50,7 @@ export default function Modal2({
                         className="h-5 cursor-pointer" 
                         onClick={onClose}
                     >
-                        <X />
+                        <X className='text-gray-800' />
                     </button>
                 </div>
 

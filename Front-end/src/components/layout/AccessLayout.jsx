@@ -1,24 +1,30 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import ThemeButton from "../ui/ThemeButton";
 
 export default function ({ accessType, description, message, link, text, children }) {
     return (
         <div className="min-h-screen  p-7 bg-gray-100">
-            {/* Back home link */}
-            <Link to='/' className="mb-10 text-sm flex items-center gap-2 font-medium text-gray-700 hover:text-gray-500 duration-200 ease-in">
-                <ArrowLeft className="size-4" /> 
-                Torna alla home
-            </Link>
+            <div className="mb-16 flex justify-between">
+                {/* Back home link */}
+                <Link to='/' className="text-sm flex items-center gap-2 font-medium text-gray-700 hover:text-gray-500 duration-200 ease-in">
+                    <ArrowLeft className="size-4" /> 
+                    Torna alla home
+                </Link>
+
+                <ThemeButton />
+            </div>
+
 
             {/* General container */}
             <div className="mx-auto max-w-lg flex flex-col items-center">
                 {/* App logo */}
-                <h1 className="text-sky-600 text-5xl font-extrabold mb-20">
+                <h1 className="text-sky-600 text-6xl font-extrabold mb-16">
                     <span className="font-extralight">my</span>Finance     
                 </h1>
 
                 <div className="w-full">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-16">
                         <h2 className="text-3xl font-semibold mb-1">{accessType}</h2>
                         <p className="text-gray-700 font-medium">{description}</p>
                     </div>

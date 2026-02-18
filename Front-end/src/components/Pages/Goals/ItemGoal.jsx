@@ -6,7 +6,7 @@ export default function ItemGoal() {
     const [goalValue, setGoalValue] = useState('0,00')
 
     return (
-        <div className="flex p-7 gap-10 shadow-md bg-gray-50 w-fit rounded-lg">
+        <div className="flex p-7 gap-10 shadow-md bg-gray-50 w-fit rounded-lg border border-gray-300">
             <div className="flex items-center gap-5">
                 {/* Icon */}
                 <div className="bg-gray-100 p-2 rounded-md">

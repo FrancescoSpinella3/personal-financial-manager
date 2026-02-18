@@ -1,9 +1,9 @@
 import { BadgeCheck } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import ThemeButton from "../ui/ThemeButton";
-import User from "../ui/User";
+import Logout from "../ui/Logout";
 
-export default function NavBar() {
+export default function NavBar({ onClick }) {
     const { user } = useAuth();
     
     // Today
@@ -39,11 +39,13 @@ export default function NavBar() {
                 </div>
 
                 <div className="flex items-center gap-5">
-                    {/* User profile */}
-                    <User />
 
                     {/* Theme button */}
                     <ThemeButton />
+                    
+                    {/* Logout button */}
+                    <Logout onClick={onClick} />
+
                 </div>
 
 

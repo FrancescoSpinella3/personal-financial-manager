@@ -18,10 +18,10 @@ export default function DashboardLayout() {
     return (
         <>
             {/* Sidebar */}
-            <SideBar onClick={handleLogout} />
+            <SideBar />
             
             {/* Navbar */}
-            <NavBar />
+            <NavBar onClick={handleLogout} />
 
             {/* Show logout modal if user want to logout */}
             <LogoutModal onLogout={logout} open={showModal} onClose={() => setShowModal(false)}/>
