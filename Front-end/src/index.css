@@ -2,9 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-/* :root {
-    --main-color: ;
-} */
+@theme {
+    --main-color: #1055C9;
+    --hover-main-color: #05339C;
+    --second-color: #2872ee;
+    --quarter-color: #052c85;
+    --third-color: #6197f2;
+}
 
 html {
     font-family: 'Inter', sans-serif;

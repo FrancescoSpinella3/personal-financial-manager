@@ -15,18 +15,15 @@ export default function NavBar({ onClick }) {
         year: 'numeric'
     }).format(currentDate);
 
-    // Finale date
+    // Final date
     const date = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
 
     return(
-        // <nav className="flex items-center bg-zinc-100 border-b border-zinc-200 h-18 ml-82 px-5">
         <nav className="fixed top-0 left-82 right-0 flex items-center bg-gray-50 border-b border-gray-300 h-18 px-5 z-50">
             <div className="flex justify-between w-full">
                 <div className="flex items-center gap-5">
-                    {/* <h2 className="flex items-center gap-2 font-semibold text-indigo-800 text-lg"> */}
-                    <h2 className="flex items-center gap-2 font-semibold text-sky-800 text-lg">
-                        <BadgeCheck className="size-4 fill-sky-600 text-white" />
-                        {/* <span className="text-zinc-600 font-medium"> */}
+                    <h2 className="flex items-center gap-2 font-semibold text-(--quarter-color) text-lg">
+                        <BadgeCheck className="size-4 fill-(--second-color) text-white" />
                         <span className="text-gray-600 font-normal">
                             {user.gender === 'Maschio' ? "Bentornato " : "Bentornata "} 
                         </span>
@@ -39,7 +36,6 @@ export default function NavBar({ onClick }) {
                 </div>
 
                 <div className="flex items-center gap-5">
-
                     {/* Theme button */}
                     <ThemeButton />
                     

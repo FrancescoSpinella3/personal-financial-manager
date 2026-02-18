@@ -14,13 +14,13 @@ export default function Home() {
                 <h3 className="text-2xl font-medium text-gray-700">Benvenuto in</h3>
                 
                 {/* App logo */}
-                <h1 className="text-sky-600 text-7xl font-extrabold">
+                <h1 className="text-(--main-color) text-7xl font-extrabold">
                     <span className="font-extralight">my</span>Finance     
                 </h1>
 
                 <h2 className="text-gray-800 text-5xl font-bold flex items-center gap-5">
                     Dashboard per la gestione finanziaria 
-                    <HandCoins className="size-16 text-sky-600 stroke-[1.5]" />
+                    <HandCoins className="size-16 text-(--main-color) stroke-[1.5]" />
                 </h2>
 
                 <div className="flex flex-col items-center max-w-4xl gap-10">

@@ -155,8 +155,7 @@ export default function Settings() {
 
     return (
         <Section sectionTitle="Gestione Account">
-            <div className="bg-white border border-sky-600 rounded-2xl shadow-md p-8">
-                {/* <h3 className="text-2xl font-bold text-indigo-900 mb-13">Gestione Account</h3> */}
+            <div className="bg-white border border-gray-300 rounded-2xl shadow-md p-8">
                 <div className="flex justify-center">
                     <div className="grid grid-cols-2 gap-60">
 

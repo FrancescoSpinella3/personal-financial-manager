@@ -8,11 +8,11 @@ export default function Button({
 
     const defaultClasses = "cursor-pointer font-medium text-lg rounded-md duration-200 ease-in flex items-center justify-center";
     const variants = {
-        primary: 'bg-sky-600 border-2 border-sky-600 hover:bg-sky-700 text-white hover:border-sky-700',
+        primary: 'bg-(--main-color) border-2 border-(--main-color) hover:bg-(--hover-main-color) text-white hover:border-(--hover-main-color)',
         secondary: 'bg-gray-400 hover:bg-gray-500 text-white',
-        border: 'border-2 border-sky-600 text-sky-600 hover:border-sky-700 hover:text-sky-700',
+        border: 'border-2 border-(--main-color) text-(--main-color) hover:border-(--hover-main-color) hover:text-(--hover-main-color)',
         alert: 'bg-red-400 hover:bg-red-600',
-        modul: 'bg-sky-600 text-white font-medium rounded-md cursor-pointer hover:bg-sky-700 duration-200 ease-in'
+        modul: 'bg-(--main-color) text-white font-medium rounded-md cursor-pointer hover:bg-(--hover-main-color) duration-200 ease-in'
     }
 
     const sizes = {
