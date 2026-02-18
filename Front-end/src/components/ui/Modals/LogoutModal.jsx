@@ -9,6 +9,7 @@ export default function LogoutModal({ onLogout, onClose, ...props }) {
             variant="alert"
             title="Sei sicuro di voler uscire dal tuo account?"
             subText="In questo modo verrai reindirizzato all pagina di login"
+            onClose={onClose}
             {...props}
         >
             <div className="flex gap-3">

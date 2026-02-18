@@ -4,7 +4,7 @@ export default function SettingsLayout({ children, title, textButton, onAction }
     return (
         <div className="p-5">
             {/* Section title */}
-            <h3 className="font-semibold text-xl text-indigo-600 underline underline-offset-8 mb-5">
+            <h3 className="font-semibold text-xl text-sky-700 underline underline-offset-8 mb-5">
                 {title}
             </h3>
 

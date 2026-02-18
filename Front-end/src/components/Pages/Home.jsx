@@ -9,21 +9,21 @@ export default function Home() {
                 <p>Light/Dark mode</p>
             </header>
 
-            <main className="min-h-screen mx-auto flex flex-col items-center justify-start text-center p-10">
-                <h1 className="text-2xl font-medium text-zinc-700 mb-12">Benvenuto in</h1>
+            <main className="min-h-screen mx-auto flex flex-col items-center justify-start text-center p-10 gap-10">
+                <h1 className="text-2xl font-medium text-gray-700">Benvenuto in</h1>
                 
                 {/* App logo */}
-                <h2 className="text-indigo-600 text-7xl font-extrabold mb-5">
+                <h2 className="text-sky-600 text-7xl font-extrabold">
                     <span className="font-extralight">my</span>Finance     
                 </h2>
 
-                <h3 className="text-zinc-800 text-5xl font-bold mb-14 flex items-center gap-5">
+                <h3 className="text-gray-800 text-5xl font-bold flex items-center gap-5">
                     Dashboard per la gestione finanziaria 
-                    <HandCoins className="size-16 text-indigo-600 stroke-[1.5]" />
+                    <HandCoins className="size-16 text-sky-600 stroke-[1.5]" />
                 </h3>
 
-                <div className="flex flex-col items-center max-w-4xl">
-                    <p className="text-xl text-zinc-600 mb-14">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
+                <div className="flex flex-col items-center max-w-4xl gap-10">
+                    <p className="text-xl text-gray-600">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
                         per avere un quadro completo della tua situazione finanziaria.
                     </p>
 

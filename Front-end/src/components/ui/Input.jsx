@@ -11,7 +11,7 @@ export default function Input({
 
     // Default classes for label and input
     let labelClasses = "font-semibold text-sm mb-1";
-    let inputClasses = "p-2 border border-gray-300 rounded-md bg-indigo-50 focus:outline-indigo-500";
+    let inputClasses = "p-2 border border-gray-300 rounded-md bg-sky-50 focus:outline-sky-600";
 
     // Add a class if there is an error
     if (error) {

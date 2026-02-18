@@ -23,7 +23,7 @@ export default function Modal2({
     }, [open]);
 
     // Default classes
-    const defaultModalClasses = "relative flex flex-col items-center rounded-md w-full max-w-sm z-50 gap-5 shadow-md bg-white overflow-hidden";
+    const defaultModalClasses = "relative flex flex-col items-center rounded-md w-full w-sm z-50 gap-5 shadow-md bg-white overflow-hidden";
 
     const variants = {
         success: { headerBg: 'bg-green-200', iconBg: 'bg-green-400', Icon: Check},
@@ -37,7 +37,7 @@ export default function Modal2({
     return createPortal(
         <dialog 
             ref={dialog} 
-            onClose={onClose}
+            onClick={onClose}
             className="fixed inset-0 z-50 top-5 left-5/11"
         >
             <div className="fixed inset-0 bg-black/50" />

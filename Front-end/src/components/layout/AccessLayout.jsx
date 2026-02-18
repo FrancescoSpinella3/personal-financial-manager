@@ -13,7 +13,7 @@ export default function ({ accessType, description, message, link, text, childre
             {/* General container */}
             <div className="mx-auto max-w-lg flex flex-col items-center">
                 {/* App logo */}
-                <h1 className="text-indigo-600 text-5xl font-extrabold mb-20">
+                <h1 className="text-sky-600 text-5xl font-extrabold mb-20">
                     <span className="font-extralight">my</span>Finance     
                 </h1>
 
@@ -35,7 +35,7 @@ export default function ({ accessType, description, message, link, text, childre
                             <p>{message}</p>
                             <Link
                                 to={link}
-                                className="text-indigo-700 font-semibold"
+                                className="text-sky-700 font-semibold"
                             >
                                 {text}
                             </Link>
