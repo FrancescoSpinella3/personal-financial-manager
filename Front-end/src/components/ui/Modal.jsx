@@ -61,8 +61,8 @@ export default function Modal2({
                 {/* Modal Content */}
                 <div className="w-full px-5 py-10 flex flex-col justify-center items-center gap-8">
                     <div className="text-center flex flex-col items-center gap-2">
-                        <p className="text-zinc-800 font-medium">{title}</p>
-                        <p className="text-zinc-600 text-sm w-60">{subText}</p>
+                        <p className="text-gray-800 font-medium">{title}</p>
+                        <p className="text-gray-600 text-sm w-60">{subText}</p>
                     </div>
 
                     {open ? children : null }

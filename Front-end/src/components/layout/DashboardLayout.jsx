@@ -16,7 +16,7 @@ export default function DashboardLayout() {
 
 
     return (
-        <div className="bg-zinc-800">
+        <>
             {/* Sidebar */}
             <SideBar onClick={handleLogout} />
             
@@ -27,10 +27,10 @@ export default function DashboardLayout() {
             <LogoutModal onLogout={logout} open={showModal} onClose={() => setShowModal(false)}/>
 
             {/* Main content */}
-            <div className="flex-1 bg-zinc-100 min-h-screen w-full">
+            <div className="flex-1 bg-gray-100 min-h-screen w-full">
                 <Outlet />
             </div>
-        </div>
+        </>
 
     );
 }

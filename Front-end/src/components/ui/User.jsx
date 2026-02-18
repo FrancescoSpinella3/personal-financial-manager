@@ -9,7 +9,7 @@ export default function User() {
         <div 
             id="user" 
             // className="w-full flex justify-between py-7 border-t border-zinc-700"
-            className="w-full flex justify-between py-7 border-t border-indigo-300"
+            className="w-full flex justify-between py-7 border-t border-sky-300"
 
         >
             <div className="flex items-center justify-center gap-4">

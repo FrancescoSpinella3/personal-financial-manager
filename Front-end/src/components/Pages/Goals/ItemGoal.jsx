@@ -6,17 +6,17 @@ export default function ItemGoal() {
     const [goalValue, setGoalValue] = useState('0,00')
 
     return (
-        <div className="flex p-7 gap-10 shadow-md bg-zinc-50 w-fit rounded-lg">
+        <div className="flex p-7 gap-10 shadow-md bg-gray-50 w-fit rounded-lg">
             <div className="flex items-center gap-5">
                 {/* Icon */}
-                <div className="bg-zinc-100 p-2 rounded-md">
-                    <BusFront className="text-zinc-600" />
+                <div className="bg-gray-100 p-2 rounded-md">
+                    <BusFront className="text-gray-600" />
                 </div>
                 <div>
                     {/* Category name */}
-                    <p className="font-medium text-sm text-zinc-500">Trasporti</p>
+                    <p className="font-medium text-sm text-gray-500">Trasporti</p>
                     {/* Goal value */}
-                    <p className="font-extrabold text-zinc-800">€{goalValue}</p>
+                    <p className="font-extrabold text-gray-800">€{goalValue}</p>
                 </div>
             </div>
 
