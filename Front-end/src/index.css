@@ -16,13 +16,13 @@
 
     --light-color: #F0F0F0;
 
-    --logout-button-color: #939393;
-    --logout-button-hover-color: #747474;
+    /* --logout-button-color: #939393;
+    --logout-button-hover-color: #747474; */
+    --logout-button-color: #EF3463;
+    --logout-button-hover-color: #BA2B4E;
 
-    --danger-color: #C92100;
-    
+    --danger-color: #EF3463;
 
-    
 }
 
 html {

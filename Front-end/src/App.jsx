@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import DashboardLayout from './components/layout/DashboardLayout'
 import AuthLayout from './components/layout/AuthLayout'
 import { initFakeDB } from './services/fakeUserDB'
@@ -13,7 +13,7 @@ import Dashboard from './components/Pages/Dashboard'
 import Login from './components/Pages/Login'
 import Register from './components/Pages/Register'
 import Home from './components/Pages/Home'
-import Categories from './components/Pages/Categories'
+import Categories from './components/Pages/Categories/Categories'
 
 import { useEffect } from 'react'
 
