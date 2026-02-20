@@ -19,12 +19,10 @@ export const categories = [
     { id: 12, name: "Extra",            icon: "Laptop",         color: "bg-green-100 text-green-600",       type: "income" },
     { id: 13, name: "Investimenti",     icon: "TrendingUp",     color: "bg-green-100 text-green-600",       type: "income" },
     { id: 14, name: "Regali",           icon: "Gift",           color: "bg-green-100 text-green-600",       type: "income" },
-    { id: 15, name: "Altro",            icon: "CircleDot",      color: "bg-green-100 text-green-600",       type: "income" },
 
     // Risparmi
-    { id: 11, name: "Stipendio",        icon: "Briefcase",      color: "bg-yellow-100 text-yellow-600",     type: "save" },
-    { id: 12, name: "Extra",            icon: "Laptop",         color: "bg-yellow-100 text-yellow-600",     type: "save" },
-    { id: 13, name: "Investimenti",     icon: "TrendingUp",     color: "bg-yellow-100 text-yellow-600",     type: "save" },
-    { id: 14, name: "Regali",           icon: "Gift",           color: "bg-yellow-100 text-yellow-600",     type: "save" },
-    { id: 15, name: "Altro",            icon: "CircleDot",      color: "bg-yellow-100 text-yellow-600",     type: "save" },
+    { id: 11, name: "Investimenti",        icon: "TrendingUp",      color: "bg-yellow-100 text-yellow-600",     type: "save" },
+    { id: 12, name: "Viaggi",              icon: "Plane",           color: "bg-yellow-100 text-yellow-600",     type: "save" },
+    { id: 14, name: "Fondo pensione",      icon: "PiggyBank",       color: "bg-yellow-100 text-yellow-600",     type: "save" },
+    { id: 15, name: "Auto",                icon: "Car",             color: "bg-yellow-100 text-yellow-600",     type: "save" },
 ];

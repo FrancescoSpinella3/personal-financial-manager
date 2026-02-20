@@ -99,7 +99,11 @@ export default function Register() {
                         value={values.gender}
                         onChange={handleChange("gender")}
                         error={submitted ? errors.gender : null}
-                    />
+                    >
+                        <option value="" disabled >Seleziona un'opzione</option>
+                        <option value="Maschio">Maschio</option>
+                        <option value="Femmina">Femmina</option>
+                    </Input>
                 </div>
 
                 {/* Email input */}

@@ -32,7 +32,7 @@ export default function ({ accessType, description, message, link, text, childre
                     {children}
 
                     <div className="flex flex-col items-center justify-center gap-5 w-full text-sm font-medium text-(--dark-second-color)">
-                        <div className="flex items-center gap-3 w-full">
+                        <div className="flex items-center gap-3 w-full mt-10">
                             <div className="w-full bg- bg-gray-300 h-px"></div>
                             <span className="font-semibold text-(--dark-second-color)">Oppure</span>
                             <div className="w-full bg- bg-gray-300 h-px"></div>

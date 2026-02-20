@@ -1,4 +1,5 @@
-export default function Input({ 
+export default function Input({
+    children, 
     label, 
     inputType, 
     select,
@@ -37,9 +38,10 @@ export default function Input({
                     onChange={onChange}
                     {...props}
                 >
-                    <option value="" disabled >Seleziona un'opzione</option>
+                    {/* <option value="" disabled >Seleziona un'opzione</option>
                     <option value="Maschio">Maschio</option>
-                    <option value="Femmina">Femmina</option>
+                    <option value="Femmina">Femmina</option> */}
+                    {children}
                 </select>
             ) : (
                 <input 

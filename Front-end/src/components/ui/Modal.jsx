@@ -1,8 +1,8 @@
-import { Check, CircleAlert, TriangleAlert, X } from 'lucide-react';
+import { Check, CircleAlert, TriangleAlert, X, Pin, Bookmark } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-export default function Modal2({ 
+export default function Modal({ 
     children, 
     open, 
     onClose,
@@ -29,6 +29,7 @@ export default function Modal2({
         success: { headerBg: 'bg-green-200', iconBg: 'bg-green-400', Icon: Check},
         danger: { headerBg: 'bg-red-200', iconBg: 'bg-red-400', Icon: TriangleAlert},
         alert: { headerBg: 'bg-yellow-200/50', iconBg: 'bg-yellow-400', Icon: CircleAlert},
+        save: { headerBg: 'bg-blue-200/50', iconBg: 'bg-blue-400', Icon: Bookmark},
     }
 
     const chosen = variants[variant] || variants.success;
@@ -43,7 +44,7 @@ export default function Modal2({
             <div className="fixed inset-0 bg-black/50" />
             
             {/* Modal Structure */}
-            <div className={modalClasses}>
+            <div className={modalClasses} onClick={(e) => e.stopPropagation()}>
                 {/* Hero */}
                 <div className={`h-24 w-full flex justify-end p-3 ${chosen.headerBg}`}>
                     <button 
