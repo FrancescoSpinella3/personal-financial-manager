@@ -19,18 +19,22 @@ export default function NavBar({ onClick }) {
     const date = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
 
     return(
-        <nav className="fixed top-0 left-82 right-0 flex items-center bg-white border-b border-gray-300 h-18 px-5 z-50">
+        <nav className="fixed top-0 left-82 right-0 flex items-center bg-gray-100 border-b border-gray-300 h-18 px-5 z-50">
             <div className="flex justify-between w-full">
                 <div className="flex items-center gap-5">
-                    <h2 className="flex items-center gap-2 font-semibold text-(--quarter-color) text-lg">
+                    {/* User */}
+                    <h2 className="flex items-center gap-2 font-semibold text-(--fourth-color) text-lg">
                         <BadgeCheck className="size-4 fill-(--second-color) text-(--light-color)" />
                         <span className="text-(--dark-second-color) font-normal">
                             {user.gender === 'Maschio' ? "Bentornato " : "Bentornata "} 
                         </span>
                         {user?.name}
                     </h2>
+                    
                     <span className="text-(--dark-third-color)">|</span>
-                    <p className="flex  items-center gap-2 text-sm font-normal text-(--dark-third-color)">
+                    
+                    {/* Current date */}
+                    <p className="flex items-center gap-2 text-sm font-normal text-(--dark-third-color)">
                         {date}
                     </p>
                 </div>
@@ -41,11 +45,7 @@ export default function NavBar({ onClick }) {
                     
                     {/* Logout button */}
                     <Logout onClick={onClick} />
-
                 </div>
-
-
-
             </div>
         </nav>
     );

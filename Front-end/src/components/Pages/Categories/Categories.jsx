@@ -18,6 +18,13 @@ export default function Categories({ onClose }) {
     return (
         <Section sectionTitle="Categorie">
             <div className="flex gap-7">
+                {/* Expenses */}
+                <ContainerCategory catergoryName="Uscite" onAdd={() => setShowAddCategoryModal(true)}>
+                    {expenses.map(category => (
+                        <CategoryCard key={category.id} category={category} />
+                    ))}
+                </ContainerCategory>
+                
                 {/* Incomes */}
                 <ContainerCategory catergoryName="Entrate" onAdd={() => setShowAddCategoryModal(true)}>
                     {incomes.map(category => (
@@ -25,16 +32,8 @@ export default function Categories({ onClose }) {
                     ))}
                 </ContainerCategory>
 
-                
-                {/* Expenses */}
-                <ContainerCategory catergoryName="Uscite">
-                    {expenses.map(category => (
-                        <CategoryCard key={category.id} category={category} />
-                    ))}
-                </ContainerCategory>
-
                 {/* Saves */}
-                <ContainerCategory catergoryName="Risparmi">
+                <ContainerCategory catergoryName="Risparmi" onAdd={() => setShowAddCategoryModal(true)}>
                     {saves.map(category => (
                         <CategoryCard key={category.id} category={category} />
                     ))}

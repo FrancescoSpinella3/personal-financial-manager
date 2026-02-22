@@ -18,6 +18,7 @@ import Categories from './components/Pages/Categories/Categories'
 import { useEffect } from 'react'
 
 import './App.css'
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() { 
   useEffect(() => {
@@ -25,30 +26,33 @@ function App() {
   }, []);
 
   return (
-    <AuthProvider>
-      {/* Pages Routes */}
-        <Routes>
-          {/* Home, Login and register pages */}
-          <Route element={<AuthLayout />}>
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/' element={<Home />} />
-          </Route>
+    <ThemeProvider>
+      <AuthProvider>
+        {/* Pages Routes */}
+          <Routes>
+            {/* Home, Login and register pages */}
+            <Route element={<AuthLayout />}>
+              <Route path='/login' element={<Login />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/' element={<Home />} />
+            </Route>
 
-          {/* Dashboard area */}
-          <Route element={
-            <ProtectedRoute>
-              <DashboardLayout />
-            </ProtectedRoute>
-          }>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/transactions" element={<Transactions />} />
-            <Route path="/goals" element={<Goals />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/settings" element={<Settings />} />
-          </Route>
-      </Routes>
-    </AuthProvider>
+            {/* Dashboard area */}
+            <Route element={
+              <ProtectedRoute>
+                <DashboardLayout />
+              </ProtectedRoute>
+            }>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/transactions" element={<Transactions />} />
+              <Route path="/goals" element={<Goals />} />
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/settings" element={<Settings />} />
+            </Route>
+        </Routes>
+      </AuthProvider>
+    </ThemeProvider>
+
   )
 }
 

@@ -8,7 +8,7 @@ export default function User() {
     return (
         <div 
             id="user" 
-            className="w-full flex justify-between py-7 border-t border-gray-700 mt-auto"
+            className="w-full flex justify-between pt-7 border-t border-gray-700 mt-auto"
 
         >
             <div className="flex items-center justify-center gap-4">
