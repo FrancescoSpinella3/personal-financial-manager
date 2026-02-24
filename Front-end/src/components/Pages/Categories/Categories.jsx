@@ -2,10 +2,7 @@ import Section from "../../ui/Section";
 import { categories } from "../../../data/categories";
 import CategoryCard from "./CategoryCard";
 import ContainerCategory from "./ContainerCategory";
-import Modal from "../../ui/Modal";
 import { useState } from "react";
-import Button from "../../ui/Button";
-import { Link } from "react-router-dom";
 import AddCategoryModal from "../../ui/Modals/AddCategoryModal";
 
 export default function Categories({ onClose }) {

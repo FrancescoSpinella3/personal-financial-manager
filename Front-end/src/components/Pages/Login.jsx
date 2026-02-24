@@ -14,9 +14,9 @@ import { Loader2 } from "lucide-react";
 
 export default function Login(){
     const { login } = useAuth();
-    const navigate = useNavigate();
-    const[authError, setAuthError] = useState(null);
+    const [authError, setAuthError] = useState(null);
     const [loading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     const {
         values,
@@ -55,8 +55,10 @@ export default function Login(){
             <Form onSubmit={handleSubmit(onLogin)}>
                 {/* Email input */}
                 <Input 
-                    inputType="email" 
-                    label="Email" 
+                    label="Email"
+                    type="email"
+                    id="email"
+                    name="email"
                     placeholder="mario.rossi@email.com" 
                     value={values.email}
                     onChange={handleChange("email")}
@@ -65,8 +67,10 @@ export default function Login(){
                 
                 {/* Password input */}
                 <Input 
-                    inputType="password" 
                     label="Password" 
+                    type="password" 
+                    id="password"
+                    name="password"
                     placeholder="••••••"
                     value={values.password}
                     onChange={handleChange("password")}

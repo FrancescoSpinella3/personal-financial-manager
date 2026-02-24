@@ -207,21 +207,27 @@ export default function Settings() {
                             <div className="space-y-4 mb-10">
                                 <Input 
                                     label="Vecchia password" 
-                                    inputType="password" 
+                                    type="password" 
+                                    id="old-password"
+                                    name="old-password"
                                     placeholder="••••••" 
                                     value={currentPassword}
                                     onChange={(e) => setCurrentPassword(e.target.value)}
                                 />
                                 <Input 
                                     label="Nuova password" 
-                                    inputType="password"
+                                    type="password" 
+                                    id="new-password"
+                                    name="new-password"
                                     placeholder="••••••" 
                                     value={newPassword}
                                     onChange={(e) => setNewPassword(e.target.value)}
                                 />
                                 <Input 
                                     label="Ripeti password" 
-                                    inputType="password" 
+                                    type="password" 
+                                    id="confirm-password"
+                                    name="confirm-password"
                                     placeholder="••••••" 
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}

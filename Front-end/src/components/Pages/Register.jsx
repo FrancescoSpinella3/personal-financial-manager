@@ -64,8 +64,10 @@ export default function Register() {
                 <div className="flex gap-3">
                     {/* Name input */}
                     <Input 
-                        inputType="text" 
                         label="Nome" 
+                        type="text"
+                        id="first-name"
+                        name="first-name"
                         placeholder="Mario" 
                         value={values.name}
                         onChange={handleChange("name")}
@@ -73,8 +75,10 @@ export default function Register() {
                     />
                     {/* Last name input */}
                     <Input 
-                        inputType="text" 
                         label="Cognome" 
+                        type="text"
+                        id="last-name"
+                        name="last-name"
                         placeholder="Rossi" 
                         value={values.lastName}
                         onChange={handleChange("lastName")}
@@ -85,8 +89,10 @@ export default function Register() {
                 <div className="flex gap-3">
                     {/* Birthday input */}
                     <Input 
-                        inputType="date" 
                         label="Data di nascita" 
+                        type="date"
+                        id="birthday"
+                        name="birthday"
                         value={values.birthday}
                         onChange={handleChange("birthday")}
                         error={submitted ? errors.birthday : null}
@@ -96,6 +102,8 @@ export default function Register() {
                     <Input 
                         select
                         label="Sesso" 
+                        id="gender"
+                        name="gender"
                         value={values.gender}
                         onChange={handleChange("gender")}
                         error={submitted ? errors.gender : null}
@@ -108,8 +116,10 @@ export default function Register() {
 
                 {/* Email input */}
                 <Input 
-                    inputType="email" 
-                    label="Email" 
+                    label="Email"
+                    type="email"
+                    id="email"
+                    name="email"
                     placeholder="mario.rossi@email.com" 
                     value={values.email}
                     onChange={handleChange("email")}
@@ -118,8 +128,10 @@ export default function Register() {
 
                 {/* Password input */}
                 <Input 
-                    inputType="password" 
                     label="Password" 
+                    type="password" 
+                    id="password"
+                    name="password"
                     placeholder="••••••"
                     value={values.password}
                     onChange={handleChange("password")}

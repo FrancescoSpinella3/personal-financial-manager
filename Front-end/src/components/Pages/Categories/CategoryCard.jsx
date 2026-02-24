@@ -19,9 +19,12 @@ export default function CategoryCard({ category }) {
 
 
             {/* Remove button */}
-            <button className="cursor-pointer text-(--danger-color) text-sm">
-                Elimina
-            </button>
+            <div className="bg-(--danger-color) hover:bg-(--danger-hover-color) flex p-1.5 rounded-md">
+                <button className="cursor-pointer text-(--light-color)">
+                    <Icons.Trash2 className="size-4" />
+                </button>
+            </div>
+
         </div>
     );
 }

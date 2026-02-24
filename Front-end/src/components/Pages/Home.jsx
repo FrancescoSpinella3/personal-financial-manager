@@ -11,7 +11,7 @@ export default function Home() {
             </header>
 
             <main className="min-h-screen mx-auto flex flex-col items-center justify-start text-center p-10 gap-10">
-                <h3 className="text-2xl font-medium text-(--dark-second-color)">Benvenuto in</h3>
+                <span className="text-2xl text-(--dark-second-color)">Benvenuto in</span>
                 
                 {/* App logo */}
                 <h1 className="text-(--main-color) text-7xl font-extrabold">

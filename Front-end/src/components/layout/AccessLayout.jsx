@@ -26,7 +26,7 @@ export default function ({ accessType, description, message, link, text, childre
                 <div className="w-full">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl text-(--dark-main-color) font-semibold mb-1">{accessType}</h2>
-                        <p className="text-(--dark-second-color) font-medium">{description}</p>
+                        <p className="text-(--dark-second-color)">{description}</p>
                     </div>
 
                     {children}

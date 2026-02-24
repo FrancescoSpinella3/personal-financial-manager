@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 export default function Input({
     children, 
-    label, 
-    inputType, 
+    label,
+    id,
     select,
     placeholder, 
     value, 
@@ -10,22 +12,28 @@ export default function Input({
     ...props 
 }) {
 
-    // Default classes for label and input
-    let labelClasses = "font-semibold text-sm mb-1 text-(--dark-main-color)";
-    let inputClasses = "p-2 border border-(--dark-fourth-color) rounded-md bg-gray-50 focus:outline-(--third-color)";
+    const [focused, setFocused] = useState(false);
 
-    // Add a class if there is an error
-    if (error) {
+    // Show error styles only when not focused
+    const showError = error && !focused && !value;
+
+    // Default classes for label and input
+    let labelClasses = "font-medium text-sm mb-1.5 text-(--dark-main-color)";
+    let inputClasses = "p-2 border border-(--dark-fourth-color) rounded-md bg-gray-50 focus:outline-(--second-color)";
+
+    // Add a class if there is an error and input is not focused
+    if (showError) {
         labelClasses += ' text-red-600';
     }
 
-    if (error) {
+    if (showError) {
         inputClasses += ' border-red-600';
     }
 
     return (
         <div className="flex flex-col w-full">
             <label 
+            htmlFor={id}
                 className={labelClasses}
             >
                 {label}
@@ -33,9 +41,12 @@ export default function Input({
 
             {select ? (
                 <select
+                    id={id}
                     className={inputClasses}
                     value={value}
                     onChange={onChange}
+                    onFocus={() => setFocused(true)}
+                    onBlur={() => setFocused(false)}
                     {...props}
                 >
                     {/* <option value="" disabled >Seleziona un'opzione</option>
@@ -45,11 +56,14 @@ export default function Input({
                 </select>
             ) : (
                 <input 
-                    type={inputType}
+                    id={id}
                     placeholder={placeholder}
                     value={value}
                     onChange={onChange}
+                    onFocus={() => setFocused(true)}
+                    onBlur={() => setFocused(false)}
                     className={inputClasses}
+                    {...props}
                 />
             )}
 

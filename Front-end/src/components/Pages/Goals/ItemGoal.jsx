@@ -1,22 +1,22 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Button from "../../ui/Button";
-import { BusFront, PencilLine } from 'lucide-react'
+import { icons, PencilLine } from 'lucide-react'
 
-export default function ItemGoal() {
-    const [goalValue, setGoalValue] = useState('0,00')
+export default function ItemGoal({name, value, icon}) {
+    const IconComponent = icons[icon];
 
     return (
-        <div className="flex p-7 gap-10 shadow-md bg-white w-fit rounded-lg border border-gray-300">
+        <div className="flex justify-between p-7 shadow-md bg-white rounded-lg border border-gray-300">
             <div className="flex items-center gap-5">
                 {/* Icon */}
                 <div className="bg-gray-200 p-2 rounded-md">
-                    <BusFront className="text-(--dark-second-color)" />
+                    {IconComponent && <IconComponent className="text-(--dark-second-color)" />}
                 </div>
                 <div>
                     {/* Category name */}
-                    <p className="font-medium text-sm text-(--dark-third-color)">Trasporti</p>
+                    <p className="font-medium text-sm text-(--dark-third-color)">{name}</p>
                     {/* Goal value */}
-                    <p className="font-extrabold text-(--dark-main-color)">€{goalValue}</p>
+                    <p className="font-bold text-(--dark-main-color)">€ {value.toFixed(2)}</p>
                 </div>
             </div>
 
