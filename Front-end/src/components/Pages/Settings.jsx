@@ -170,9 +170,9 @@ export default function Settings() {
                                 <p className={labelClasses}>Email: 
                                     <span className={valueClasses}>{user.email}</span>
                                 </p>
-                                {/* Birthday */}
+                                {/* birthdate */}
                                 <p className={labelClasses}>Data di nascita: 
-                                    <span className={valueClasses}>{user.birthday}</span>
+                                    <span className={valueClasses}>{user.birthdate}</span>
                                 </p>
                                 {/* Gender */}
                                 <p className={labelClasses}>Sesso: 

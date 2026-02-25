@@ -30,7 +30,7 @@ export default function Home() {
 
                     {/* Login and Register buttons */}
                     <div id="access" className="flex gap-5">
-                        <Link to="login">
+                        <Link to="/login">
                             <Button variant="primary" size="md">
                                 Accedi
                             </Button>

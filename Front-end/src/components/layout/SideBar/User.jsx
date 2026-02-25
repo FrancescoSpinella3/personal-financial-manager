@@ -30,7 +30,7 @@ export default function User() {
                         {user?.name} {user?.lastName}
                     </p>
                     <Link
-                        to="/settings"
+                        to="/impostazioni"
                         className="text-xs text-(--dark-third-color) hover:text-(--dark-fourth-color) transition-colors duration-200 ease-in"
                     >
                         Vedi profilo

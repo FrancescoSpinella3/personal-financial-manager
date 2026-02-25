@@ -8,7 +8,7 @@ export default function useAuthForm({ mode }) {
     const [values, setValues] = useState({
         email: '',
         password: '',
-        ...(isRegister && { name: '', lastName: '', birthday: '', gender: '', profileImage: null, })
+        ...(isRegister && { name: '', lastName: '', birthdate: '', gender: '', profileImage: null, })
     });
 
     // Error states
@@ -55,9 +55,9 @@ export default function useAuthForm({ mode }) {
                 newErrors.lastName = "Inserisci il tuo cognome";
             }
 
-            // Birthday validation
-            if (!values.birthday) {
-                newErrors.birthday = "Inserisci la tua data di nascita";
+            // birthdate validation
+            if (!values.birthdate) {
+                newErrors.birthdate = "Inserisci la tua data di nascita";
             }
 
             // Gender validation
@@ -86,7 +86,7 @@ export default function useAuthForm({ mode }) {
         setValues({
             email: '',
             password: '',
-            ...(isRegister && { name: '', lastName: '', birthday: '', gender: '', profileImage: null, })
+            ...(isRegister && { name: '', lastName: '', birthdate: '', gender: '', profileImage: null, })
         });
         setErrors({});
         setSubmitted(false);

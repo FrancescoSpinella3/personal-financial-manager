@@ -31,7 +31,7 @@ export default function ContainerItems() {
 
             {/* Transactions link */}
             <NavLink
-                to="/transactions"
+                to="/transazioni"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
@@ -42,7 +42,7 @@ export default function ContainerItems() {
 
             {/* Goals link */}
             <NavLink
-                to="/goals"
+                to="/obiettivi"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
@@ -53,7 +53,7 @@ export default function ContainerItems() {
 
             {/* Goals link */}
                 <NavLink
-                    to="/categories"
+                    to="/categorie"
                     className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                     }
@@ -64,7 +64,7 @@ export default function ContainerItems() {
 
             {/* Settings link */}
             <NavLink
-                to="/settings"
+                to="/impostazioni"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }

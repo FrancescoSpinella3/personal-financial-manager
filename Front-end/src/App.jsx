@@ -44,10 +44,10 @@ function App() {
               </ProtectedRoute>
             }>
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/transactions" element={<Transactions />} />
-              <Route path="/goals" element={<Goals />} />
-              <Route path="/categories" element={<Categories />} />
-              <Route path="/settings" element={<Settings />} />
+              <Route path="/transazioni" element={<Transactions />} />
+              <Route path="/obiettivi" element={<Goals />} />
+              <Route path="/categorie" element={<Categories />} />
+              <Route path="/impostazioni" element={<Settings />} />
             </Route>
         </Routes>
       </AuthProvider>

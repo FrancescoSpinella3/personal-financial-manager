@@ -22,8 +22,8 @@ export default function Register() {
     } = useAuthForm({ mode: 'register'})
 
 
-    // Formating birthday
-    const formatBirthday = (dateStr) => {
+    // Formating birthdate
+    const formatbirthdate = (dateStr) => {
         if (!dateStr) return '';
         const [year, month, day] = dateStr.split('-');
         return `${day}/${month}/${year}`;
@@ -37,7 +37,7 @@ export default function Register() {
             name: (data.name || '').trim(),
             lastName: (data.lastName || '').trim(),
             email: (data.email || '').trim(),
-            birthday: formatBirthday(data.birthday)
+            birthdate: formatbirthdate(data.birthdate)
         }
         try {
             registerUser(payload)
@@ -87,15 +87,15 @@ export default function Register() {
                 </div >
 
                 <div className="flex gap-3">
-                    {/* Birthday input */}
+                    {/* birthdate input */}
                     <Input 
                         label="Data di nascita" 
                         type="date"
-                        id="birthday"
-                        name="birthday"
-                        value={values.birthday}
-                        onChange={handleChange("birthday")}
-                        error={submitted ? errors.birthday : null}
+                        id="birthdate"
+                        name="birthdate"
+                        value={values.birthdate}
+                        onChange={handleChange("birthdate")}
+                        error={submitted ? errors.birthdate : null}
                     />
 
                     {/* Gender input */}
