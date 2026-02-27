@@ -21,8 +21,8 @@ export const categories = [
     { id: 14, name: "Regali",           icon: "Gift",           color: "bg-green-100 text-green-600",       type: "income" },
 
     // Risparmi
-    { id: 11, name: "Investimenti",        icon: "TrendingUp",      color: "bg-yellow-100 text-yellow-600",     type: "save" },
-    { id: 12, name: "Viaggi",              icon: "Plane",           color: "bg-yellow-100 text-yellow-600",     type: "save" },
-    { id: 14, name: "Fondo pensione",      icon: "PiggyBank",       color: "bg-yellow-100 text-yellow-600",     type: "save" },
-    { id: 15, name: "Auto",                icon: "Car",             color: "bg-yellow-100 text-yellow-600",     type: "save" },
+    { id: 15, name: "Investimenti",        icon: "TrendingUp",      color: "bg-yellow-100 text-yellow-600",     type: "save" },
+    { id: 16, name: "Viaggi",              icon: "Plane",           color: "bg-yellow-100 text-yellow-600",     type: "save" },
+    { id: 17, name: "Fondo pensione",      icon: "PiggyBank",       color: "bg-yellow-100 text-yellow-600",     type: "save" },
+    { id: 18, name: "Auto",                icon: "Car",             color: "bg-yellow-100 text-yellow-600",     type: "save" },
 ];

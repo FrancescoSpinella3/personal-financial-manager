@@ -5,7 +5,7 @@ import ContainerCategory from "./ContainerCategory";
 import { useState } from "react";
 import AddCategoryModal from "../../ui/Modals/AddCategoryModal";
 
-export default function Categories({ onClose }) {
+export default function Categories() {
     const [showAddCategoryModal, setShowAddCategoryModal] = useState(false);
 
     const incomes = categories.filter(category => category.type === "income");
@@ -40,7 +40,7 @@ export default function Categories({ onClose }) {
             {showAddCategoryModal && (
                 <AddCategoryModal 
                     onShow={showAddCategoryModal} 
-                    onClose={() => setShowAddCategoryModal(false)} 
+                    onClose={() => setShowAddCategoryModal(false)}
                 />
             )}
         </Section>

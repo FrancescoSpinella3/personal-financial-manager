@@ -1,4 +1,4 @@
-import { ArrowRightLeft, Goal, LayoutGrid, Settings, Tags } from "lucide-react";
+import { ArrowRightLeft, CalendarSync, Goal, LayoutGrid, Settings, Tags } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 export default function ContainerItems() {
@@ -28,7 +28,6 @@ export default function ContainerItems() {
                 Dashboard
             </NavLink>
 
-
             {/* Transactions link */}
             <NavLink
                 to="/transazioni"
@@ -38,6 +37,17 @@ export default function ContainerItems() {
             >            
                 <ArrowRightLeft className={iconClasses} />
                 Transazioni
+            </NavLink>
+
+            {/* Transactions link */}
+            <NavLink
+                to="/abbonamenti"
+                className={({ isActive }) => 
+                    isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
+                }
+            >            
+                <CalendarSync className={iconClasses} />
+                Abbonamenti
             </NavLink>
 
             {/* Goals link */}

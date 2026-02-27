@@ -186,7 +186,7 @@ export default function Settings() {
                                     <input
                                         type="file"
                                         accept="image/*"
-                                        className="text-(--dark-third-color) cursor-pointer"
+                                        className="text-(--dark-third-color) text-sm font-light cursor-pointer"
                                         onClick={() => {
                                             setReplaceImage(true);
                                             setFileError('');

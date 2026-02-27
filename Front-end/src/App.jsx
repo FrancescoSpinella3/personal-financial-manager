@@ -8,7 +8,7 @@ import ProtectedRoute from './components/routes/ProtectedRoute'
 
 import Goals from './components/Pages/Goals/Goals'
 import Settings from './components/Pages/Settings'
-import Transactions from './components/Pages/Transations'
+import Transactions from './components/Pages/Transactions/Transations'
 import Dashboard from './components/Pages/Dashboard'
 import Login from './components/Pages/Login'
 import Register from './components/Pages/Register'
@@ -19,6 +19,7 @@ import { useEffect } from 'react'
 
 import './App.css'
 import { ThemeProvider } from './context/ThemeContext'
+import Subscriptions from './components/Pages/Subscriptions'
 
 function App() { 
   useEffect(() => {
@@ -45,6 +46,7 @@ function App() {
             }>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/transazioni" element={<Transactions />} />
+              <Route path="/abbonamenti" element={<Subscriptions />} />
               <Route path="/obiettivi" element={<Goals />} />
               <Route path="/categorie" element={<Categories />} />
               <Route path="/impostazioni" element={<Settings />} />

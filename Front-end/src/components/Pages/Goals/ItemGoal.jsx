@@ -2,7 +2,7 @@
 import Button from "../../ui/Button";
 import { icons, PencilLine } from 'lucide-react'
 
-export default function ItemGoal({name, value, icon}) {
+export default function ItemGoal({ name, value, icon }) {
     const IconComponent = icons[icon];
 
     return (
@@ -16,7 +16,7 @@ export default function ItemGoal({name, value, icon}) {
                     {/* Category name */}
                     <p className="font-medium text-sm text-(--dark-third-color)">{name}</p>
                     {/* Goal value */}
-                    <p className="font-bold text-(--dark-main-color)">€ {value.toFixed(2)}</p>
+                    <p className="font-bold text-(--dark-main-color)">{value}</p>
                 </div>
             </div>
 
