@@ -24,6 +24,7 @@ export default function AddCategoryModal({ onShow, onClose }) {
         <Modal 
             open={onShow}
             variant="save"
+            size="lg"
             title="Aggiungi una nuova categoria"
             subText="Inserisci il nome e l'icona"
             onClose={onClose}
@@ -51,7 +52,7 @@ export default function AddCategoryModal({ onShow, onClose }) {
                                             : "hover:bg-gray-200 text-(--dark-second-color)"
                                         }`}
                                 >
-                                    <IconComponent size={30} />
+                                    <IconComponent size={20} />
                                 </button>
                             );
                         })}

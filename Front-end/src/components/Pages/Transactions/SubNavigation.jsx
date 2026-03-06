@@ -1,7 +1,7 @@
 import { Plus } from "lucide-react";
 import Button from "../../ui/Button";
 
-export default function SubNavigation({ selectedTabId, onSelectTab }) {
+export default function SubNavigation({ selectedTabId, onSelectTab, onAdd }) {
     // Available tabs
     const tabs = [
         {id: "all", tag: "Tutte"},
@@ -11,7 +11,7 @@ export default function SubNavigation({ selectedTabId, onSelectTab }) {
     ];
 
     return (
-        <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center justify-between mb-7">
             <ul className="flex gap-5">
                 {tabs.map(tab => {
                     // Default classes
@@ -39,6 +39,7 @@ export default function SubNavigation({ selectedTabId, onSelectTab }) {
                 variant="primary"
                 size="sm"
                 className="gap-2"
+                onClick={onAdd}
             >
                 <Plus className="size-4" />
                 Aggiungi Transazione

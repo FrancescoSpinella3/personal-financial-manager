@@ -14,17 +14,17 @@ export default function Categories() {
 
     return (
         <Section sectionTitle="Categorie">
-            <div className="flex gap-7">
-                {/* Expenses */}
-                <ContainerCategory catergoryName="Uscite" onAdd={() => setShowAddCategoryModal(true)}>
-                    {expenses.map(category => (
-                        <CategoryCard key={category.id} category={category} />
-                    ))}
-                </ContainerCategory>
-                
+            <div className="flex flex-col gap-7">
                 {/* Incomes */}
                 <ContainerCategory catergoryName="Entrate" onAdd={() => setShowAddCategoryModal(true)}>
                     {incomes.map(category => (
+                        <CategoryCard key={category.id} category={category} />
+                    ))}
+                </ContainerCategory>
+
+                {/* Expenses */}
+                <ContainerCategory catergoryName="Uscite" onAdd={() => setShowAddCategoryModal(true)}>
+                    {expenses.map(category => (
                         <CategoryCard key={category.id} category={category} />
                     ))}
                 </ContainerCategory>
@@ -37,9 +37,10 @@ export default function Categories() {
                 </ContainerCategory>
             </div>
 
+            {/* Show add new category modal */}
             {showAddCategoryModal && (
-                <AddCategoryModal 
-                    onShow={showAddCategoryModal} 
+                <AddCategoryModal
+                    onShow={showAddCategoryModal}
                     onClose={() => setShowAddCategoryModal(false)}
                 />
             )}

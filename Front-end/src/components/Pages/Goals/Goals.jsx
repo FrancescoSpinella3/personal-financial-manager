@@ -8,18 +8,16 @@ import AddGoalModal from "../../ui/Modals/AddGoalModal";
 import SummaryGoal from "./SummaryGoal";
 import { currencyFormatter } from "../../../util/currencyFormatter";
 
-
  export default function Goals() {
-
     const [showAddGoalModal, setShowAddGoalModal] = useState(false);
 
     return (
         <Section sectionTitle="Obiettivi">
             {/* Summary goals grid */}
             <div className="grid grid-cols-3 gap-5 mb-10 mx-auto">
-                <SummaryGoal categoryName="Entrate" currentValue={0} goal={0} />
-                <SummaryGoal categoryName="Uscite" currentValue={0} goal={0} />
-                <SummaryGoal categoryName="Risparmi" currentValue={0} goal={0} />
+                <SummaryGoal categoryName="Entrate" currentValue={0} userGoal={0} />
+                <SummaryGoal categoryName="Uscite" currentValue={0} userGoal={0} />
+                <SummaryGoal categoryName="Risparmi" currentValue={0} userGoal={0} />
             </div>
 
             <div className="flex items-center justify-between mb-10">
@@ -45,7 +43,7 @@ import { currencyFormatter } from "../../../util/currencyFormatter";
                             key={g.id}  
                             name={g.name}
                             icon={g.icon}
-                            value={currencyFormatter.format(g.value)}
+                            value={currencyFormatter.format(g.userGoal)}
                         />
                     ))}
                 </div>

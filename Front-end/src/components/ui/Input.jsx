@@ -8,7 +8,7 @@ export default function Input({
     placeholder, 
     value, 
     onChange, 
-    error, 
+    error,
     ...props 
 }) {
 
@@ -43,15 +43,12 @@ export default function Input({
                 <select
                     id={id}
                     className={inputClasses}
-                    value={value}
+                    defaultValue={value ?? ""}
                     onChange={onChange}
                     onFocus={() => setFocused(true)}
                     onBlur={() => setFocused(false)}
                     {...props}
                 >
-                    {/* <option value="" disabled >Seleziona un'opzione</option>
-                    <option value="Maschio">Maschio</option>
-                    <option value="Femmina">Femmina</option> */}
                     {children}
                 </select>
             ) : (

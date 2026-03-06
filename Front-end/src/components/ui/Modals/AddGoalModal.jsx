@@ -10,6 +10,7 @@ export default function AddGoalModal({ onShow, onClose }) {
             open={onShow}
             onClose={onClose}
             variant="save"
+            size="md"
             title="Aggiungi un nuovo obiettivo"
             subText="Inserisci categoria ed il rispettivo valore dell'obiettivo"
         >
@@ -26,7 +27,7 @@ export default function AddGoalModal({ onShow, onClose }) {
                 </Input>
 
                 <Input 
-                    label="Obiettivo (€)"
+                    label="Obiettivo €"
                     type="number" 
                     placeholder="0,00" 
                 />

@@ -20,7 +20,7 @@ export default function ContainerCategory({ children, catergoryName, onAdd }) {
                 </Button>
             </div>
             
-            <div className="flex flex-col gap-5">
+            <div className="grid grid-cols-3 gap-5">
                 {children}
             </div>
 

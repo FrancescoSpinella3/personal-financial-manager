@@ -8,7 +8,7 @@ import ProtectedRoute from './components/routes/ProtectedRoute'
 
 import Goals from './components/Pages/Goals/Goals'
 import Settings from './components/Pages/Settings'
-import Transactions from './components/Pages/Transactions/Transations'
+import Transactions from './components/Pages/Transactions/Transactions'
 import Dashboard from './components/Pages/Dashboard'
 import Login from './components/Pages/Login'
 import Register from './components/Pages/Register'

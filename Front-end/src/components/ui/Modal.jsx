@@ -9,6 +9,7 @@ export default function Modal({
     title,
     subText,
     variant = 'success',
+    size = 'sm',
     className = ''
 }) {
 
@@ -23,7 +24,7 @@ export default function Modal({
     }, [open]);
 
     // Default classes
-    const defaultModalClasses = "relative flex flex-col items-center rounded-md w-full w-sm z-50 gap-5 shadow-md bg-white overflow-hidden";
+    const defaultModalClasses = "relative flex flex-col items-center rounded-md z-50 gap-5 shadow-md bg-white overflow-hidden";
 
     const variants = {
         success: { headerBg: 'bg-green-200', iconBg: 'bg-green-400', Icon: Check},
@@ -32,14 +33,20 @@ export default function Modal({
         save: { headerBg: 'bg-blue-200/50', iconBg: 'bg-blue-400', Icon: Bookmark},
     }
 
+    const sizes = {
+        sm: 'w-sm',
+        md: 'w-md',
+        lg: 'w-lg',
+    }
+
     const chosen = variants[variant] || variants.success;
-    const modalClasses = `${defaultModalClasses} ${chosen.bg} ${className}`
+    const modalClasses = `${defaultModalClasses} ${chosen.bg} ${className} ${sizes[size]}`
 
     return createPortal(
         <dialog 
             ref={dialog} 
             onClick={onClose}
-            className="fixed inset-0 z-50 top-5 left-5/11"
+            className="fixed inset-0 z-50 top-5 left-8/18"
         >
             <div className="fixed inset-0 bg-black/50" />
             

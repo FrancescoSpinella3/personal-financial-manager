@@ -108,7 +108,7 @@ export default function Register() {
                         onChange={handleChange("gender")}
                         error={submitted ? errors.gender : null}
                     >
-                        <option value="" disabled >Seleziona un'opzione</option>
+                        <option value="" disabled>Seleziona un'opzione</option>
                         <option value="Maschio">Maschio</option>
                         <option value="Femmina">Femmina</option>
                     </Input>
@@ -139,7 +139,7 @@ export default function Register() {
                 />
 
                 <FormButton>
-                    {loading ? <Loader2 /> : 'Registrati'}
+                    {loading ? <Loader2 className="size-4" /> : 'Registrati'}
                 </FormButton>
             </Form>
         </AccessLayout>

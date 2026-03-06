@@ -14,9 +14,9 @@ export default function ItemGoal({ name, value, icon }) {
                 </div>
                 <div>
                     {/* Category name */}
-                    <p className="font-medium text-sm text-(--dark-third-color)">{name}</p>
+                    <p className="text-sm font-light text-(--dark-third-color)">{name}</p>
                     {/* Goal value */}
-                    <p className="font-bold text-(--dark-main-color)">{value}</p>
+                    <p className="font-semibold text-(--dark-main-color)">{value}</p>
                 </div>
             </div>
 

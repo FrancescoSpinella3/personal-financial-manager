@@ -86,7 +86,7 @@ export default function Login(){
 
                 {/* Button */}
                 <FormButton>
-                    {loading ? <Loader2 /> : 'Accedi'}
+                    {loading ? <Loader2 className="size-5 animate-spin" /> : 'Accedi'}
                 </FormButton>
             </Form>
         </AccessLayout>
