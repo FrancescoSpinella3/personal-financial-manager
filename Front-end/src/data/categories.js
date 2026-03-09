@@ -15,10 +15,10 @@ export const categories = [
     { id: 10, name: "Viaggi",           icon: "Plane",          color: "bg-red-100 text-red-700",           type: "expense" },
 
     // Entrate
-    { id: 11, name: "Stipendio",        icon: "Briefcase",      color: "bg-green-100 text-green-700",       type: "income" },
-    { id: 12, name: "Extra",            icon: "Laptop",         color: "bg-green-100 text-green-700",       type: "income" },
-    { id: 13, name: "Investimenti",     icon: "TrendingUp",     color: "bg-green-100 text-green-700",       type: "income" },
-    { id: 14, name: "Regali",           icon: "Gift",           color: "bg-green-100 text-green-700",       type: "income" },
+    { id: 11, name: "Stipendio",        icon: "Briefcase",      color: "bg-indigo-100 text-indigo-700",       type: "income" },
+    { id: 12, name: "Extra",            icon: "Laptop",         color: "bg-indigo-100 text-indigo-700",       type: "income" },
+    { id: 13, name: "Investimenti",     icon: "TrendingUp",     color: "bg-indigo-100 text-indigo-700",       type: "income" },
+    { id: 14, name: "Regali",           icon: "Gift",           color: "bg-indigo-100 text-indigo-700",       type: "income" },
 
     // Risparmi
     { id: 15, name: "Investimenti",        icon: "TrendingUp",      color: "bg-yellow-100 text-yellow-600",     type: "save" },

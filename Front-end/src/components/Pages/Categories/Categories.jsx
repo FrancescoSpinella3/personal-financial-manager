@@ -16,21 +16,21 @@ export default function Categories() {
         <Section sectionTitle="Categorie">
             <div className="flex flex-col gap-7">
                 {/* Incomes */}
-                <ContainerCategory catergoryName="Entrate" onAdd={() => setShowAddCategoryModal(true)}>
+                <ContainerCategory categoryName="Entrate" onAdd={() => setShowAddCategoryModal(true)}>
                     {incomes.map(category => (
                         <CategoryCard key={category.id} category={category} />
                     ))}
                 </ContainerCategory>
 
                 {/* Expenses */}
-                <ContainerCategory catergoryName="Uscite" onAdd={() => setShowAddCategoryModal(true)}>
+                <ContainerCategory categoryName="Uscite" onAdd={() => setShowAddCategoryModal(true)}>
                     {expenses.map(category => (
                         <CategoryCard key={category.id} category={category} />
                     ))}
                 </ContainerCategory>
 
                 {/* Saves */}
-                <ContainerCategory catergoryName="Risparmi" onAdd={() => setShowAddCategoryModal(true)}>
+                <ContainerCategory categoryName="Risparmi" onAdd={() => setShowAddCategoryModal(true)}>
                     {saves.map(category => (
                         <CategoryCard key={category.id} category={category} />
                     ))}

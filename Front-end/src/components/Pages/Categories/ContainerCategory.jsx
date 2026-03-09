@@ -1,12 +1,12 @@
-import { Plus } from "lucide-react";
+import { MoveHorizontal, Plus, TrendingDown } from "lucide-react";
 import Button from "../../ui/Button"
  
-export default function ContainerCategory({ children, catergoryName, onAdd }) {
+export default function ContainerCategory({ children, categoryName, onAdd }) {
     return (
         <div className="w-full h-fit p-7 bg-white rounded-2xl border border-gray-300 shadow-md">
             <div className="flex items-center justify-between mb-5">
                 <h4 className="font-medium text-xl text-(--dark-main-color)">
-                    {catergoryName}
+                    {categoryName}
                 </h4>
                 {/* Add new item  button */}
                 <Button 

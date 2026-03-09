@@ -39,7 +39,7 @@ export default function TransactionsTable() {
                     let labelClasses = "px-4 py-1 text-xs font-normal rounded-lg";
 
                     if (transaction.category === 'incomes') {
-                        labelClasses += ' bg-green-100 text-green-700';
+                        labelClasses += ' bg-indigo-100 text-indigo-700';
                     } else if (transaction.category === 'expences') {
                         labelClasses += ' bg-red-100 text-red-700';
                     } else if (transaction.category === 'saves') {

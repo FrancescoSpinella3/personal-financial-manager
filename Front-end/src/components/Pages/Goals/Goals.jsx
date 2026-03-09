@@ -6,6 +6,7 @@ import { goals } from "../../../data/goals";
 import { useState } from "react";
 import AddGoalModal from "../../ui/Modals/AddGoalModal";
 import SummaryGoal from "./SummaryGoal";
+import GoalsChart from "./GoalsChart";
 import { currencyFormatter } from "../../../util/currencyFormatter";
 
  export default function Goals() {
@@ -19,6 +20,9 @@ import { currencyFormatter } from "../../../util/currencyFormatter";
                 <SummaryGoal categoryName="Uscite" currentValue={0} userGoal={0} />
                 <SummaryGoal categoryName="Risparmi" currentValue={0} userGoal={0} />
             </div>
+
+            {/* Chart: obiettivi vs valore corrente per categoria */}
+            <GoalsChart />
 
             <div className="flex items-center justify-between mb-10">
                 <h4 className="font-medium text-(--dark-second-color) text-xl">I miei obiettivi per categoria</h4>
@@ -49,12 +53,10 @@ import { currencyFormatter } from "../../../util/currencyFormatter";
                 </div>
             </div>
             
-
             {/* Show modal to add new Goal */}
             {showAddGoalModal && (
                 <AddGoalModal onShow={showAddGoalModal} onClose={() => setShowAddGoalModal(false)} />
             )}
-
         </Section>
     );
 }   
