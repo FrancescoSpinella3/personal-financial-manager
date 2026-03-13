@@ -6,7 +6,7 @@ export default function FormButton({ children }) {
             type="submit"
             variant="modul"
             size="lg"
-            
+            className="h-10"
         >
             {children}
         </Button>

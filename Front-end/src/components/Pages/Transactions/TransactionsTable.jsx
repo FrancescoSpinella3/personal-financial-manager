@@ -13,7 +13,7 @@ export default function TransactionsTable() {
     };
 
     // th table default classes
-    const thClasses = "font-normal text-(--dark-main-color) p-5"
+    const thClasses = "font-normal text-sm text-(--dark-main-color) p-5"
     // td table default classes
     const tdClasses = "font-light text-sm text-center text-(--dark-second-color) p-5"
 
@@ -26,7 +26,7 @@ export default function TransactionsTable() {
                     <th className={thClasses}>Categoria</th>
                     <th className={thClasses}>Data</th>
                     <th className={thClasses}>Descrizione</th>
-                    <th className={thClasses + ' text-end'}>Importo</th>
+                    <th className={thClasses}>Importo</th>
                     <th className={thClasses + ' text-end'}>Azioni</th>
 
                 </tr>
@@ -49,7 +49,7 @@ export default function TransactionsTable() {
                     // Render table row for each transaction
                     return (
                         <tr key={transaction.id}>
-                            <td className={tdClasses + ' text-start font-normal'}>
+                            <td className={tdClasses + ' text-start font-medium'}>
                                 {/* Find categoty icon */}
                                 <div className="flex items-center gap-3">
                                     {(() => {
@@ -70,7 +70,7 @@ export default function TransactionsTable() {
                             </td>
                             <td className={tdClasses}>{transaction.date}</td>
                             <td className={tdClasses}>{transaction.description}</td>
-                            <td className={tdClasses + ' text-end font-normal'}>{currencyFormatter.format(transaction.amount)}</td>
+                            <td className={tdClasses + ' font-medium'}>{currencyFormatter.format(transaction.amount)}</td>
                             <td><Actions /></td>
                         </tr>
                     )

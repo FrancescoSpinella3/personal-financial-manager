@@ -70,7 +70,7 @@ export default function Modal({
                 <div className="w-full px-5 py-10 flex flex-col justify-center items-center gap-8">
                     <div className="text-center flex flex-col items-center gap-2">
                         <p className="text-(--dark-main-color) font-medium">{title}</p>
-                        <p className="text-(--dark-second-color) text-sm w-60">{subText}</p>
+                        <p className="text-(--dark-second-color) text-sm">{subText}</p>
                     </div>
 
                     {open ? children : null }

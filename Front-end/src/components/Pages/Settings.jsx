@@ -4,7 +4,7 @@ import Input from "../ui/Input";
 import SettingsLayout from "../layout/SettingsLayout";
 import { useEffect, useState } from "react";
 import Modal from "../ui/Modal";
-import { Loader2 } from "lucide-react";
+import { Loader2, UserRound } from "lucide-react";
 
 export default function Settings() {
     const { user, updateProfile } = useAuth();
@@ -162,6 +162,15 @@ export default function Settings() {
                         {/* Account */}
                         <SettingsLayout title="Profilo" textButton={loading ? <Loader2 /> : 'Aggiorna profilo'} onAction={handleUpdateProfile}>
                             <div className="space-y-4 mb-10">
+                                {/* User profile image */}
+                                <div className="bg-(--dark-third-color) rounded-full size-22 flex items-center justify-center overflow-hidden">
+                                    {user.profileImage ? (
+                                        <img src={user.profileImage} alt="Profile image" />
+                                    ) : (
+                                        <UserRound className="size-9 text-(--light-color)" />
+                                    )}
+
+                                </div>
                                 {/* Full name */}
                                 <p className={labelClasses}>Nome: 
                                     <span className={valueClasses}>{user.name} {user.lastName}</span>

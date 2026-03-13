@@ -24,7 +24,7 @@ export default function Home() {
                 </h2>
 
                 <div className="flex flex-col items-center max-w-4xl gap-10">
-                    <p className="text-xl text-(--dark-second-color)">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
+                    <p className="text-xl font-light text-(--dark-second-color)">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
                         per avere un quadro completo della tua situazione finanziaria.
                     </p>
 

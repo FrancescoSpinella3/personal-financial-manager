@@ -7,10 +7,18 @@ import { registerUser } from "../../services/fakeUserDB";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import Modal from "../ui/Modal";
+import Button from "../ui/Button";
 
 export default function Register() {
     const navigate = useNavigate();
     const [loading, setIsLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [modalConfig, setModalConfig] = useState({
+        variant: "success",
+        title: "",
+        subText: ""
+    })
 
     const {
         values,
@@ -23,7 +31,7 @@ export default function Register() {
 
 
     // Formating birthdate
-    const formatbirthdate = (dateStr) => {
+    const formatBirthDate = (dateStr) => {
         if (!dateStr) return '';
         const [year, month, day] = dateStr.split('-');
         return `${day}/${month}/${year}`;
@@ -37,16 +45,38 @@ export default function Register() {
             name: (data.name || '').trim(),
             lastName: (data.lastName || '').trim(),
             email: (data.email || '').trim(),
-            birthdate: formatbirthdate(data.birthdate)
+            birthdate: formatBirthDate(data.birthdate)
         }
+
         try {
             registerUser(payload)
             setIsLoading(true);
-            alert("Registrazione effettuata")
-            navigate('/dashboard');
+            setModalConfig({
+                variant: "success",
+                title: "Registrazione completata!",
+                subText: "Account creato con successo! Verrai reindirizzato alla pagina di login per accedere al tuo account."
+            });
+            setShowModal(true);
             reset(); // Clear input field after registration
         } catch (error) {
-            alert(error.message)
+            setModalConfig({
+                variant: "danger",
+                title: "Errore di registrazione",
+                subText: error.message || "Si è verificato un problema durante la registrazione dell'account."
+            });
+            setShowModal(true);
+        } finally {
+            setIsLoading(false);
+        }
+    }
+
+    // When the user close the modal, he will be redirect to the login page 
+    const handleCloseModal = () => {
+        setShowModal(false);
+
+        // If modal is success, redirect user to login
+        if (modalConfig.variant === "success") {
+            navigate('/login');
         }
     }
 
@@ -142,6 +172,25 @@ export default function Register() {
                     {loading ? <Loader2 className="size-4" /> : 'Registrati'}
                 </FormButton>
             </Form>
+
+            {/* Show modal */}
+            {showModal && (
+                <Modal
+                    variant={modalConfig.variant}
+                    title={modalConfig.title}
+                    subText={modalConfig.subText}
+                    open={showModal}
+                    onClose={handleCloseModal}
+                >
+                    <Button
+                        variant="primary"
+                        size="xs"
+                        onClick={handleCloseModal}
+                    >
+                        Chiudi
+                    </Button>
+                </Modal>
+            )}
         </AccessLayout>
     );
 }

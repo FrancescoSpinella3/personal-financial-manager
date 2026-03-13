@@ -3,6 +3,7 @@ import DashboardLayout from './components/layout/DashboardLayout'
 import AuthLayout from './components/layout/AuthLayout'
 import { initFakeDB } from './services/fakeUserDB'
 import { AuthProvider } from './context/AuthContext'
+import { ThemeProvider } from './context/ThemeContext'
 
 import ProtectedRoute from './components/routes/ProtectedRoute'
 
@@ -14,12 +15,11 @@ import Login from './components/Pages/Login'
 import Register from './components/Pages/Register'
 import Home from './components/Pages/Home'
 import Categories from './components/Pages/Categories/Categories'
+import Subscriptions from './components/Pages/Subscriptions/Subscriptions'
 
 import { useEffect } from 'react'
 
 import './App.css'
-import { ThemeProvider } from './context/ThemeContext'
-import Subscriptions from './components/Pages/Subscriptions'
 
 function App() { 
   useEffect(() => {
@@ -54,7 +54,6 @@ function App() {
         </Routes>
       </AuthProvider>
     </ThemeProvider>
-
   )
 }
 

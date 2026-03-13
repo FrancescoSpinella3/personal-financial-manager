@@ -1,12 +1,26 @@
 1. Aggiungere riquadro immagine di profilo nella pagina "Impostazioni"
 2. Creare modale per la modifica di una categoria nella pagina "Obiettivi"
-3. Creare layout pagina "Abbonamenti"
-4. Creare modale per modifica transazione nella pagina "Transazioni"
-5. Creare layout pagina "Dashboard"
-6. Creare piccolo popup in basso a destra per la conferma di un azione eseguita dall'utente
-7. Aggiungere funzionalita' di cambio schermata sul click della subnav nella pagina "Transazioni"
-8. Aggiungere filtraggio transazioni per mese e anno nella pagina "Transazioni"
-9. Impostare la dark mode
-10. Aggiunegere responsive design
+3. ✅ Creare layout pagina "Abbonamenti"
+4. ✅ Aggiungere modale per l'aggiunta di un nuovo abbonamento nella pagina "Abbonamenti"
+5. Aggiungere modale per la modifica di un abbonamento nella pagina "Abbonamenti"
+6. Creare modale per modifica transazione nella pagina "Transazioni"
+7. Creare layout pagina "Dashboard"
+8. Creare piccolo popup in basso a destra per la conferma di un azione eseguita dall'utente
+9. Aggiungere funzionalita' di cambio schermata sul click della subnav nella pagina "Transazioni"
+10. Aggiungere filtraggio transazioni per mese e anno nella pagina "Transazioni"
+11. Impostare la dark mode
+12. Aggiunegere responsive design
+
+
+Composizione Pagina Dashboard
+1. Riquadro "Bilancio totale anno corrente" (con totale entrate, uscite, risparmi)
+2. Riquadro "Obiettivi". Riassunto generale degli obiettivi dell'anno corrente,
+   con valori prestabiliti ed attuali (entrate, uscite, risparmi)
+3. Riquadro "Abbonamenti", con due abbonamenti nel riquadro
+4. Riquadro "Transazioni recenti" (entrate e uscite) 
+5. Grafico istogramma con rappresentazione valori (entrate, uscite, risparmi) per ogni mese dell'anno corrente
+6. Riquadro da definire
+
+Riquadri Obittivi, Abbonamenti e transazioni devono avere un link che riporta alla loro pagina
 
 
