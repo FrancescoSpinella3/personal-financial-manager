@@ -3,7 +3,7 @@ import { categories } from "../../../data/categories";
 import CategoryCard from "./CategoryCard";
 import ContainerCategory from "./ContainerCategory";
 import { useState } from "react";
-import AddCategoryModal from "../../ui/Modals/AddCategoryModal";
+import CategoryModal from "../../ui/Modals/CategoryModal";
 
 export default function Categories() {
     const [showAddCategoryModal, setShowAddCategoryModal] = useState(false);
@@ -39,7 +39,10 @@ export default function Categories() {
 
             {/* Show add new category modal */}
             {showAddCategoryModal && (
-                <AddCategoryModal
+                <CategoryModal
+                    title="Aggiungi una nuova categoria"
+                    subText="Inserisci il nome e l'icona della categoria"
+                    textButton="Aggiungi"
                     onShow={showAddCategoryModal}
                     onClose={() => setShowAddCategoryModal(false)}
                 />

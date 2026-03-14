@@ -4,12 +4,13 @@ import Section from "../../ui/Section";
 import SubNavigation from "./SubNavigation";
 import { useState } from "react";
 import TransactionsTable from "./TransactionsTable";
-import AddTransactionModal from "../../ui/Modals/AddTransactionModal";
+import TransactionModal from "../../ui/Modals/TransactionModal";
 
 
  export default function Transactions() {
     const [selectedTab, setSelectedTab] = useState("all");
     const [showAddTransactionModal, setShowAddTransactionModal] = useState(false);
+    const [showUpdateTransactionModal, setShowUpdateTransactionModal] = useState(false);
 
 
     return (
@@ -38,15 +39,31 @@ import AddTransactionModal from "../../ui/Modals/AddTransactionModal";
                     </div>
 
                     {/* Add table */}
-                    <TransactionsTable />
+                    <TransactionsTable onUpdate={() => setShowUpdateTransactionModal(true)} />
                 </div>
             )}
 
-            {/* Show modal */}
+            {/* Show add transaction modal */}
             {showAddTransactionModal && (
-                <AddTransactionModal 
+                <TransactionModal
+                    title="Aggiungi transazione"
+                    subText="Compila tutti i campi per aggiungere una transazione"
+                    textButton="Aggiungi"
                     onShow={showAddTransactionModal} 
                     onClose={() => setShowAddTransactionModal(false)}
+                />
+
+                
+            )}
+
+            {/* Show update transaction modal */}
+            {showUpdateTransactionModal && (
+                <TransactionModal
+                    title="Modifica transazione"
+                    subText="Compila tutti i campi per modificare la transazione"
+                    textButton="Modifica"
+                    onShow={showUpdateTransactionModal} 
+                    onClose={() => setShowUpdateTransactionModal(false)}
                 />
             )}
         </Section>

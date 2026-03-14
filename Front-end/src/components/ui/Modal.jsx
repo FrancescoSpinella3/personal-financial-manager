@@ -40,7 +40,7 @@ export default function Modal({
     }
 
     const chosen = variants[variant] || variants.success;
-    const modalClasses = `${defaultModalClasses} ${chosen.bg} ${className} ${sizes[size]}`
+    const modalClasses = `${defaultModalClasses} ${className} ${sizes[size]}`
 
     return createPortal(
         <dialog 

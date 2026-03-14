@@ -1,9 +1,9 @@
-1. Aggiungere riquadro immagine di profilo nella pagina "Impostazioni"
-2. Creare modale per la modifica di una categoria nella pagina "Obiettivi"
+1. ✅ Aggiungere riquadro immagine di profilo nella pagina "Impostazioni"
+2. ✅ Creare modale per la modifica di una categoria nella pagina "Obiettivi"
 3. ✅ Creare layout pagina "Abbonamenti"
 4. ✅ Aggiungere modale per l'aggiunta di un nuovo abbonamento nella pagina "Abbonamenti"
-5. Aggiungere modale per la modifica di un abbonamento nella pagina "Abbonamenti"
-6. Creare modale per modifica transazione nella pagina "Transazioni"
+5. ✅ Aggiungere modale per la modifica di un abbonamento nella pagina "Abbonamenti"
+6. ✅ Creare modale per modifica transazione nella pagina "Transazioni"
 7. Creare layout pagina "Dashboard"
 8. Creare piccolo popup in basso a destra per la conferma di un azione eseguita dall'utente
 9. Aggiungere funzionalita' di cambio schermata sul click della subnav nella pagina "Transazioni"

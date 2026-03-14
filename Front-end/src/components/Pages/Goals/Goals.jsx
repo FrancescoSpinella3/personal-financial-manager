@@ -4,13 +4,15 @@ import Section from "../../ui/Section";
 import ItemGoal from "./ItemGoal";
 import { goals } from "../../../data/goals";
 import { useState } from "react";
-import AddGoalModal from "../../ui/Modals/AddGoalModal";
+import GoalModal from "../../ui/Modals/GoalModal";
 import SummaryGoal from "./SummaryGoal";
 import GoalsChart from "./GoalsChart";
 import { currencyFormatter } from "../../../util/currencyFormatter";
 
  export default function Goals() {
     const [showAddGoalModal, setShowAddGoalModal] = useState(false);
+    const [showUpdateGoalModal, setShowUpdateGoalModal] = useState(false);
+
 
     return (
         <Section sectionTitle="Obiettivi">
@@ -48,6 +50,7 @@ import { currencyFormatter } from "../../../util/currencyFormatter";
                             name={g.name}
                             icon={g.icon}
                             value={currencyFormatter.format(g.userGoal)}
+                            onUpdate={() => setShowUpdateGoalModal(true)}
                         />
                     ))}
                 </div>
@@ -55,7 +58,24 @@ import { currencyFormatter } from "../../../util/currencyFormatter";
             
             {/* Show modal to add new Goal */}
             {showAddGoalModal && (
-                <AddGoalModal onShow={showAddGoalModal} onClose={() => setShowAddGoalModal(false)} />
+                <GoalModal 
+                    title="Aggiungi un nuovo obiettivo"
+                    subText="Inserisci la categoria ed il rispettivo importo dell'obiettivo"
+                    textButton="Aggiungi"
+                    onShow={showAddGoalModal} 
+                    onClose={() => setShowAddGoalModal(false)} 
+                />
+            )}
+
+            {/* Show modal to update Goal */}
+            {showUpdateGoalModal && (
+                <GoalModal 
+                    title="Modifica obiettivo"
+                    subText="Compila tutti i campi per modificare l'obiettivo"
+                    textButton="Modifica"
+                    onShow={showUpdateGoalModal} 
+                    onClose={() => setShowUpdateGoalModal(false)} 
+                />
             )}
         </Section>
     );

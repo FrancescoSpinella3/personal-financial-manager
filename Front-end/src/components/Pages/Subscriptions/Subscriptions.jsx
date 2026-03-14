@@ -3,12 +3,13 @@ import {subscriptions} from "../../../data/subscriptions";
 import { Ban, Plus } from "lucide-react";
 import SubscriptionsTable from "./SubscriptionsTable";
 import Button from "../../ui/Button";
-import AddSubscriptionModal from "../../ui/Modals/AddSubscriptionModal";
+import SubscriptionModal from "../../ui/Modals/SubscriptionModal";
 import { useState } from "react";
 
 export default function Subscriptions() {
     const [showAddSubscriptionModal, setShowAddSubscriptionModal] = useState(false);
-    
+    const [showUpdateSubscriptionModal, setShowUpdateSubscriptionModal] = useState(false);
+
     return (
         <Section sectionTitle="Abbonamenti">
             {/* Show a text if there are not transactions */}
@@ -32,16 +33,30 @@ export default function Subscriptions() {
                     </div>
                     {/* Subscriptions */}
                     <div className="bg-white border border-gray-300 rounded-2xl shadow-md p-5">
-                        <SubscriptionsTable />
+                        <SubscriptionsTable onUpdate={() => setShowUpdateSubscriptionModal(true)} />
                     </div>
                 </>
             )}
 
-            {/* Show modal */}
+            {/* Show add subscription modal */}
             {showAddSubscriptionModal && (
-                <AddSubscriptionModal
+                <SubscriptionModal
+                    title="Aggiungi abbonamento"
+                    subText="Compila tutti i campi per aggiungere un abbonamento"
+                    textButton="Aggiungi"
                     onShow={showAddSubscriptionModal}
                     onClose={() => setShowAddSubscriptionModal(false)}
+                />
+            )}
+
+            {/* Show update subscription modal */}
+            {showUpdateSubscriptionModal && (
+                <SubscriptionModal
+                    title="Modifica abbonamento"
+                    subText="Compila tutti i campi per modificare l'abbonamento"
+                    textButton="Modifica"
+                    onShow={setShowUpdateSubscriptionModal}
+                    onClose={() => setShowUpdateSubscriptionModal(false)}
                 />
             )}
 

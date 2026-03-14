@@ -4,7 +4,7 @@ import { currencyFormatter } from "../../../util/currencyFormatter";
 import * as LucideIcons from "lucide-react";
 import Actions from "./Actions";
 
-export default function TransactionsTable() {
+export default function TransactionsTable({ onUpdate }) {
     // Transaction labels translated
     const categoryLabels = {
         incomes: 'Entrate',
@@ -71,7 +71,7 @@ export default function TransactionsTable() {
                             <td className={tdClasses}>{transaction.date}</td>
                             <td className={tdClasses}>{transaction.description}</td>
                             <td className={tdClasses + ' font-medium'}>{currencyFormatter.format(transaction.amount)}</td>
-                            <td><Actions /></td>
+                            <td><Actions onUpdate={onUpdate} /></td>
                         </tr>
                     )
                 })}

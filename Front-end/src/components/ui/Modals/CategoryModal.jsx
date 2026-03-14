@@ -1,8 +1,6 @@
 import { useState } from "react";
-import Button from "../Button";
-import Form from "../Form";
-import Modal from "../Modal";
-import Input from "../../ui/Input";
+import Input from "../Input";
+import ItemModal from "./ItemModal";
 import { icons } from "lucide-react";
 
 // Available icon list
@@ -17,19 +15,17 @@ const availableIcons = [
     "Stethoscope", "Pill", "TreePine", "Flower2", "Globe",
 ];
 
-export default function AddCategoryModal({ onShow, onClose }) {
+export default function CategoryModal({ onShow, onClose, title, subText, textButton }) {
     const [selectedIcon, setSelectedIcon] = useState("");
-
+    
     return (
-        <Modal 
-            open={onShow}
-            variant="save"
-            size="lg"
-            title="Aggiungi una nuova categoria"
-            subText="Inserisci il nome e l'icona"
+        <ItemModal
+            onShow={onShow}
             onClose={onClose}
+            title={title}
+            subText={subText}
+            textButton={textButton}
         >
-            <Form>
                 {/* Input custom category names */}
                 <Input label="Nome categoria" placeholder="Categoria" />
 
@@ -58,27 +54,6 @@ export default function AddCategoryModal({ onShow, onClose }) {
                         })}
                     </div>
                 </div>
-            </Form>
-
-            {/* Action buttons */}
-            <div className="flex gap-3">
-                {/* Logout button */}
-                <Button 
-                    variant="primary" 
-                    size="xs" 
-                >
-                    Conferma
-                </Button>
-
-                {/* Close modal */}
-                <Button 
-                    variant="secondary" 
-                    size="xs" 
-                    onClick={onClose}
-                >
-                    Annulla
-                </Button>
-            </div>
-        </Modal>
+        </ItemModal>
     );
 }

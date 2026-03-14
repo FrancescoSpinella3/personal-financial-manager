@@ -2,7 +2,7 @@
 import Button from "../../ui/Button";
 import { icons, PencilLine } from 'lucide-react'
 
-export default function ItemGoal({ name, value, icon }) {
+export default function ItemGoal({ name, value, icon, onUpdate }) {
     const IconComponent = icons[icon];
 
     return (
@@ -22,7 +22,7 @@ export default function ItemGoal({ name, value, icon }) {
 
 
             {/* Edit button */}
-            <Button variant="border" size="s" className="gap-2">
+            <Button variant="border" size="s" className="gap-2" onClick={onUpdate}>
                 Modifica
                 <PencilLine className="size-4 stroke-[2.5]" />
             </Button>

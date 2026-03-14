@@ -2,7 +2,7 @@ import { subscriptions } from "../../../data/subscriptions";
 import { currencyFormatter } from "../../../util/currencyFormatter";
 import Actions from "../Transactions/Actions";
 
-export default function SubscriptionsTable() {
+export default function SubscriptionsTable({ onUpdate }) {
     // th table default classes
     const thClasses = "font-normal text-(--dark-main-color) p-5"
 
@@ -42,7 +42,7 @@ export default function SubscriptionsTable() {
                             <td className={tdClasses}>{subscription.description}</td>
                             <td className={tdClasses}>{subscription.lastRenewal}</td>
                             <td className={tdClasses + ' font-medium'}>{currencyFormatter.format(subscription.amount)}</td>
-                            <td className={tdClasses + ' text-end'}><Actions /></td>
+                            <td><Actions onUpdate={onUpdate} /></td>
                         </tr>
                     )
                 })}

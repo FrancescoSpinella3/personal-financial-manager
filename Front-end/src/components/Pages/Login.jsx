@@ -71,7 +71,7 @@ export default function Login(){
                     type="password" 
                     id="password"
                     name="password"
-                    placeholder="󠁯•󠁏󠁯•󠁏󠁯•󠁏󠁯•󠁏󠁯•󠁏󠁯•󠁏"
+                    placeholder="󠁯•󠁏󠁯•󠁏󠁯•󠁏󠁯•󠁏󠁯•󠁏󠁯•󠁏•󠁏•󠁏"
                     value={values.password}
                     onChange={handleChange("password")}
                     error={submitted ? errors.password : null}
