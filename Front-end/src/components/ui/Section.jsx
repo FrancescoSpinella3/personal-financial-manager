@@ -2,7 +2,7 @@ import { ArrowRightLeft, CalendarSync, Goal, LayoutGrid, Settings, Tags } from "
 
 export default function Section({ children, sectionTitle }) {
     let sectionTitleIcon;
-    const iconClasses = 'size-7'
+    const iconClasses = 'size-6 text-(--main-color)'
 
     switch (sectionTitle) {
         case "Dashboard":
@@ -28,9 +28,12 @@ export default function Section({ children, sectionTitle }) {
 
     return (
         <section className="ml-82 p-7 pt-28">
-            <div className="flex items-center gap-3 mb-10 text-(--fourth-color) text-2xl font-semibold">
+            <div className="flex items-center gap-3 mb-10 text-(--dark-main-color) text-2xl font-semibold">
                 {/* Icon */}
-                {sectionTitleIcon}
+                <div className="bg-blue-200 rounded-md p-2">
+                    {sectionTitleIcon}
+                </div>
+
 
                 {/* Section Title */}
                 <h3>{sectionTitle}</h3>
