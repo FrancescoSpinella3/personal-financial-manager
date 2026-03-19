@@ -2,7 +2,7 @@ import { ArrowRightLeft, CalendarSync, Goal, LayoutGrid, Settings, Tags } from "
 
 export default function Section({ children, sectionTitle }) {
     let sectionTitleIcon;
-    const iconClasses = 'size-6 text-(--main-color)'
+    const iconClasses = 'size-6 text-(--fourth-color)'
 
     switch (sectionTitle) {
         case "Dashboard":

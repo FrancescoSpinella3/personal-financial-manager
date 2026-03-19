@@ -1,15 +1,15 @@
-import { HandCoins, MoveHorizontal, PiggyBank, TrendingDown, TrendingUp } from "lucide-react";
+import { HandCoins, MoveHorizontal, TrendingDown, TrendingUp } from "lucide-react";
 import { currencyFormatter } from "../../../util/currencyFormatter";
 
 export default function SummaryGoal({ userGoal, currentValue, categoryName }) {
     let categoryIcon = null;
     
     if (categoryName === 'Entrate') {
-        categoryIcon = <TrendingUp />;
+        categoryIcon = <TrendingUp className="size-5" />;
     } else if (categoryName === 'Uscite') {
-        categoryIcon = <TrendingDown />;
+        categoryIcon = <TrendingDown className="size-5" />;
     } else if (categoryName === 'Risparmi') {
-        categoryIcon = <MoveHorizontal />;
+        categoryIcon = <MoveHorizontal className="size-5" />;
     }
 
     return (
@@ -19,10 +19,14 @@ export default function SummaryGoal({ userGoal, currentValue, categoryName }) {
             <p className="text-sm text-(--dark-third-color)">Il mio obiettivo: 
                 <span className="text-(--dark-second-color) font-medium"> {currencyFormatter.format(userGoal)}</span>
             </p>
-            <p className="text-lg font-medium text-(--main-color) flex items-center gap-2">
-                {categoryName}
-                <span>{categoryIcon}</span>
-            </p>
+            <div className="flex items-center gap-2">
+                <div className="bg-blue-200 p-1.5 rounded-md text-(--fourth-color)">
+                    {categoryIcon}
+                </div>
+                <p className="text-lg font-medium  text-(--fourth-color)">
+                    {categoryName}
+                </p>
+            </div>
         </div>
     );
 }
