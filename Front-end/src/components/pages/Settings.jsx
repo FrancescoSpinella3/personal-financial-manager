@@ -163,7 +163,7 @@ export default function Settings() {
                         <SettingsLayout title="Profilo" textButton={loading ? <Loader2 /> : 'Aggiorna profilo'} onAction={handleUpdateProfile}>
                             <div className="space-y-4 mb-10">
                                 {/* User profile image */}
-                                <div className="bg-(--dark-third-color) rounded-full size-22 flex items-center justify-center overflow-hidden">
+                                <div className="bg-(--dark-third-color) rounded-full size-22 flex items-center justify-center overflow-hidden mb-7">
                                     {user.profileImage ? (
                                         <img src={user.profileImage} alt="Profile image" />
                                     ) : (
@@ -171,22 +171,24 @@ export default function Settings() {
                                     )}
 
                                 </div>
-                                {/* Full name */}
-                                <p className={labelClasses}>Nome: 
-                                    <span className={valueClasses}>{user.name} {user.lastName}</span>
-                                </p>
-                                {/* Email */}
-                                <p className={labelClasses}>Email: 
-                                    <span className={valueClasses}>{user.email}</span>
-                                </p>
-                                {/* birthdate */}
-                                <p className={labelClasses}>Data di nascita: 
-                                    <span className={valueClasses}>{user.birthdate}</span>
-                                </p>
-                                {/* Gender */}
-                                <p className={labelClasses}>Sesso: 
-                                    <span className={valueClasses}>{user.gender}</span>
-                                </p>
+                                <div className="flex flex-col gap-4">
+                                    {/* Full name */}
+                                    <p className={labelClasses}>Nome: 
+                                        <span className={valueClasses}>{user.name} {user.lastName}</span>
+                                    </p>
+                                    {/* Email */}
+                                    <p className={labelClasses}>Email: 
+                                        <span className={valueClasses}>{user.email}</span>
+                                    </p>
+                                    {/* birthdate */}
+                                    <p className={labelClasses}>Data di nascita: 
+                                        <span className={valueClasses}>{user.birthdate}</span>
+                                    </p>
+                                    {/* Gender */}
+                                    <p className={labelClasses}>Sesso: 
+                                        <span className={valueClasses}>{user.gender}</span>
+                                    </p>
+                                </div>
                             </div>
 
                             <div className="mb-10">
@@ -195,7 +197,7 @@ export default function Settings() {
                                     <input
                                         type="file"
                                         accept="image/*"
-                                        className="text-(--dark-third-color) text-sm font-light cursor-pointer"
+                                        className="text-(--dark-third-color) text-sm cursor-pointer"
                                         onClick={() => {
                                             setReplaceImage(true);
                                             setFileError('');

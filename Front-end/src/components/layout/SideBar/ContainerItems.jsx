@@ -19,13 +19,13 @@ export default function ContainerItems() {
         <div className="w-full flex flex-col gap-3 py-14">
             {/* Dashboard link */}
             <NavLink
-                to="/dashboard"
+                to="/panoramica"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
             >            
                 <LayoutGrid className={iconClasses} />
-                Dashboard
+                Panoramica
             </NavLink>
 
             {/* Transactions link */}

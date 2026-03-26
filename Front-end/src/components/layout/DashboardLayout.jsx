@@ -27,7 +27,7 @@ export default function DashboardLayout() {
             <LogoutModal onLogout={logout} open={showModal} onClose={() => setShowModal(false)}/>
 
             {/* Main content */}
-            <div className="flex-1 bg-gray-200 min-h-screen w-full">
+            <div className="flex-1 bg-gray-200 min-h-screen w-full dark:bg-(--bg-dark-dashboard)">
                 <Outlet />
             </div>
         </>

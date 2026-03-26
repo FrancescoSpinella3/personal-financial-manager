@@ -4,7 +4,7 @@ import User from "./User";
 export default function SideBar() {
     return (
         <div
-            className="bg-gray-900 w-82 fixed top-0 left-0 h-screen p-8 z-40 border-r border-gray-300"
+            className="bg-(--bg-dark-bar) w-82 fixed top-0 left-0 h-screen p-8 z-40 border-r border-gray-300 dark:border-(--border-dark)"
         >
             <div className="flex flex-col items-center h-full">
                 {/* App logo */}

@@ -10,7 +10,7 @@ import { Loader2 } from "lucide-react";
 import Modal from "../ui/Modal";
 import Button from "../ui/Button";
 
-export default function Register() {
+export default function SignUp() {
     const navigate = useNavigate();
     const [loading, setIsLoading] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -27,7 +27,7 @@ export default function Register() {
         handleChange,
         handleSubmit,
         reset
-    } = useAuthForm({ mode: 'register'})
+    } = useAuthForm({ mode: 'signup'})
 
 
     // Formating birthdate

@@ -16,7 +16,7 @@ export default function Subscriptions() {
             {subscriptions.length === 0 ? (
                 <div className="absolute top-1/2 left-1/2 flex flex-col items-center justify-center gap-3 text-(--dark-third-color)">
                     <Ban className="size-10 stroke-[1.5]" />
-                    <p className="font-light">Non sono presenti abbonamenti</p>
+                    <p>Non sono presenti abbonamenti</p>
                 </div>
             ) : (
                 <>

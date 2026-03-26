@@ -9,12 +9,12 @@ export default function ItemGoal({ name, value, icon, onUpdate }) {
         <div className="flex justify-between p-7 shadow-md bg-white rounded-lg border border-gray-300">
             <div className="flex items-center gap-5">
                 {/* Icon */}
-                <div className="bg-gray-200 p-2 rounded-md">
-                    {IconComponent && <IconComponent className="text-(--dark-second-color)" />}
+                <div className="bg-blue-200 p-2 rounded-md">
+                    {IconComponent && <IconComponent className="text-(--fourth-color)" />}
                 </div>
                 <div>
                     {/* Category name */}
-                    <p className="text-sm font-light text-(--dark-third-color)">{name}</p>
+                    <p className="text-sm text-(--dark-third-color)">{name}</p>
                     {/* Goal value */}
                     <p className="font-semibold text-(--dark-main-color)">{value}</p>
                 </div>

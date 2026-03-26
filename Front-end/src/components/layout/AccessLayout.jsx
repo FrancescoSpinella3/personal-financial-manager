@@ -2,9 +2,9 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import ThemeButton from "../ui/ThemeButton";
 
-export default function ({ accessType, description, message, link, text, children }) {
+export default function AccessLayout({ accessType, description, message, link, text, children }) {
     return (
-        <div className="min-h-screen  p-7 bg-gray-100">
+        <div className="min-h-screen p-7 bg-gray-100">
             <div className="mb-16 flex justify-between">
                 {/* Back home link */}
                 <Link to='/' className="text-sm flex items-center gap-2 font-medium text-(--dark-second-color) hover:text-(--dark-main-color) duration-200 ease-in">

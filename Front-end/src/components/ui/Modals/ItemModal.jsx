@@ -22,7 +22,7 @@ export default function ItemModal({
             <Form>
                 {children}
                 {/* Action buttons */}
-                <div className="flex justify-center gap-3">
+                <div className="flex justify-between gap-3">
                     {/* Confirm update button */}
                     <Button
                         variant="primary" 

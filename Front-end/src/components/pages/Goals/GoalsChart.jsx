@@ -3,8 +3,8 @@ import { goals } from "../../../data/goals";
 import { categories } from "../../../data/categories";
 import { currencyFormatter } from "../../../util/currencyFormatter";
 
-const COLORS_GOAL = ["#432dd7", "#EF3463", "#fed920"];
-const COLORS_CURRENT = ["#432dd7", "#EF3463", "#fed920"];
+const COLORS_GOAL = ["#432dd7", "#EF3463", "#22c55e"];
+const COLORS_CURRENT = ["#432dd7", "#EF3463", "#22c55e"];
 
 function buildChartData() {
     const groups = { income: { label: "Entrate", goal: 0, current: 0 }, expense: { label: "Uscite", goal: 0, current: 0 }, save: { label: "Risparmi", goal: 0, current: 0 } };
@@ -46,7 +46,7 @@ export default function GoalsChart() {
                 <p className="font-medium text-(--dark-main-color) mb-3 text-center">Il mio obiettivo</p>
                 <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
-                        <Pie data={goalData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} label={renderLabel} labelLine={false}>
+                        <Pie data={goalData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false}>
                             {goalData.map((_, i) => <Cell key={i} fill={COLORS_GOAL[i]} />)}
                         </Pie>
                         <Tooltip content={<CustomTooltip />} />
@@ -60,7 +60,7 @@ export default function GoalsChart() {
                 <p className="font-medium text-(--dark-main-color) mb-3 text-center">Valore attuale</p>
                 <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
-                        <Pie data={currentData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} label={renderLabel} labelLine={false}>
+                        <Pie data={currentData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false}>
                             {currentData.map((_, i) => <Cell key={i} fill={COLORS_CURRENT[i]} />)}
                         </Pie>
                         <Tooltip content={<CustomTooltip />} />

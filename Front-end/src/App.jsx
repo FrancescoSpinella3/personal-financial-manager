@@ -3,16 +3,15 @@ import DashboardLayout from './components/layout/DashboardLayout'
 import AuthLayout from './components/layout/AuthLayout'
 import { initFakeDB } from './services/fakeUserDB'
 import { AuthProvider } from './context/AuthContext'
-import { ThemeProvider } from './context/ThemeContext'
 
 import ProtectedRoute from './routes/ProtectedRoute'
 
 import Goals from './components/pages/Goals/Goals'
 import Settings from './components/pages/Settings'
 import Transactions from './components/pages/Transactions/Transactions'
-import Dashboard from './components/pages/Dashboard/Dashboard'
+import Overview from './components/pages/Dashboard/Overview'
 import Login from './components/pages/Login'
-import Register from './components/pages/Register'
+import SignUp from './components/pages/SignUp'
 import Home from './components/pages/Home'
 import Categories from './components/pages/Categories/Categories'
 import Subscriptions from './components/pages/Subscriptions/Subscriptions'
@@ -20,6 +19,10 @@ import Subscriptions from './components/pages/Subscriptions/Subscriptions'
 import { useEffect } from 'react'
 
 import './App.css'
+import { ThemeProvider } from './context/ThemeProvider'
+
+
+
 
 function App() { 
   useEffect(() => {
@@ -34,7 +37,7 @@ function App() {
             {/* Home, Login and register pages */}
             <Route element={<AuthLayout />}>
               <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
+              <Route path='/signup' element={<SignUp />} />
               <Route path='/' element={<Home />} />
             </Route>
 
@@ -44,7 +47,7 @@ function App() {
                 <DashboardLayout />
               </ProtectedRoute>
             }>
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/panoramica" element={<Overview />} />
               <Route path="/transazioni" element={<Transactions />} />
               <Route path="/abbonamenti" element={<Subscriptions />} />
               <Route path="/obiettivi" element={<Goals />} />

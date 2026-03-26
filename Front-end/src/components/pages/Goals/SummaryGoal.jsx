@@ -1,15 +1,16 @@
-import { HandCoins, MoveHorizontal, TrendingDown, TrendingUp } from "lucide-react";
+import { TrendingDown, TrendingUp, Wallet } from "lucide-react";
 import { currencyFormatter } from "../../../util/currencyFormatter";
 
 export default function SummaryGoal({ userGoal, currentValue, categoryName }) {
     let categoryIcon = null;
     
+    // Select the correct icon based on the category name
     if (categoryName === 'Entrate') {
         categoryIcon = <TrendingUp className="size-5" />;
     } else if (categoryName === 'Uscite') {
         categoryIcon = <TrendingDown className="size-5" />;
     } else if (categoryName === 'Risparmi') {
-        categoryIcon = <MoveHorizontal className="size-5" />;
+        categoryIcon = <Wallet className="size-5" />;
     }
 
     return (

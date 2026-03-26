@@ -39,7 +39,7 @@ export default function Login(){
         setAuthError(null);
         login(values.email, values.password);
         setIsLoading(true);
-        navigate('/dashboard'); // After login, go to user dashboard
+        navigate('/panoramica'); // After login, go to user dashboard
         reset(); // Clear input field after login
     }
 
@@ -48,7 +48,7 @@ export default function Login(){
             accessType="Accedi al tuo account" 
             description="Riprendi a gestire le tue finanze"
             message="Non hai un account?"
-            link="/register"
+            link="/signup"
             text="Registrati"
         >
             {/* Login Form */}

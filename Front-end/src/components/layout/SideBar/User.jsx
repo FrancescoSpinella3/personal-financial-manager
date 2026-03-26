@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import { UserRound } from "lucide-react";
 
@@ -20,20 +19,17 @@ export default function User() {
                     )}
                 </div>
 
-                {/* User name */}
-                <div className="leading-0">
-                    <p 
-                        id="userName"
-                        className="text-(--light-color) text-sm font-light"
+                {/* User info */}
+                <div>
+                    {/* Name */}
+                    <p className="text-(--light-color) text-sm font-light"
                     >
                         {user?.name} {user?.lastName}
                     </p>
-                    <Link
-                        to="/impostazioni"
-                        className="text-xs text-(--dark-third-color) hover:text-(--dark-fourth-color) transition-colors duration-200 ease-in"
-                    >
-                        Vedi profilo
-                    </Link>
+                    {/* Email */}
+                    <p className="text-xs text-(--dark-third-color)">
+                        {user.email}
+                    </p>
                 </div>
             </div>
         </div>

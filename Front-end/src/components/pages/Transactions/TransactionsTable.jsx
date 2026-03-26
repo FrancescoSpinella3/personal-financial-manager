@@ -13,15 +13,15 @@ export default function TransactionsTable({ onUpdate }) {
     };
 
     // th table default classes
-    const thClasses = "font-normal text-sm text-(--dark-main-color) p-5"
+    const thClasses = "font-medium text-sm text-(--dark-main-color) p-5"
     // td table default classes
-    const tdClasses = "font-light text-sm text-center text-(--dark-second-color) p-5"
+    const tdClasses = "text-sm text-center p-5"
 
     return (
         <table className="min-w-full">
             {/* Table head */}
             <thead>
-                <tr className="bg-blue-50 rounded-md">
+                <tr className="bg-blue-50 rounded-md border-b border-blue-100">
                     <th className={thClasses + ' text-start'}>Info</th>
                     <th className={thClasses}>Categoria</th>
                     <th className={thClasses}>Data</th>
@@ -33,7 +33,7 @@ export default function TransactionsTable({ onUpdate }) {
             </thead>
 
             {/* Table body */}
-            <tbody>
+            <tbody className="divide-y divide-gray-200">
                 {transactions.map(transaction => {
                     // Transaction label classes
                     let labelClasses = "px-4 py-1 text-xs font-normal rounded-lg";
@@ -43,34 +43,46 @@ export default function TransactionsTable({ onUpdate }) {
                     } else if (transaction.category === 'expences') {
                         labelClasses += ' bg-red-100 text-red-700';
                     } else if (transaction.category === 'saves') {
-                        labelClasses += ' bg-yellow-100 text-yellow-700';
+                        labelClasses += ' bg-green-100 text-green-700';
                     }
 
                     // Render table row for each transaction
                     return (
                         <tr key={transaction.id}>
-                            <td className={tdClasses + ' text-start font-medium'}>
+                            <td className={`${tdClasses} text-start font-medium text-(--dark-main-color)`}>
                                 {/* Find categoty icon */}
                                 <div className="flex items-center gap-3">
                                     {(() => {
+                                        // Find the category
                                         const category = categories.find(c => c.name === transaction.info);
+                                        // if category exist, set and return the icon, otherwise, return null
                                         if (category) {
                                             const Icon = LucideIcons[category.icon];
-                                            return Icon ? <Icon className="size-6" /> : null;
+                                            return Icon 
+                                            ?   <div className="bg-blue-200 text-(--fourth-color) p-2 rounded-md">
+                                                    <Icon className="size-5" />
+                                                </div>
+                                            : null;
                                         }
                                         return null;
                                     })()}
-                                    {transaction.info}
+                                    {/* Transaction info */}
+                                    <p>{transaction.info}</p>
                                 </div>
                             </td>
+                            {/* Transaction's category label */}
                             <td className={tdClasses}>
                                 <span className={labelClasses}>
                                     {categoryLabels[transaction.category] || transaction.category}
                                 </span>
                             </td>
-                            <td className={tdClasses}>{transaction.date}</td>
-                            <td className={tdClasses}>{transaction.description}</td>
+                            {/* Date */}
+                            <td className={`${tdClasses} text-(--dark-second-color)`}>{transaction.date}</td>
+                            {/* Description */}
+                            <td className={`${tdClasses} text-(--dark-second-color)`}>{transaction.description}</td>
+                            {/* Amount */}
                             <td className={tdClasses + ' font-medium'}>{currencyFormatter.format(transaction.amount)}</td>
+                            {/* Action buttons */}
                             <td><Actions onUpdate={onUpdate} /></td>
                         </tr>
                     )

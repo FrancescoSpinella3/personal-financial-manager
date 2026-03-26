@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function useAuthForm({ mode }) {
     // Check if is register mode
-    const isRegister = mode === 'register';
+    const isRegister = mode === 'signup';
 
     // Check values state for login or register
     const [values, setValues] = useState({
