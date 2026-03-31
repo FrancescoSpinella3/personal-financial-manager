@@ -25,11 +25,11 @@ export default function Input({
     const showError = error && !focused && !value;
 
     // Default classes for label and input
-    let labelClasses = "font-medium text-sm mb-1.5 text-(--dark-main-color)";
-    let inputClasses = "p-2 border border-(--dark-fourth-color) rounded-md bg-gray-50 focus:outline-(--second-color) w-full";
+    let labelClasses = "font-medium text-sm mb-1.5 text-(--dark-main-color) dark:text-(--light-color)";
+    let inputClasses = "p-2 border border-(--light-border-color) dark:border-(--dark-border-color) rounded-md bg-(--light-bg-input) dark:bg-(--dark-bg-input) focus:outline-(--second-color) w-full text-[0.9em] placeholder:text-(--dark-third-color) dark:text-(--dark-fourth-color)";
     
     // Add classes if input type is password
-    if (isPassword) inputClasses += ' pr-10 placeholder:text-2xl';
+    if (isPassword) inputClasses += ' pr-10';
 
     // Add a class if there is an error and input is not focused
     if (showError) labelClasses += ' text-red-600';

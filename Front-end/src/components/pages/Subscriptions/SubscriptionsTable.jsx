@@ -4,7 +4,7 @@ import Actions from "../Transactions/Actions";
 
 export default function SubscriptionsTable({ onUpdate }) {
     // th table default classes
-    const thClasses = "font-medium text-sm text-(--dark-main-color) p-5"
+    const thClasses = "font-medium text-sm text-(--dark-main-color) dark:text-(--light-color) p-5"
 
     // td table default classes
     const tdClasses = "text-sm text-center p-5"
@@ -13,7 +13,7 @@ export default function SubscriptionsTable({ onUpdate }) {
         <table className="min-w-full">
             {/* Table head */}
             <thead>
-                <tr className="bg-blue-50 rounded-md  border-b border-blue-100">
+                <tr className="bg-(--light-bg-table-head) dark:bg-(--dark-bg-table-head) rounded-md border-b border-blue-100 dark:border-gray-700">
                     <th className={thClasses + ' text-start'}>Scadenza</th>
                     <th className={thClasses}>Descrizione</th>
                     <th className={thClasses}>Ultimo rinnovo</th>
@@ -23,7 +23,7 @@ export default function SubscriptionsTable({ onUpdate }) {
             </thead>
 
             {/* Table body */}
-            <tbody>
+            <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
                 {subscriptions.map(subscription => {
                     const [dd, mm, yyyy] = subscription.dueDate.split('/');
                     const date = new Date(yyyy, mm - 1, dd);
@@ -33,15 +33,14 @@ export default function SubscriptionsTable({ onUpdate }) {
                     return (
                         <tr key={subscription.id}>
                             <td className={tdClasses}>
-                                <div className="flex flex-col items-center justify-center bg-gray-100 w-14 p-2 rounded-md">
-                                    <span className="font-bold text-lg text-(--dark-main-color)">{day}</span>
+                                <div className="flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-800 w-14 p-2 rounded-md text-(--dark-main-color)  dark:text-(--light-color)">
+                                    <span className="font-bold text-lg">{day}</span>
                                     <span className="font-normal text-(--dark-third-color)">{month}</span>
                                 </div>
                             </td>
-
-                            <td className={`${tdClasses} text-(--dark-main-color) font-medium`}>{subscription.description}</td>
-                            <td className={`${tdClasses} text-(--dark-second-color)`}>{subscription.lastRenewal}</td>
-                            <td className={`${tdClasses} text-(--dark-main-color) font-medium`}>{currencyFormatter.format(subscription.amount)}</td>
+                            <td className={`${tdClasses} text-(--dark-main-color) dark:text-(--light-color) font-medium`}>{subscription.description}</td>
+                            <td className={`${tdClasses} text-(--dark-second-color) dark:text-(--dark-fourth-color)`}>{subscription.lastRenewal}</td>
+                            <td className={`${tdClasses} text-(--dark-main-color) dark:text-(--light-color) font-medium`}>{currencyFormatter.format(subscription.amount)}</td>
                             <td><Actions onUpdate={onUpdate} /></td>
                         </tr>
                     )

@@ -19,7 +19,7 @@ export default function NavBar({ onClick }) {
     const date = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
 
     return(
-        <nav className="fixed top-0 left-82 right-0 flex items-center bg-gray-100 dark:bg-(--bg-dark-bar) border-b border-gray-300 dark:border-(--border-dark) h-18 px-5 z-50">
+        <nav className="fixed top-0 left-82 right-0 flex items-center bg-(--light-bg-bar) dark:bg-(--dark-bg-bar) border-b border-(--light-border-color) dark:border-(--dark-border-color) h-18 px-5 z-50">
             <div className="flex justify-between w-full">
                 <div className="flex items-center gap-5">
                     {/* User */}

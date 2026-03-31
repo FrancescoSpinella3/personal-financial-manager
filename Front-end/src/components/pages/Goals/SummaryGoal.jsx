@@ -14,17 +14,17 @@ export default function SummaryGoal({ userGoal, currentValue, categoryName }) {
     }
 
     return (
-        <div className="h-64 flex flex-col items-center justify-between bg-(--light-color) p-5 rounded-md border border-(--dark-fourth-color) shadow-md">
-            <p className="font-medium text-(--dark-main-color)">Valore attuale</p>
-            <p className="text-4xl font-semibold text-(--dark-main-color)">{currencyFormatter.format(currentValue)}</p>
+        <div className="h-64 flex flex-col items-center justify-between bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md border border-(--light-border-color) dark:border-(--dark-border-color) shadow-md">
+            <p className="font-medium text-(--dark-main-color) dark:text-(--light-color)">Valore attuale</p>
+            <p className="text-4xl font-semibold text-(--dark-main-color) dark:text-(--light-color)">{currencyFormatter.format(currentValue)}</p>
             <p className="text-sm text-(--dark-third-color)">Il mio obiettivo: 
-                <span className="text-(--dark-second-color) font-medium"> {currencyFormatter.format(userGoal)}</span>
+                <span className="text-(--dark-second-color) dark:text-(--dark-fourth-color) font-medium"> {currencyFormatter.format(userGoal)}</span>
             </p>
             <div className="flex items-center gap-2">
                 <div className="bg-blue-200 p-1.5 rounded-md text-(--fourth-color)">
                     {categoryIcon}
                 </div>
-                <p className="text-lg font-medium  text-(--fourth-color)">
+                <p className="text-lg font-medium  text-(--fourth-color) dark:text-(--second-color)">
                     {categoryName}
                 </p>
             </div>

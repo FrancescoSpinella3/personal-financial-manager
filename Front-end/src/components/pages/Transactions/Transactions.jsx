@@ -28,10 +28,10 @@ import FilterButton from "../../ui/FilterButton";
 
             ) : (
                 // Transactions
-                <div className="bg-white border border-gray-300 rounded-2xl shadow-md p-5">
+                <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) border border-(--light-border-color) dark:border-(--dark-border-color) rounded-2xl shadow-md p-5">
                     {/* Time Filter (month/year) */}
                     <div className="flex items-center justify-between mt-1 mb-8">
-                        <h4 className="font-semibold text-(--dark-main-color)">Tutte le transazioni</h4>
+                        <h4 className="font-semibold text-(--dark-main-color) dark:text-(--light-color)">Tutte le transazioni</h4>
 
                         <FilterButton />
                     </div>
@@ -60,8 +60,6 @@ import FilterButton from "../../ui/FilterButton";
                     onShow={showAddTransactionModal} 
                     onClose={() => setShowAddTransactionModal(false)}
                 />
-
-                
             )}
 
             {/* Show update transaction modal */}

@@ -12,21 +12,21 @@ export default function LogoutModal({ onLogout, onClose, ...props }) {
             onClose={onClose}
             {...props}
         >
-            <div className="flex gap-3">
+            <div className="flex flex-col items-center gap-5 w-full">
                 {/* Logout button */}
-                <Link to="/login">
+                <Link to="/login" className="w-full">
                     <Button 
                         variant="primary" 
-                        size="xs" 
+                        size="lg" 
                         onClick={onLogout}
                     >
-                        Esci
+                        Effettua il logout
                     </Button>
                 </Link>
 
                 {/* Close modal */}
                 <Button 
-                    variant="secondary" 
+                    variant="textOnly" 
                     size="xs" 
                     onClick={onClose}
                 >

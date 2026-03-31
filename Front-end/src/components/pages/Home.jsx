@@ -5,7 +5,7 @@ import { HandCoins } from "lucide-react";
 
 export default function Home() {
     return(
-        <>
+        <div className="bg-(--light-bg-color) dark:bg-(--dark-bg-color)">
             <header className="h-16 p-5 flex justify-end mb-22">
                 <ThemeButton />
             </header>
@@ -18,13 +18,13 @@ export default function Home() {
                     <span className="font-extralight">my</span>Finance     
                 </h1>
 
-                <h2 className="text-(--dark-main-color) text-5xl font-bold flex items-center gap-5">
+                <h2 className="text-(--dark-main-color) dark:text-(--light-color) text-5xl font-bold flex items-center gap-5">
                     Dashboard per la gestione finanziaria 
                     <HandCoins className="size-16 text-(--main-color) stroke-[1.5]" />
                 </h2>
 
                 <div className="flex flex-col items-center max-w-4xl gap-10">
-                    <p className="text-xl text-(--dark-second-color)">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
+                    <p className="text-xl text-(--dark-second-color) dark:text-(--dark-fourth-color)">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
                         per avere un quadro completo della tua situazione finanziaria.
                     </p>
 
@@ -44,7 +44,7 @@ export default function Home() {
                     </div>
                 </div>
             </main>
-        </>
+        </div>
 
     );
 }

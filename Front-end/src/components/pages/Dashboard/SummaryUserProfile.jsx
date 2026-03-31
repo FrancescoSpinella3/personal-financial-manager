@@ -41,7 +41,7 @@ export default function SummaryUserProfile() {
                 </div>
 
                 {/* User profile image */}
-                <div className="bg-(--dark-third-color) rounded-full size-22 flex items-center justify-center overflow-hidden">
+                <div className="bg-(--dark-third-color) dark:bg-gray-700 dark:border dark:border-gray-600 rounded-full size-22 flex items-center justify-center overflow-hidden">
                     {user.profileImage ? (
                         <img src={user.profileImage} alt="Profile image" />
                     ) : (

@@ -33,8 +33,8 @@ export default function Settings() {
     }, [user])
 
     // Default user data classes
-    const labelClasses = "font-medium text-(--dark-main-color)";
-    const valueClasses = "font-normal text-(--dark-second-color) pl-2";
+    const labelClasses = "font-medium text-(--dark-main-color) dark:text-(--light-color)";
+    const valueClasses = "font-normal text-(--dark-second-color) dark:text-(--dark-fourth-color) pl-2";
 
 
     // Upload image
@@ -155,7 +155,7 @@ export default function Settings() {
 
     return (
         <Section sectionTitle="Gestione Account">
-            <div className="bg-white border border-gray-300 rounded-2xl shadow-md p-8">
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) border border-(--light-border-color) dark:border-(--dark-border-color) rounded-2xl shadow-md p-8">
                 <div className="flex justify-center">
                     <div className="grid grid-cols-2 gap-60">
 
@@ -163,7 +163,7 @@ export default function Settings() {
                         <SettingsLayout title="Profilo" textButton={loading ? <Loader2 /> : 'Aggiorna profilo'} onAction={handleUpdateProfile}>
                             <div className="space-y-4 mb-10">
                                 {/* User profile image */}
-                                <div className="bg-(--dark-third-color) rounded-full size-22 flex items-center justify-center overflow-hidden mb-7">
+                                <div className="bg-(--dark-third-color) dark:bg-gray-700 dark:border dark:border-gray-600 rounded-full size-22 flex items-center justify-center overflow-hidden mb-7">
                                     {user.profileImage ? (
                                         <img src={user.profileImage} alt="Profile image" />
                                     ) : (
@@ -192,7 +192,7 @@ export default function Settings() {
                             </div>
 
                             <div className="mb-10">
-                                <p className="font-medium text-lg text-(--dark-main-color)">Inserisci la tua immagine di profilo</p>
+                                <p className="font-medium text-lg text-(--dark-main-color) dark:text-(--light-color)">Inserisci la tua immagine di profilo</p>
                                 <div className="flex items-center gap-2">
                                     <input
                                         type="file"
@@ -208,7 +208,7 @@ export default function Settings() {
                                 
                                 {/* Show an error message */}
                                 {fileError && (
-                                    <p className="text-sm text-red-600 mt-2">{fileError}</p>
+                                    <p className="text-sm text-red-500 mt-2">{fileError}</p>
                                 )}
                             </div>
                         </SettingsLayout>
@@ -246,7 +246,7 @@ export default function Settings() {
                                 
                                 {/* Show an error message */}
                                 {passworddError && (
-                                    <p className="text-sm text-red-600 mt-2">{passworddError}</p>
+                                    <p className="text-sm text-red-500 mt-2">{passworddError}</p>
                                 )}
                             </div>
                         </SettingsLayout>

@@ -27,7 +27,7 @@ import { currencyFormatter } from "../../../util/currencyFormatter";
             <GoalsChart />
 
             <div className="flex items-center justify-between mb-10">
-                <h4 className="font-medium text-(--dark-second-color) text-xl">I miei obiettivi per categoria</h4>
+                <h4 className="font-medium text-(--dark-second-color) dark:text-(--dark-fourth-color) text-xl">I miei obiettivi per categoria</h4>
             
                 {/* Add new goal */}
                 <Button 

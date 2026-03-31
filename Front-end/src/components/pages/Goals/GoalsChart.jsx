@@ -27,7 +27,7 @@ const CustomTooltip = ({ active, payload }) => {
     if (!active || !payload?.length) return null;
     const { name, value } = payload[0];
     return (
-        <div className="bg-(--light-color) border border-(--dark-fourth-color) rounded-md p-3 shadow-md text-sm">
+        <div className="bg-(--light-bg-container) border border-(--light-border-color) rounded-md p-3 shadow-md text-sm">
             <p className="font-semibold text-(--dark-main-color)">{name}</p>
             <p style={{ color: payload[0].payload.fill }}>{currencyFormatter.format(value)}</p>
         </div>
@@ -42,29 +42,36 @@ export default function GoalsChart() {
     return (
         <div className="grid grid-cols-2 gap-5 mb-10">
             {/* Pie Obiettivi */}
-            <div className="bg-(--light-color) p-5 rounded-md border border-(--dark-fourth-color) shadow-md">
-                <p className="font-medium text-(--dark-main-color) mb-3 text-center">Il mio obiettivo</p>
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md border border-(--light-border-color) dark:border-(--dark-border-color) shadow-md">
+                <p className="font-medium text-(--dark-main-color) dark:text-(--light-color) mb-3 text-center">Il mio obiettivo</p>
                 <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
-                        <Pie data={goalData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false}>
+                        <Pie data={goalData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false} stroke={false}>
                             {goalData.map((_, i) => <Cell key={i} fill={COLORS_GOAL[i]} />)}
                         </Pie>
                         <Tooltip content={<CustomTooltip />} />
-                        <Legend wrapperStyle={{ fontSize: 14 }} formatter={(value) => <span className="text-(--dark-second-color)">{value}</span>} />
+                        <Legend wrapperStyle={{ fontSize: 14 }} formatter={(value) => 
+                            <span className="text-(--dark-second-color) dark:text-(--dark-fourth-color)">
+                                {value}
+                            </span>} />
                     </PieChart>
                 </ResponsiveContainer>
             </div>
 
             {/* Pie Valore Corrente */}
-            <div className="bg-(--light-color) p-5 rounded-md border border-(--dark-fourth-color) shadow-md">
-                <p className="font-medium text-(--dark-main-color) mb-3 text-center">Valore attuale</p>
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md border border-(--light-border-color) dark:border-(--dark-border-color) shadow-md">
+                <p className="font-medium text-(--dark-main-color) dark:text-(--light-color) mb-3 text-center">Valore attuale</p>
                 <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
-                        <Pie data={currentData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false}>
+                        <Pie data={currentData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false} stroke={false}>
                             {currentData.map((_, i) => <Cell key={i} fill={COLORS_CURRENT[i]} />)}
                         </Pie>
                         <Tooltip content={<CustomTooltip />} />
-                        <Legend wrapperStyle={{ fontSize: 14 }} formatter={(value) => <span className="text-(--dark-second-color)">{value}</span>} />
+                        <Legend wrapperStyle={{ fontSize: 14 }} formatter={(value) => 
+                            <span className="text-(--dark-second-color) dark:text-(--dark-fourth-color)">
+                                {value}
+                            </span>} 
+                        />
                     </PieChart>
                 </ResponsiveContainer>
             </div>

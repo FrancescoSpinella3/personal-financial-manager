@@ -5,7 +5,7 @@ export default function User() {
     const { user } = useAuth();
 
     return (
-        <div className="w-full flex justify-between pt-7 border-t border-gray-700 mt-auto">
+        <div className="w-full flex justify-between pt-7 border-t border-(--dark-border-color) mt-auto">
             <div className="flex items-center justify-center gap-4">
                 {/* User image */}
                 <div 

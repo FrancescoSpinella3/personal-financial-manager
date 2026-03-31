@@ -31,8 +31,8 @@ export default function CategoryModal({ onShow, onClose, title, subText, textBut
 
                 {/* Icon picker */}
                 <div>
-                    <label className="font-medium text-sm mb-1.5 text-(--dark-main-color)">Icona</label>
-                    <div className="grid grid-cols-8 gap-2 mt-1.5 max-h-48 overflow-y-auto p-2 border border-(--dark-fourth-color) rounded-md bg-gray-50">
+                    <label className="font-medium text-sm mb-1.5 text-(--dark-main-color) dark:text-(--light-color)">Icona</label>
+                    <div className="grid grid-cols-8 gap-2 mt-1.5 max-h-48 overflow-y-auto p-2 border border-(--light-border-color) dark:border-(--dark-border-color) rounded-md bg-(--light-bg-container) dark:bg-(--dark-bg-container)">
                         {availableIcons.map(iconName => {
                             const IconComponent = icons[iconName];
                             if (!IconComponent) return null;
@@ -45,7 +45,7 @@ export default function CategoryModal({ onShow, onClose, title, subText, textBut
                                     className={`p-2 rounded-md flex items-center justify-center cursor-pointer transition-colors
                                         ${selectedIcon === iconName 
                                             ? "bg-(--second-color) text-white" 
-                                            : "hover:bg-gray-200 text-(--dark-second-color)"
+                                            : "hover:bg-gray-200 text-(--dark-second-color) dark:text-(--dark-fourth-color) dark:hover:bg-gray-800"
                                         }`}
                                 >
                                     <IconComponent size={20} />

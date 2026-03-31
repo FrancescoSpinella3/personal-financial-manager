@@ -14,7 +14,7 @@ export default function ContainerSummaryBalance({ icon, amount, categoryTotal })
 
     return (
         <div >
-            <div className="bg-(--light-color) dark:bg-(--bg-dark-container) dark:border-(--border-dark) p-5 rounded-md border border-(--dark-fourth-color) shadow-md flex flex-col items-start justify-between min-h-46 w-82">
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) border border-(--light-border-color) dark:border-(--dark-border-color) p-5 rounded-md shadow-md flex flex-col items-start justify-between min-h-46 w-82">
                 <div className="flex items-center justify-between w-full">
                     {/* Icon */}
                     <div className={iconClasses}>

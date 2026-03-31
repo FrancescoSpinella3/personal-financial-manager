@@ -13,7 +13,7 @@ export default function TransactionsTable({ onUpdate }) {
     };
 
     // th table default classes
-    const thClasses = "font-medium text-sm text-(--dark-main-color) p-5"
+    const thClasses = "font-medium text-sm text-(--dark-main-color) dark:text-(--light-color) p-5"
     // td table default classes
     const tdClasses = "text-sm text-center p-5"
 
@@ -21,7 +21,7 @@ export default function TransactionsTable({ onUpdate }) {
         <table className="min-w-full">
             {/* Table head */}
             <thead>
-                <tr className="bg-blue-50 rounded-md border-b border-blue-100">
+                <tr className="bg-(--light-bg-table-head) dark:bg-(--dark-bg-table-head) rounded-md border-b border-blue-100 dark:border-gray-700">
                     <th className={thClasses + ' text-start'}>Info</th>
                     <th className={thClasses}>Categoria</th>
                     <th className={thClasses}>Data</th>
@@ -33,7 +33,7 @@ export default function TransactionsTable({ onUpdate }) {
             </thead>
 
             {/* Table body */}
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
                 {transactions.map(transaction => {
                     // Transaction label classes
                     let labelClasses = "px-4 py-1 text-xs font-normal rounded-lg";
@@ -49,7 +49,7 @@ export default function TransactionsTable({ onUpdate }) {
                     // Render table row for each transaction
                     return (
                         <tr key={transaction.id}>
-                            <td className={`${tdClasses} text-start font-medium text-(--dark-main-color)`}>
+                            <td className={`${tdClasses} text-start font-medium text-(--dark-main-color) dark:text-(--light-color)`}>
                                 {/* Find categoty icon */}
                                 <div className="flex items-center gap-3">
                                     {(() => {
@@ -77,11 +77,11 @@ export default function TransactionsTable({ onUpdate }) {
                                 </span>
                             </td>
                             {/* Date */}
-                            <td className={`${tdClasses} text-(--dark-second-color)`}>{transaction.date}</td>
+                            <td className={`${tdClasses} text-(--dark-second-color) dark:text-(--dark-fourth-color)`}>{transaction.date}</td>
                             {/* Description */}
-                            <td className={`${tdClasses} text-(--dark-second-color)`}>{transaction.description}</td>
+                            <td className={`${tdClasses} text-(--dark-second-color) dark:text-(--dark-fourth-color)`}>{transaction.description}</td>
                             {/* Amount */}
-                            <td className={tdClasses + ' font-medium'}>{currencyFormatter.format(transaction.amount)}</td>
+                            <td className={tdClasses + ' font-medium text-(--dark-main-color) dark:text-(--light-color)'}>{currencyFormatter.format(transaction.amount)}</td>
                             {/* Action buttons */}
                             <td><Actions onUpdate={onUpdate} /></td>
                         </tr>

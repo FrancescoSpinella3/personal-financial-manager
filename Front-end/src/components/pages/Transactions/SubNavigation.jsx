@@ -22,7 +22,7 @@ export default function SubNavigation({ selectedTabId, onSelectTab, onAdd }) {
                         cssClasses += " text-(--main-color) underline decoration-3 underline-offset-14 decoration-(--main-color)";
                     // Not active tab classes
                     } else {
-                        cssClasses += " text-(--dark-second-color)";
+                        cssClasses += " text-(--dark-second-color) dark:text-(--dark-fourth-color)";
                     }
                     return (
                         <li key={tab.id}>

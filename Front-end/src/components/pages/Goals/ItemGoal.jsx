@@ -6,7 +6,7 @@ export default function ItemGoal({ name, value, icon, onUpdate }) {
     const IconComponent = icons[icon];
 
     return (
-        <div className="flex justify-between p-7 shadow-md bg-white rounded-lg border border-gray-300">
+        <div className="flex justify-between p-7 shadow-md bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-lg border border-(--light-border-color) dark:border-(--dark-border-color)">
             <div className="flex items-center gap-5">
                 {/* Icon */}
                 <div className="bg-blue-200 p-2 rounded-md">
@@ -16,7 +16,7 @@ export default function ItemGoal({ name, value, icon, onUpdate }) {
                     {/* Category name */}
                     <p className="text-sm text-(--dark-third-color)">{name}</p>
                     {/* Goal value */}
-                    <p className="font-semibold text-(--dark-main-color)">{value}</p>
+                    <p className="font-semibold text-(--dark-main-color) dark:text-(--light-color)">{value}</p>
                 </div>
             </div>
 

@@ -21,24 +21,24 @@ export default function ItemModal({
         >
             <Form>
                 {children}
+
                 {/* Action buttons */}
                 <div className="flex justify-between gap-3">
-                    {/* Confirm update button */}
-                    <Button
-                        variant="primary" 
-                        size="xs"
-                    >
-                        {textButton}
-                    </Button>
-
                     {/* Close modal */}
                     <Button 
                         variant="secondary" 
-                        size="xs" 
+                        size="lg" 
                         type="button"
                         onClick={onClose}
                     >
                         Annulla
+                    </Button>
+                    {/* Confirm update button */}
+                    <Button
+                        variant="primary" 
+                        size="lg"
+                    >
+                        {textButton}
                     </Button>
                 </div>
             </Form>

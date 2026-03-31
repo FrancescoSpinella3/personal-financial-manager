@@ -9,10 +9,11 @@ export default function Button({
     const defaultClasses = "cursor-pointer rounded-md duration-200 ease-in flex items-center justify-center";
     const variants = {
         primary: 'bg-(--main-color) border-2 border-(--main-color) hover:bg-(--hover-main-color) text-white hover:border-(--hover-main-color)',
-        secondary: 'bg-(--dark-third-color) hover:bg-(--dark-second-color) text-white',
+        secondary: 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 text-(--dark-main-color) dark:text-white',
         border: 'font-medium border-2 border-(--main-color) text-(--main-color) hover:border-(--hover-main-color) hover:text-(--hover-main-color)',
         alert: 'bg-red-400 hover:bg-red-600',
-        modul: 'bg-(--main-color) text-white rounded-md cursor-pointer hover:bg-(--hover-main-color) duration-200 ease-in'
+        modul: 'bg-(--main-color) text-white rounded-md cursor-pointer hover:bg-(--hover-main-color) duration-200 ease-in',
+        textOnly: 'text-(--main-color) font-medium dark:text-(--light-color)'
     }
 
     const sizes = {

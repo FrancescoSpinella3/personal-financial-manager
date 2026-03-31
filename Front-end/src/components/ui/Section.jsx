@@ -2,7 +2,7 @@ import { ArrowRightLeft, CalendarSync, Goal, LayoutGrid, Settings, Tags } from "
 
 export default function Section({ children, sectionTitle }) {
     let sectionTitleIcon;
-    const iconClasses = 'size-6 text-(--fourth-color)'
+    const iconClasses = 'size-6 text-(--light-color)'
 
     switch (sectionTitle) {
         case "Panoramica":
@@ -30,7 +30,7 @@ export default function Section({ children, sectionTitle }) {
         <section className="ml-82 p-7 pt-28">
             <div className="flex items-center gap-3 mb-10 text-(--dark-main-color) dark:text-(--light-color) text-2xl font-semibold">
                 {/* Icon */}
-                <div className="bg-blue-200 rounded-md p-2">
+                <div className="bg-(--second-color) rounded-md p-2">
                     {sectionTitleIcon}
                 </div>
 
