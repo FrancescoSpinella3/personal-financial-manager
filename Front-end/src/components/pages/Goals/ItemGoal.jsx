@@ -6,7 +6,8 @@ export default function ItemGoal({ name, value, icon, onUpdate }) {
     const IconComponent = icons[icon];
 
     return (
-        <div className="flex justify-between p-7 shadow-md bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-lg border border-(--light-border-color) dark:border-(--dark-border-color)">
+        // <div className="flex justify-between p-7 shadow-md bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-lg border border-(--light-border-color) dark:border-(--dark-border-color)">
+        <div className="flex justify-between p-7 shadow-md bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-lg">
             <div className="flex items-center gap-5">
                 {/* Icon */}
                 <div className="bg-blue-200 p-2 rounded-md">
@@ -19,7 +20,6 @@ export default function ItemGoal({ name, value, icon, onUpdate }) {
                     <p className="font-semibold text-(--dark-main-color) dark:text-(--light-color)">{value}</p>
                 </div>
             </div>
-
 
             {/* Edit button */}
             <Button variant="border" size="s" className="gap-2" onClick={onUpdate}>

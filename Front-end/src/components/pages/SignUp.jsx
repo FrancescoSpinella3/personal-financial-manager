@@ -91,7 +91,7 @@ export default function SignUp() {
         >
             {/* Register Form */}
             <Form onSubmit={handleSubmit(onRegister)}>
-                <div className="flex gap-3">
+                <div className="flex flex-col md:flex-row gap-7 md:gap-3">
                     {/* Name input */}
                     <Input 
                         label="Nome" 
@@ -116,7 +116,7 @@ export default function SignUp() {
                     />
                 </div >
 
-                <div className="flex gap-3">
+                <div className="flex flex-col md:flex-row gap-7 md:gap-3">
                     {/* birthdate input */}
                     <Input 
                         label="Data di nascita" 

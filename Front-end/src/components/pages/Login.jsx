@@ -39,7 +39,7 @@ export default function Login(){
         setAuthError(null);
         login(values.email, values.password);
         setIsLoading(true);
-        navigate('/panoramica'); // After login, go to user dashboard
+        navigate('/dashboard/panoramica'); // After login, go to user dashboard
         reset(); // Clear input field after login
     }
 

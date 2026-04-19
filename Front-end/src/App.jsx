@@ -22,8 +22,6 @@ import './App.css'
 import { ThemeProvider } from './context/ThemeProvider'
 
 
-
-
 function App() { 
   useEffect(() => {
     initFakeDB(); // create test user if not exist
@@ -42,17 +40,17 @@ function App() {
             </Route>
 
             {/* Dashboard area */}
-            <Route element={
+            <Route path="/dashboard" element={
               <ProtectedRoute>
                 <DashboardLayout />
               </ProtectedRoute>
             }>
-              <Route path="/panoramica" element={<Overview />} />
-              <Route path="/transazioni" element={<Transactions />} />
-              <Route path="/abbonamenti" element={<Subscriptions />} />
-              <Route path="/obiettivi" element={<Goals />} />
-              <Route path="/categorie" element={<Categories />} />
-              <Route path="/impostazioni" element={<Settings />} />
+              <Route path="panoramica" element={<Overview />} />
+              <Route path="transazioni" element={<Transactions />} />
+              <Route path="abbonamenti" element={<Subscriptions />} />
+              <Route path="obiettivi" element={<Goals />} />
+              <Route path="categorie" element={<Categories />} />
+              <Route path="impostazioni" element={<Settings />} />
             </Route>
         </Routes>
       </AuthProvider>

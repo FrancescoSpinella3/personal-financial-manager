@@ -15,14 +15,13 @@ export default function Overview() {
     return (
         <Section sectionTitle="Panoramica">
             <div className="flex flex-col gap-7">
-
                 {/* Total Balance */}
-                <div className="flex gap-5">
-                    <div className="flex flex-col gap-5 shrink-0">
+                <div className="flex flex-col justify-between gap-5 lg:flex-row">
+                    <div className="flex flex-col gap-5 flex-1">
                         {/* Balance cards */}
-                        <div>
+                        <div className="w-full">
                             <h4 className="text-xl font-medium text-(--dark-second-color) dark:text-(--light-color) mb-3">Bilancio Totale</h4>
-                            <div className="flex gap-3">
+                            <div className="grid grid-cols-1 md:grid-cols-3 justify-between gap-3 w-full">
                                 {/* Total Incomes */}
                                 <ContainerSummaryBalance
                                     icon={<TrendingUp className="size-5" />} 
@@ -55,7 +54,7 @@ export default function Overview() {
                     />
                 </div>
                 
-                <div className="flex gap-5 min-h-64">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-5 min-h-64">
                     <SummaryGoals  />
                     <SummarySubscriptions />
                     <SummaryUserProfile />

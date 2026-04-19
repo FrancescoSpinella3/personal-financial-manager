@@ -11,11 +11,11 @@ export default function SubNavigation({ selectedTabId, onSelectTab, onAdd }) {
     ];
 
     return (
-        <div className="flex items-center justify-between mb-7">
+        <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between mb-7">
             <ul className="flex gap-5">
                 {tabs.map(tab => {
                     // Default classes
-                    let cssClasses = "cursor-pointer hover:text-(--main-color) duration-100 ease-in";
+                    let cssClasses = "cursor-pointer hover:text-(--main-color) duration-100 ease-in text-sm md:text-base";
 
                     // Active tab classes
                     if (tab.id === selectedTabId) {

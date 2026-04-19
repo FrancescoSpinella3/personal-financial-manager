@@ -1,22 +1,48 @@
+import BurgerButton from "../../ui/BurgerButton";
 import ContainerItems from "./ContainerItems";
 import User from "./User";
+import FinestLogo from "../../../../public/finest-logo.png"
 
-export default function SideBar() {
+export default function SideBar({ isCollapsed, onToggle }) {
+    
+    let sidebarDefaultClasses = "px-3 py-7 bg-(--dark-bg-bar) fixed top-0 left-0 h-screen z-40 border-r border-(--light-border-color) dark:border-(--dark-border-color) duration-300 hidden xl:block";
+    sidebarDefaultClasses += isCollapsed ? " w-20" : " w-76";
+
     return (
         <div
-            className="bg-(--dark-bg-bar) w-82 fixed top-0 left-0 h-screen p-8 z-40 border-r border-(--light-border-color) dark:border-(--dark-border-color)"
+            className={sidebarDefaultClasses}
         >
             <div className="flex flex-col items-center h-full">
-                {/* App logo */}
-                <h1 className="text-(--light-color) text-3xl font-extrabold">
-                    <span className="font-extralight">my</span>Finance     
-                </h1>
+                <div className={`flex items-center w-full ${isCollapsed ? "justify-center" : "justify-between"}`}>
+                    {/* App logo */}
+                    {isCollapsed ? (
+                        <div className="flex items-center justify-center">
+                            <img 
+                                src={FinestLogo} alt="Finest Logo"
+                                className="h-7 w-auto"
+                            />                            
+                        </div>
+                    ) : (
+                        <div className="flex items-center gap-3">
+                            <img 
+                                src={FinestLogo} alt="Finest Logo"
+                                className="h-7"
+                            />                            
+                            <h1 className="text-(--light-color) text-2xl font-extrabold">
+                                Finest    
+                            </h1>
+                        </div>
+                    )}
+
+                    {/* Burger button */}
+                    <BurgerButton isClicked={isCollapsed} onToggle={onToggle} />
+                </div>
 
                 {/* Items */}
-                <ContainerItems />
+                <ContainerItems isCollapsed={isCollapsed} />
 
                 {/* User profile */}
-                <User />
+                <User isCollapsed={isCollapsed} />
             </div>
         </div>
     );

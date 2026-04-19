@@ -25,15 +25,15 @@ export default function Input({
     const showError = error && !focused && !value;
 
     // Default classes for label and input
-    let labelClasses = "font-medium text-sm mb-1.5 text-(--dark-main-color) dark:text-(--light-color)";
-    let inputClasses = "p-2 border border-(--light-border-color) dark:border-(--dark-border-color) rounded-md bg-(--light-bg-input) dark:bg-(--dark-bg-input) focus:outline-(--second-color) w-full text-[0.9em] placeholder:text-(--dark-third-color) dark:text-(--dark-fourth-color)";
+    let labelClasses = "font-medium text-sm mb-1.5";
+    let inputClasses = "p-2 border rounded-md bg-(--light-bg-input) dark:bg-(--dark-bg-input) focus:outline-(--second-color) w-full text-[0.9em] placeholder:text-(--dark-third-color) dark:text-(--dark-fourth-color)";
     
     // Add classes if input type is password
     if (isPassword) inputClasses += ' pr-10';
 
     // Add a class if there is an error and input is not focused
-    if (showError) labelClasses += ' text-red-600';
-    if (showError) inputClasses += ' border-red-600';
+    if (showError ? labelClasses += ' text-red-600' : labelClasses += ' text-(--dark-main-color) dark:text-(--light-color)');
+    if (showError ? inputClasses += ' border-red-600' : inputClasses += ' border-(--light-border-color) dark:border-(--dark-border-color)');
 
     return (
         <div className="flex flex-col w-full">

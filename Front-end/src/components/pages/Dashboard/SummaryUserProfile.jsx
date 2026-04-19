@@ -7,20 +7,15 @@ export default function SummaryUserProfile() {
     const { user } = useAuth();
 
     // Default user data classes
-    const labelClasses = "font-medium text-(--dark-main-color) dark:text-(--light-color)";
-    const valueClasses = "font-normal text-(--dark-second-color) dark:text-(--dark-third-color) pl-2";
+    const labelClasses = "font-medium text-sm text-(--dark-main-color) dark:text-(--light-color)";
+    const valueClasses = "font-normal text-sm text-(--dark-second-color) dark:text-(--dark-third-color) pl-2";
 
     return (
         <ContainerItem 
             title="Info Utente"
             className="w-full"  
         >
-            {/* Link to Transactions pages */}
-            <div className="flex justify-end w-full">
-                <ViewAllLink path="/impostazioni" />
-            </div>
-
-            <div className="flex items-center justify-between p-5">
+            <div className="flex items-center justify-between py-5">
                 <div className="flex flex-col justify-center gap-4 h-full">
                     {/* Full name */}
                     <p className={labelClasses}>Nome: 
@@ -41,7 +36,7 @@ export default function SummaryUserProfile() {
                 </div>
 
                 {/* User profile image */}
-                <div className="bg-(--dark-third-color) dark:bg-gray-700 dark:border dark:border-gray-600 rounded-full size-22 flex items-center justify-center overflow-hidden">
+                <div className="bg-(--dark-third-color) dark:bg-gray-700 dark:border dark:border-gray-600 rounded-full size-20 flex items-center justify-center overflow-hidden">
                     {user.profileImage ? (
                         <img src={user.profileImage} alt="Profile image" />
                     ) : (

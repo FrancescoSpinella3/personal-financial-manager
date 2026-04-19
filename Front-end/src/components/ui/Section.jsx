@@ -27,13 +27,12 @@ export default function Section({ children, sectionTitle }) {
     }
 
     return (
-        <section className="ml-82 p-7 pt-28">
+        <section className="px-5 pb-5 md:px-7 md:pb-7 pt-28">
             <div className="flex items-center gap-3 mb-10 text-(--dark-main-color) dark:text-(--light-color) text-2xl font-semibold">
                 {/* Icon */}
                 <div className="bg-(--second-color) rounded-md p-2">
                     {sectionTitleIcon}
                 </div>
-
 
                 {/* Section Title */}
                 <h3>{sectionTitle}</h3>

@@ -2,7 +2,7 @@ import { Ban } from "lucide-react";
 import { transactions } from "../../../data/transactions";
 import Section from "../../ui/Section";
 import SubNavigation from "./SubNavigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TransactionsTable from "./TransactionsTable";
 import TransactionModal from "../../ui/Modals/TransactionModal";
 import Button from "../../ui/Button";
@@ -13,6 +13,14 @@ import FilterButton from "../../ui/FilterButton";
     const [selectedTab, setSelectedTab] = useState("all");
     const [showAddTransactionModal, setShowAddTransactionModal] = useState(false);
     const [showUpdateTransactionModal, setShowUpdateTransactionModal] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 768px)").matches);
+
+    useEffect(() => {
+        const mql = window.matchMedia("(max-width: 768px)");
+        const handler = (e) => setIsMobile(e.matches);
+        mql.addEventListener("change", handler);
+        return () => mql.removeEventListener("change", handler);
+    }, []);
 
 
     return (
@@ -28,12 +36,13 @@ import FilterButton from "../../ui/FilterButton";
 
             ) : (
                 // Transactions
-                <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) border border-(--light-border-color) dark:border-(--dark-border-color) rounded-2xl shadow-md p-5">
+                <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-2xl shadow-md p-5">
+
                     {/* Time Filter (month/year) */}
                     <div className="flex items-center justify-between mt-1 mb-8">
                         <h4 className="font-semibold text-(--dark-main-color) dark:text-(--light-color)">Tutte le transazioni</h4>
 
-                        <FilterButton />
+                        <FilterButton variant={isMobile ? "small" : "normal"} />
                     </div>
 
                     {/* Add table */}

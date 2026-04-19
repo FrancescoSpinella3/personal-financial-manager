@@ -2,7 +2,7 @@ import Button from "../ui/Button";
 
 export default function SettingsLayout({ children, title, textButton, onAction }) {
     return (
-        <div className="p-5">
+        <div>
             {/* Section title */}
             <h3 className="font-semibold text-xl text-(--main-color) underline underline-offset-8 mb-5">
                 {title}
@@ -23,8 +23,6 @@ export default function SettingsLayout({ children, title, textButton, onAction }
                     </Button>
                 </form>
             </div>
-
-
         </div>
     );
 }

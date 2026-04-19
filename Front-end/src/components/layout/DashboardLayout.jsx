@@ -8,6 +8,7 @@ import NavBar from "./NavBar";
 export default function DashboardLayout() {
     const { logout } = useAuth();
     const [showModal, setShowModal] = useState(false);
+    const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
     // Show modal
     const handleLogout = () => {
@@ -16,21 +17,21 @@ export default function DashboardLayout() {
 
 
     return (
-        <>
+        <div className="bg-(--light-navbar-color) dark:bg-(--dark-bg-dashboard) min-h-screen">
             {/* Sidebar */}
-            <SideBar />
+            <SideBar isCollapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed(!sidebarCollapsed)} />
             
             {/* Navbar */}
-            <NavBar onClick={handleLogout} />
+            <NavBar onClick={handleLogout} isCollapsed={sidebarCollapsed} />
 
             {/* Show logout modal if user want to logout */}
             <LogoutModal onLogout={logout} open={showModal} onClose={() => setShowModal(false)}/>
 
             {/* Main content */}
-            <div className="flex-1 bg-(--light-bg-dashboard) dark:bg-(--dark-bg-dashboard) min-h-screen w-full">
+            <div className={`flex-1 min-h-screen ${sidebarCollapsed ? "xl:ml-20" : "xl:ml-76"} duration-300`}>
                 <Outlet />
             </div>
-        </>
+        </div>
 
     );
 }

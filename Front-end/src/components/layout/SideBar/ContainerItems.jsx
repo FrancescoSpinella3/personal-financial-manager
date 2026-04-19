@@ -1,7 +1,7 @@
 import { ArrowRightLeft, CalendarSync, Goal, LayoutGrid, Settings, Tags } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-export default function ContainerItems() {
+export default function ContainerItems( { isCollapsed }) {
 
     // Default NavLink classes
     const defaultClasses = "flex rounded px-4 py-3 font-regular gap-3 cursor-pointer transition-all duration-50 ease-in";
@@ -16,71 +16,71 @@ export default function ContainerItems() {
     const notActiveClasses = " text-(--dark-third-color) hover:text-(--light-color) border-none"
 
     return (
-        <div className="w-full flex flex-col gap-3 py-14">
+        <div className="w-full flex flex-col gap-3 py-14 text-sm">
             {/* Dashboard link */}
             <NavLink
-                to="/panoramica"
+                to="/dashboard/panoramica"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
             >            
                 <LayoutGrid className={iconClasses} />
-                Panoramica
+                {!isCollapsed && "Panoramica"}
             </NavLink>
 
             {/* Transactions link */}
             <NavLink
-                to="/transazioni"
+                to="/dashboard/transazioni"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
             >            
                 <ArrowRightLeft className={iconClasses} />
-                Transazioni
+                {!isCollapsed && "Transazioni"}
             </NavLink>
 
             {/* Transactions link */}
             <NavLink
-                to="/abbonamenti"
+                to="/dashboard/abbonamenti"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
             >            
                 <CalendarSync className={iconClasses} />
-                Abbonamenti
+                {!isCollapsed && "Abbonamenti"}
             </NavLink>
 
             {/* Goals link */}
             <NavLink
-                to="/obiettivi"
+                to="/dashboard/obiettivi"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
             >
                 <Goal className={iconClasses} />
-                Obiettivi
+                {!isCollapsed && "Obiettivi"}
             </NavLink>
 
             {/* Goals link */}
                 <NavLink
-                    to="/categorie"
+                    to="/dashboard/categorie"
                     className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                     }
                 >
                     <Tags className={iconClasses} />
-                    Categorie
+                    {!isCollapsed && "Categorie"}
                 </NavLink>
 
             {/* Settings link */}
             <NavLink
-                to="/impostazioni"
+                to="/dashboard/impostazioni"
                 className={({ isActive }) => 
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
             >
                 <Settings className={iconClasses} />
-                Impostazioni
+                {!isCollapsed && "Impostazioni"}
             </NavLink>
         </div>
     );

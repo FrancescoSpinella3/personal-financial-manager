@@ -5,6 +5,10 @@
 
 @import "tailwindcss";
 
+@theme {
+    --breakpoint-xl: 1200px;
+}
+
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
@@ -21,13 +25,11 @@
 
     --light-color: #F0F0F0;
 
-    /* --logout-button-color: #EF3463;
-    --logout-button-hover-color: #BA2B4E; */
-
     --danger-color: #EF3463;
     --danger-hover-color: #BA2B4E;
 
     /* Light mode config */
+    --light-navbar-color: #f3f8fd;
     --light-bg-color: #F0F0F0;
     --light-bg-dashboard: #e5e7eb;
     --light-bg-bar: #f3f4f6;
@@ -39,6 +41,7 @@
     --light-bg-modal: #ffffff;
     
     /* Dark mode config */
+    --dark-navbar-color: #0f111a;
     --dark-bg-color: #0f111a;
     --dark-bg-bar: #141824;
     --dark-bg-dashboard: #0f111a;
@@ -48,16 +51,6 @@
     --dark-bg-input: #1c1e2e;
     --dark-bg-table-head: #131622;
     --dark-bg-modal: #1b1c24;
-
-
-
-    /* --bg-dark-bar: #141824;
-    --bg-dark-dashboard: #0f111a;
-    --bg-dark-container: #151821;
-    --border-dark: #333547;
-    --bg-dark-input: #1c1e2e;
-    --bg-dark-table-head: #131622;
-    --bg-dark-modal: #1b1c24; */
 }
 
 html {

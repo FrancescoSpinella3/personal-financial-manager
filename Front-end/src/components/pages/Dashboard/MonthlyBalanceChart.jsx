@@ -27,6 +27,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     if (!active || !payload?.length) return null;
     return (
         <div className="bg-(--light-bg-container) border border-(--light-border-color) rounded-md p-3 shadow-md text-sm">
+            
             <p className="font-semibold mb-1">{label}</p>
             {payload.map((entry) => (
                 <p key={entry.name} style={{ color: entry.color }}>
@@ -46,9 +47,9 @@ export default function MonthlyBalanceChart() {
             <h4 className="text-xl font-medium text-(--dark-second-color) dark:text-(--light-color) mb-3">
                 Riepilogo {currentYear}
             </h4>
-            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md border border-(--light-border-color) dark:border-(--dark-border-color) shadow-md min-w-0">
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md shadow-md min-w-0">
                 <ResponsiveContainer width="100%" height={220}>
-                    <BarChart data={data} barSize={12} barCategoryGap="30%" barGap={3}>
+                    <BarChart data={data} barSize={12} barCategoryGap="30%" barGap={3} margin={{ left: -15 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#D1D1D1" vertical={false} />
                         <XAxis
                             dataKey="month"
@@ -57,6 +58,7 @@ export default function MonthlyBalanceChart() {
                             tickLine={false}
                         />
                         <YAxis
+                            width={45}
                             tick={{ fontSize: 11, fill: "#939393" }}
                             axisLine={false}
                             tickLine={false}

@@ -1,30 +1,37 @@
 import { Link } from "react-router-dom";
 import Button from "../ui/Button";
 import ThemeButton from "../ui/ThemeButton";
-import { HandCoins } from "lucide-react";
+
+import FinestLogo from "../../../public/finest-logo.png"
 
 export default function Home() {
     return(
-        <div className="bg-(--light-bg-color) dark:bg-(--dark-bg-color)">
-            <header className="h-16 p-5 flex justify-end mb-22">
+        <div className="bg-(--light-bg-color) dark:bg-(--dark-bg-color) min-h-screen flex flex-col gap-8 md:gap-16">
+            <header className="h-16 p-5 flex justify-end">
                 <ThemeButton />
             </header>
 
-            <main className="min-h-screen mx-auto flex flex-col items-center justify-start text-center p-10 gap-10">
-                <span className="text-2xl text-(--dark-third-color)">Benvenuto in</span>
-                
-                {/* App logo */}
-                <h1 className="text-(--main-color) text-7xl font-extrabold">
-                    <span className="font-extralight">my</span>Finance     
-                </h1>
+            <main className="mx-auto flex flex-col items-center justify-center text-center p-5 gap-10">
+                <span className="text-xl md:text-2xl text-(--dark-third-color)">Benvenuto in</span>
+                {/* Logo */}
+                <div className="flex items-center gap-5">
+                    <img 
+                        src={FinestLogo} alt="Finest Logo"
+                        className="h-16"
+                    />
+                    <h1 className="text-(--main-color) text-5xl md:text-7xl font-extrabold">
+                        Finest    
+                    </h1>
+                </div>
 
-                <h2 className="text-(--dark-main-color) dark:text-(--light-color) text-5xl font-bold flex items-center gap-5">
-                    Dashboard per la gestione finanziaria 
-                    <HandCoins className="size-16 text-(--main-color) stroke-[1.5]" />
-                </h2>
+                <div className="flex items-center gap-5">
+                    <h2 className="text-(--dark-main-color) dark:text-(--light-color) text-3xl md:text-5xl font-bold">
+                        Dashboard per la gestione finanziaria 
+                    </h2>
+                </div>
 
                 <div className="flex flex-col items-center max-w-4xl gap-10">
-                    <p className="text-xl text-(--dark-second-color) dark:text-(--dark-fourth-color)">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
+                    <p className="text-base md:text-xl text-(--dark-second-color) dark:text-(--dark-fourth-color)">Inizia a tracciare il tuo reddito, le tue spese, i tuoi risparmi e imposta i tuoi obiettivi mensili e annuali, 
                         per avere un quadro completo della tua situazione finanziaria.
                     </p>
 

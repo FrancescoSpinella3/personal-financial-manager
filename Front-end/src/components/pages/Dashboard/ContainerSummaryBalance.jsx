@@ -13,8 +13,8 @@ export default function ContainerSummaryBalance({ icon, amount, categoryTotal })
     }
 
     return (
-        <div >
-            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) border border-(--light-border-color) dark:border-(--dark-border-color) p-5 rounded-md shadow-md flex flex-col items-start justify-between min-h-46 w-82">
+        <div className="flex-1">
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md shadow-md flex flex-col items-start justify-between min-h-46 w-full">
                 <div className="flex items-center justify-between w-full">
                     {/* Icon */}
                     <div className={iconClasses}>
@@ -22,11 +22,11 @@ export default function ContainerSummaryBalance({ icon, amount, categoryTotal })
                     </div>
 
                     {/* Filter button */}
-                    <FilterButton />
+                    <FilterButton variant="small" />
                 </div>
 
                 {/* Amount */}
-                <p className="text-3xl font-semibold text-(--dark-main-color) dark:text-(--light-color)">{currencyFormatter.format(amount)}</p>
+                <p className="text-2xl xl:break-all font-semibold text-(--dark-main-color) dark:text-(--light-color)">{currencyFormatter.format(amount)}</p>
 
                 {/* Summary category  */}
                 <p className="text-(--dark-second-color) dark:text-(--dark-fourth-color) text-sm">{categoryTotal}</p>

@@ -12,11 +12,6 @@ export default function SummarySubscriptions() {
             title="Abbonamenti"
             className="w-full"
         >   
-            <div className="flex justify-end w-full">
-                {/* Link to Transactions pages */}
-                <ViewAllLink path="/abbonamenti" />
-            </div>
-
             <div className="h-full">
                 {subscriptions.length === 0 && (
                     <div className="flex flex-col h-full items-center justify-center gap-3 text-(--dark-third-color)">
@@ -35,13 +30,13 @@ export default function SummarySubscriptions() {
 
                         return (
                             <li key={subscription.id}>
-                                <div className="flex items-center justify-between text-sm text-center text-(--dark-main-color) dark:text-(--light-color) py-4">
+                                <div className="flex items-center justify-between text-xs md:text-sm text-center text-(--dark-main-color) dark:text-(--light-color) py-4">
                                     <div className="flex flex-col items-center justify-center bg-gray-200 dark:bg-gray-800 w-14 p-2 rounded-md">
                                         <span className="font-bold text-lg">{day}</span>
                                         <span className="font-normal text-(--dark-third-color)">{month}</span>
                                     </div>
                                     
-                                    <div className="text-start font-medium w-48">
+                                    <div className="text-center font-medium w-48">
                                         <p>{subscription.description}</p>
                                         <p className="text-xs text-(--dark-third-color)">Ultimo rinnovo: {subscription.lastRenewal}</p>
                                     </div>

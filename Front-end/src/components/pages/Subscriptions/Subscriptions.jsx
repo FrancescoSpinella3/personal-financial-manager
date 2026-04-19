@@ -4,11 +4,19 @@ import { Ban, Plus } from "lucide-react";
 import SubscriptionsTable from "./SubscriptionsTable";
 import Button from "../../ui/Button";
 import SubscriptionModal from "../../ui/Modals/SubscriptionModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Subscriptions() {
     const [showAddSubscriptionModal, setShowAddSubscriptionModal] = useState(false);
     const [showUpdateSubscriptionModal, setShowUpdateSubscriptionModal] = useState(false);
+        const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 768px)").matches);
+    
+        useEffect(() => {
+            const mql = window.matchMedia("(max-width: 768px)");
+            const handler = (e) => setIsMobile(e.matches);
+            mql.addEventListener("change", handler);
+            return () => mql.removeEventListener("change", handler);
+        }, []);
 
     return (
         <Section sectionTitle="Abbonamenti">
@@ -24,7 +32,7 @@ export default function Subscriptions() {
                         <Button
                             variant="primary"
                             size="sm"
-                            className="gap-2"
+                            className={`gap-2 ${isMobile ? "w-full" : undefined}`}
                             onClick={() => setShowAddSubscriptionModal(true)}
                         >
                             <Plus className="size-4" />
@@ -32,7 +40,7 @@ export default function Subscriptions() {
                         </Button>
                     </div>
                     {/* Subscriptions */}
-                    <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) border border-(--light-border-color) dark:border-(--dark-border-color) rounded-2xl shadow-md p-5">
+                    <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-2xl shadow-md p-5">
                         <SubscriptionsTable onUpdate={() => setShowUpdateSubscriptionModal(true)} />
                     </div>
                 </>
@@ -59,7 +67,6 @@ export default function Subscriptions() {
                     onClose={() => setShowUpdateSubscriptionModal(false)}
                 />
             )}
-
         </Section>
     );
 }

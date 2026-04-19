@@ -40,13 +40,13 @@ export default function GoalsChart() {
     const { goalData, currentData } = buildChartData();
 
     return (
-        <div className="grid grid-cols-2 gap-5 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
             {/* Pie Obiettivi */}
-            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md border border-(--light-border-color) dark:border-(--dark-border-color) shadow-md">
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md shadow-md">
                 <p className="font-medium text-(--dark-main-color) dark:text-(--light-color) mb-3 text-center">Il mio obiettivo</p>
                 <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
-                        <Pie data={goalData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false} stroke={false}>
+                        <Pie data={goalData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false} stroke={0}>
                             {goalData.map((_, i) => <Cell key={i} fill={COLORS_GOAL[i]} />)}
                         </Pie>
                         <Tooltip content={<CustomTooltip />} />
@@ -59,11 +59,11 @@ export default function GoalsChart() {
             </div>
 
             {/* Pie Valore Corrente */}
-            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md border border-(--light-border-color) dark:border-(--dark-border-color) shadow-md">
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md shadow-md">
                 <p className="font-medium text-(--dark-main-color) dark:text-(--light-color) mb-3 text-center">Valore attuale</p>
                 <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
-                        <Pie data={currentData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false} stroke={false}>
+                        <Pie data={currentData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={55} outerRadius={100} label={renderLabel} labelLine={false} stroke={0}>
                             {currentData.map((_, i) => <Cell key={i} fill={COLORS_CURRENT[i]} />)}
                         </Pie>
                         <Tooltip content={<CustomTooltip />} />
