@@ -43,8 +43,8 @@ export default function Modal({
     const modalClasses = `${defaultModalClasses} ${className} ${sizes[size]}`
 
     return createPortal(
-        <dialog 
-            ref={dialog} 
+        <dialog
+            ref={dialog}
             onClick={onClose}
             className="fixed inset-0 z-50 top-5 left-8/18 rounded-xl"
         >

@@ -42,7 +42,7 @@ export default function SideBar({ isCollapsed, onToggle }) {
                 <ContainerItems isCollapsed={isCollapsed} />
 
                 {/* User profile */}
-                <User isCollapsed={isCollapsed} />
+                <User isCollapsed={isCollapsed} className="mt-auto" />
             </div>
         </div>
     );

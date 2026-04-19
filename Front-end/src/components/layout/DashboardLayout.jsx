@@ -4,6 +4,7 @@ import LogoutModal from "../ui/Modals/LogoutModal";
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import NavBar from "./NavBar";
+import MobileSideBar from "./Mobile_SideBar/MobileSideBar";
 
 export default function DashboardLayout() {
     const { logout } = useAuth();
@@ -20,6 +21,9 @@ export default function DashboardLayout() {
         <div className="bg-(--light-navbar-color) dark:bg-(--dark-bg-dashboard) min-h-screen">
             {/* Sidebar */}
             <SideBar isCollapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed(!sidebarCollapsed)} />
+            
+            {/* Mobile Sidebar */}   
+            {/* <MobileSideBar /> */}
             
             {/* Navbar */}
             <NavBar onClick={handleLogout} isCollapsed={sidebarCollapsed} />

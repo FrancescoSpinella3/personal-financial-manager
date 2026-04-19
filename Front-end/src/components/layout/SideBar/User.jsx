@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import { UserRound } from "lucide-react";
 
-export default function User({ isCollapsed }) {
+export default function User({ isCollapsed, className }) {
     const { user } = useAuth();
 
     return (
-        <div className="w-full flex items-center pt-7 border-t border-(--dark-border-color) mt-auto">
+        <div className={`w-full flex items-center pt-7 border-t border-(--dark-border-color) ${className}`} >
             <div className={`w-full flex items-center ${isCollapsed ? "justify-center" : "justify-start"} `}>
                 {/* User image */}
                 <Link to="/dashboard/impostazioni"
