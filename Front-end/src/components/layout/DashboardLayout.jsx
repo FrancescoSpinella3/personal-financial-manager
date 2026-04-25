@@ -18,12 +18,12 @@ export default function DashboardLayout() {
 
 
     return (
-        <div className="bg-(--light-navbar-color) dark:bg-(--dark-bg-dashboard) min-h-screen">
+        <div className="bg-(--light-bg-main-color) dark:bg-(--dark-bg-dashboard) min-h-screen">
             {/* Sidebar */}
             <SideBar isCollapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed(!sidebarCollapsed)} />
             
             {/* Mobile Sidebar */}   
-            {/* <MobileSideBar /> */}
+            {/* <MobileSideBar onClick={handleLogout} /> */}
             
             {/* Navbar */}
             <NavBar onClick={handleLogout} isCollapsed={sidebarCollapsed} />

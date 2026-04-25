@@ -4,19 +4,19 @@ import { NavLink } from "react-router-dom";
 export default function ContainerItems( { isCollapsed }) {
 
     // Default NavLink classes
-    const defaultClasses = "flex rounded px-4 py-3 font-regular gap-3 cursor-pointer transition-all duration-50 ease-in";
+    const defaultClasses = "flex items-center rounded-xl px-4 py-2.5 font-regular gap-3 cursor-pointer transition-all duration-50 ease-in";
 
     // Icon classe
-    const iconClasses = "stroke-[1.5]"
+    const iconClasses = "stroke-[1.5] size-5"
 
     // Active link classes
-    const activeClasses = " bg-gray-800/75 text-(--second-color) border-l-3 border-(--second-color)"
+    const activeClasses = " bg-blue-800/50 text-(--third-color) border-l-3 border-(--second-color)"
     
     // Not active link classes
     const notActiveClasses = " text-(--dark-third-color) hover:text-(--light-color) border-none"
 
     return (
-        <div className="w-full flex flex-col gap-3 py-14 text-sm">
+        <div className="w-full flex flex-col gap-2 py-14 text-sm">
             {/* Dashboard link */}
             <NavLink
                 to="/dashboard/panoramica"

@@ -24,7 +24,7 @@ export default function Modal({
     }, [open]);
 
     // Default classes
-    const defaultModalClasses = "relative flex flex-col items-center rounded-xl z-50 p-5 shadow-md bg-(--light-bg-modal) dark:bg-(--dark-bg-modal) overflow-hidden";
+    const defaultModalClasses = "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center rounded-xl z-[60] p-5 shadow-md bg-(--light-bg-modal) dark:bg-(--dark-bg-modal) overflow-hidden";
 
     const variants = {
         success: { iconBg: 'bg-green-400', iconBorder: 'border-green-400', Icon: Check },
@@ -34,10 +34,11 @@ export default function Modal({
     }
 
     const sizes = {
-        sm: 'w-sm',
-        md: 'w-md',
-        lg: 'w-lg',
+        sm: 'w-[90vw] sm:w-sm',
+        md: 'w-[90vw] sm:w-md',
+        lg: 'w-[90vw] sm:w-lg',
     }
+
 
     const chosen = variants[variant] || variants.success;
     const modalClasses = `${defaultModalClasses} ${className} ${sizes[size]}`
@@ -46,7 +47,7 @@ export default function Modal({
         <dialog
             ref={dialog}
             onClick={onClose}
-            className="fixed inset-0 z-50 top-5 left-8/18 rounded-xl"
+            className="fixed inset-0 z-50"
         >
             <div className="fixed inset-0 bg-black/50" />
             

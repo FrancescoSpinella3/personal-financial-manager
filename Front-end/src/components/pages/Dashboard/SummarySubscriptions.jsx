@@ -9,8 +9,10 @@ import ViewAllLink from "../../ui/ViewAllLink";
 export default function SummarySubscriptions() {
     return (
         <ContainerItem
-            title="Abbonamenti"
+            subText="ABBONAMENTI"
+            title="Ultimi Rinnovi"
             className="w-full"
+            link="/dashboard/abbonamenti"
         >   
             <div className="h-full">
                 {subscriptions.length === 0 && (

@@ -11,9 +11,11 @@ export default function SummaryUserProfile() {
     const valueClasses = "font-normal text-sm text-(--dark-second-color) dark:text-(--dark-third-color) pl-2";
 
     return (
-        <ContainerItem 
-            title="Info Utente"
+        <ContainerItem
+        subText="UTENTE" 
+            title="Informazioni"
             className="w-full"  
+            link="/dashboard/impostazioni"
         >
             <div className="flex items-center justify-between py-5">
                 <div className="flex flex-col justify-center gap-4 h-full">

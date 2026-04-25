@@ -5,7 +5,7 @@ import FinestLogo from "../../../../public/finest-logo.png"
 
 export default function SideBar({ isCollapsed, onToggle }) {
     
-    let sidebarDefaultClasses = "px-3 py-7 bg-(--dark-bg-bar) fixed top-0 left-0 h-screen z-40 border-r border-(--light-border-color) dark:border-(--dark-border-color) duration-300 hidden xl:block";
+    let sidebarDefaultClasses = "px-3 py-7 bg-(--light-bg-bar) dark:bg-(--dark-bg-bar) fixed top-0 left-0 h-screen z-40 border-r border-(--light-border-color) dark:border-(--dark-border-color) duration-300 hidden xl:block";
     sidebarDefaultClasses += isCollapsed ? " w-20" : " w-76";
 
     return (
@@ -28,7 +28,7 @@ export default function SideBar({ isCollapsed, onToggle }) {
                                 src={FinestLogo} alt="Finest Logo"
                                 className="h-7"
                             />                            
-                            <h1 className="text-(--light-color) text-2xl font-extrabold">
+                            <h1 className="text-(--dark-main-color) dark:text-(--light-color) text-2xl font-extrabold">
                                 Finest    
                             </h1>
                         </div>

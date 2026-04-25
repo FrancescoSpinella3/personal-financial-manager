@@ -10,7 +10,7 @@ export default function TransactionModal({ onShow, onClose, title, subText, text
             subText={subText}
             textButton={textButton}
         >
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Input 
                     label="Info" 
                     id="info"
@@ -43,7 +43,7 @@ export default function TransactionModal({ onShow, onClose, title, subText, text
                     id="amount"
                     name="amount"
                 />
-                <div className="col-span-2">
+                <div className="sm:col-span-2">
                     <Input 
                         label="Descrizione" 
                         type="text" 

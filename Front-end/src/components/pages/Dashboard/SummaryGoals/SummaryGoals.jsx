@@ -7,14 +7,11 @@ import ViewAllLink from "../../../ui/ViewAllLink";
 export default function SummaryGoals() {
     return (
         <ContainerItem
-            title="Obiettivi"
+        subText="OBIETTIVI"
+            title="In corso"
             className="w-full"
+            link="/dashboard/obiettivi"
         >
-            <div className="flex items-start justify-between mb-2">
-                {/* Filter button */}
-                <FilterButton variant="small" />
-            </div>
-
             {/* Statistics goals */}
             <div className="flex flex-col items-center justify-between">
                 {/* Chart */}

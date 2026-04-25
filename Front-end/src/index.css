@@ -28,12 +28,12 @@
     --danger-color: #EF3463;
     --danger-hover-color: #BA2B4E;
 
-    /* Light mode config */
-    --light-navbar-color: #f3f8fd;
+    /* Light mode config */ 
+    --light-bg-main-color: #fbfaf7;
     --light-bg-color: #F0F0F0;
     --light-bg-dashboard: #e5e7eb;
-    --light-bg-bar: #f3f4f6;
-    --light-border-color: #c8d2d2;
+    --light-bg-bar: #fff;
+    --light-border-color: #e1e1df;
     --light-bg-input: #f9fafb;
     --light-bg-container: #ffffff;
     --light-bg-category-card: #ffffff;
@@ -41,7 +41,6 @@
     --light-bg-modal: #ffffff;
     
     /* Dark mode config */
-    --dark-navbar-color: #0f111a;
     --dark-bg-color: #0f111a;
     --dark-bg-bar: #141824;
     --dark-bg-dashboard: #0f111a;

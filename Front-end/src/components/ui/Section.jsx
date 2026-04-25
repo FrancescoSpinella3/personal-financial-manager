@@ -5,9 +5,6 @@ export default function Section({ children, sectionTitle }) {
     const iconClasses = 'size-6 text-(--light-color)'
 
     switch (sectionTitle) {
-        case "Panoramica":
-            sectionTitleIcon = <LayoutGrid className={iconClasses} />;
-            break;
         case "Transazioni":
             sectionTitleIcon = <ArrowRightLeft className={iconClasses} />;
             break; 
