@@ -14,8 +14,7 @@ export default function SummaryGoal({ userGoal, currentValue, categoryName }) {
     }
 
     return (
-        // <div className="h-64 flex flex-col items-center justify-between bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md border border-(--light-border-color) dark:border-(--dark-border-color) shadow-md">
-        <div className="h-64 flex flex-col items-center justify-between bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md shadow-md">
+        <div className="h-64 flex flex-col items-center justify-between bg-(--light-bg-container) dark:bg-(--dark-bg-container) border border-(--light-border-color) dark:border-(--dark-border-color) p-5 rounded-2xl">
 
             <p className="font-medium text-(--dark-main-color) dark:text-(--light-color)">Valore attuale</p>
             <p className="text-4xl font-semibold text-(--dark-main-color) dark:text-(--light-color)">{currencyFormatter.format(currentValue)}</p>

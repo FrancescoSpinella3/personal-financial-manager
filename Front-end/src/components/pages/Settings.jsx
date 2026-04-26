@@ -155,10 +155,9 @@ export default function Settings() {
 
     return (
         <Section sectionTitle="Gestione Account">
-            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-2xl shadow-md p-8">
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-2xl border border-(--light-border-color) dark:border-(--dark-border-color) p-8">
                 <div className="flex justify-center">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-60">
-
                         {/* Account */}
                         <SettingsLayout title="Profilo" textButton={loading ? <Loader2 /> : 'Aggiorna profilo'} onAction={handleUpdateProfile}>
                             <div className="space-y-4 mb-10">

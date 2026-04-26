@@ -6,8 +6,7 @@ export default function ItemGoal({ name, value, icon, onUpdate }) {
     const IconComponent = icons[icon];
 
     return (
-        // <div className="flex justify-between p-7 shadow-md bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-lg border border-(--light-border-color) dark:border-(--dark-border-color)">
-        <div className="flex justify-between p-7 shadow-md bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-lg">
+        <div className="flex justify-between p-5 bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-2xl border border-(--light-border-color) dark:border-(--dark-border-color)">
             <div className="flex items-center gap-5">
                 {/* Icon */}
                 <div className="bg-blue-200 p-2 rounded-md">

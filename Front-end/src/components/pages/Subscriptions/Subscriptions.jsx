@@ -40,7 +40,7 @@ export default function Subscriptions() {
                         </Button>
                     </div>
                     {/* Subscriptions */}
-                    <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-2xl shadow-md p-5">
+                    <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) border border-(--light-border-color) dark:border-(--dark-border-color) rounded-2xl p-5">
                         <SubscriptionsTable onUpdate={() => setShowUpdateSubscriptionModal(true)} />
                     </div>
                 </>

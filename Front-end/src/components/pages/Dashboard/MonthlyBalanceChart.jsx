@@ -52,7 +52,7 @@ export default function MonthlyBalanceChart() {
     const gridColor = theme === "light" ? "#e5e7eb" : "#374151";
 
     return (
-        <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md border border-(--light-border-color) dark:border-(--dark-border-color) min-w-0">
+        <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-lg border border-(--light-border-color) dark:border-(--dark-border-color) min-w-0">
             <p className="text-sm text-(--dark-third-color)">FLUSSO ANNUALE</p>
             <h4 className="mb-4 text-2xl font-semibold text-(--dark-main-color) dark:text-(--light-color)">{currentYear}</h4>
 

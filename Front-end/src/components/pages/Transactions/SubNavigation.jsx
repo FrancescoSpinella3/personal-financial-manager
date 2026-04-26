@@ -12,14 +12,14 @@ export default function SubNavigation({ selectedTabId, onSelectTab, onAdd }) {
 
     return (
         <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between mb-7">
-            <ul className="flex gap-5">
+            <ul className="flex items-center bg-(--light-bg-table-head) dark:bg-(--dark-bg-table-head) border border-(--light-border-color) dark:border-(--dark-border-color) p-1.5 rounded-lg">
                 {tabs.map(tab => {
                     // Default classes
-                    let cssClasses = "cursor-pointer hover:text-(--main-color) duration-100 ease-in text-sm md:text-base";
+                    let cssClasses = "py-1 px-3 cursor-pointer hover:text-(--dark-main-color) dark:hover:text-white transition-transform duration-100 font-medium ease-in text-sm md:text-sm";
 
                     // Active tab classes
                     if (tab.id === selectedTabId) {
-                        cssClasses += " text-(--main-color) underline decoration-3 underline-offset-14 decoration-(--main-color)";
+                        cssClasses += " bg-white dark:bg-(--dark-bg-input) text-(--dark-main-color) dark:text-white border border-(--light-border-color) dark:border-(--dark-border-color) rounded-md";
                     // Not active tab classes
                     } else {
                         cssClasses += " text-(--dark-second-color) dark:text-(--dark-fourth-color)";

@@ -26,7 +26,7 @@ export default function Input({
 
     // Default classes for label and input
     let labelClasses = "font-medium text-sm mb-1.5";
-    let inputClasses = "p-2 border rounded-md bg-(--light-bg-input) dark:bg-(--dark-bg-input) focus:outline-(--second-color) w-full text-[0.9em] placeholder:text-(--dark-third-color) dark:text-(--dark-fourth-color)";
+    let inputClasses = "p-2 border rounded-lg bg-(--light-bg-input) dark:bg-(--dark-bg-input) focus:outline-(--second-color) w-full text-[0.9em] placeholder:text-(--dark-third-color) dark:text-(--dark-fourth-color)";
     
     // Add classes if input type is password
     if (isPassword) inputClasses += ' pr-10';

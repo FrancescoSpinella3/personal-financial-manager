@@ -7,7 +7,7 @@ import FinestLogo from "../../../public/finest-logo.png"
 export default function Home() {
     return(
         <div className="bg-(--light-bg-color) dark:bg-(--dark-bg-color) min-h-screen flex flex-col gap-8 md:gap-16">
-            <header className="h-16 p-5 flex justify-end">
+            <header className="h-18 p-5 flex justify-end">
                 <ThemeButton />
             </header>
 

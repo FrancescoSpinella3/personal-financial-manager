@@ -2,7 +2,7 @@ import { currencyFormatter } from "../../../util/currencyFormatter";
 import FilterButton from "../../ui/FilterButton";
 
 export default function ContainerSummaryBalance({ amount, categoryTotal, className }) {
-    let divClasses = "w-1 h-5 rounded-md";
+    let divClasses = "w-1 h-5 rounded-lg";
 
     if (categoryTotal === "Entrate Totali") {
         divClasses += " bg-indigo-700";
@@ -14,7 +14,7 @@ export default function ContainerSummaryBalance({ amount, categoryTotal, classNa
 
     return (
         <div className="flex-1">
-            <div className={`bg-(--light-bg-container) dark:bg-(--dark-bg-container) flex flex-col items-start ${className}`}>
+            <div className={`p-5 flex flex-col items-start ${className}`}>
                 {/* Summary category  */}
                 <p className="text-(--dark-third-color) dark:text-(--dark-fourth-color) text-xs">{categoryTotal}</p>
                 

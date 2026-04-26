@@ -42,7 +42,7 @@ export default function GoalsChart() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
             {/* Pie Obiettivi */}
-            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md shadow-md">
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-2xl border border-(--light-border-color) dark:border-(--dark-border-color)">
                 <p className="font-medium text-(--dark-main-color) dark:text-(--light-color) mb-3 text-center">Il mio obiettivo</p>
                 <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
@@ -59,7 +59,7 @@ export default function GoalsChart() {
             </div>
 
             {/* Pie Valore Corrente */}
-            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-md shadow-md">
+            <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) p-5 rounded-2xl border border-(--light-border-color) dark:border-(--dark-border-color)">
                 <p className="font-medium text-(--dark-main-color) dark:text-(--light-color) mb-3 text-center">Valore attuale</p>
                 <ResponsiveContainer width="100%" height={300}>
                     <PieChart>

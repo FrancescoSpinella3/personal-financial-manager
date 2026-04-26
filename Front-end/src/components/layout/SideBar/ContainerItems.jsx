@@ -1,28 +1,35 @@
-import { ArrowRightLeft, CalendarSync, Goal, LayoutGrid, Settings, Tags } from "lucide-react";
+import { ArrowRightLeft, Goal, LayoutGrid, RefreshCw, Settings, Tags } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-export default function ContainerItems( { isCollapsed }) {
+export default function ContainerItems({ isCollapsed, onClose }) {
 
-    // Default NavLink classes
-    const defaultClasses = "flex items-center rounded-xl px-4 py-2.5 font-regular gap-3 cursor-pointer transition-all duration-50 ease-in";
+    // Default link classes
+    let defaultClasses = "flex items-center rounded-xl py-2.5 font-medium gap-3 cursor-pointer transition-all duration-50 ease-in";
+
+    if (isCollapsed) {
+        defaultClasses += " px-3 w-fit justify-center"
+    } else {
+        defaultClasses += " px-4"
+    }
 
     // Icon classe
-    const iconClasses = "stroke-[1.5] size-5"
+    const iconClasses = "stroke-[2.1] size-5"
 
     // Active link classes
-    const activeClasses = " bg-blue-800/50 text-(--third-color) border-l-3 border-(--second-color)"
+    const activeClasses = " bg-blue-700/20  text-(--fourth-color) dark:text-(--third-color)"
     
     // Not active link classes
-    const notActiveClasses = " text-(--dark-third-color) hover:text-(--light-color) border-none"
+    const notActiveClasses = " text-(--dark-second-color) dark:text-(--dark-third-color) hover:text-(--fourth-color) dark:hover:text-(--light-color) border-none"
 
     return (
-        <div className="w-full flex flex-col gap-2 py-14 text-sm">
+        <div className={`w-full flex flex-col gap-2 py-14 text-sm ${isCollapsed ? " items-center" : undefined}`}>
             {/* Dashboard link */}
             <NavLink
                 to="/dashboard/panoramica"
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
+                onClick={onClose}
             >            
                 <LayoutGrid className={iconClasses} />
                 {!isCollapsed && "Panoramica"}
@@ -31,9 +38,10 @@ export default function ContainerItems( { isCollapsed }) {
             {/* Transactions link */}
             <NavLink
                 to="/dashboard/transazioni"
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
+                onClick={onClose}
             >            
                 <ArrowRightLeft className={iconClasses} />
                 {!isCollapsed && "Transazioni"}
@@ -42,20 +50,22 @@ export default function ContainerItems( { isCollapsed }) {
             {/* Transactions link */}
             <NavLink
                 to="/dashboard/abbonamenti"
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
+                onClick={onClose}
             >            
-                <CalendarSync className={iconClasses} />
+                <RefreshCw className={iconClasses} />
                 {!isCollapsed && "Abbonamenti"}
             </NavLink>
 
             {/* Goals link */}
             <NavLink
                 to="/dashboard/obiettivi"
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
+                onClick={onClose}
             >
                 <Goal className={iconClasses} />
                 {!isCollapsed && "Obiettivi"}
@@ -64,9 +74,10 @@ export default function ContainerItems( { isCollapsed }) {
             {/* Goals link */}
                 <NavLink
                     to="/dashboard/categorie"
-                    className={({ isActive }) => 
-                    isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
+                    className={({ isActive }) =>
+                        isActive ? `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                     }
+                    onClick={onClose}
                 >
                     <Tags className={iconClasses} />
                     {!isCollapsed && "Categorie"}
@@ -75,9 +86,10 @@ export default function ContainerItems( { isCollapsed }) {
             {/* Settings link */}
             <NavLink
                 to="/dashboard/impostazioni"
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                     isActive ?  `${defaultClasses + activeClasses}` : `${defaultClasses + notActiveClasses}`
                 }
+                onClick={onClose}
             >
                 <Settings className={iconClasses} />
                 {!isCollapsed && "Impostazioni"}

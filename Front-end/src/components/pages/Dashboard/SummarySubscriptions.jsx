@@ -33,7 +33,7 @@ export default function SummarySubscriptions() {
                         return (
                             <li key={subscription.id}>
                                 <div className="flex items-center justify-between text-xs md:text-sm text-center text-(--dark-main-color) dark:text-(--light-color) py-4">
-                                    <div className="flex flex-col items-center justify-center bg-gray-200 dark:bg-gray-800 w-14 p-2 rounded-md">
+                                    <div className="flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-800 w-14 p-2 rounded-md">
                                         <span className="font-bold text-lg">{day}</span>
                                         <span className="font-normal text-(--dark-third-color)">{month}</span>
                                     </div>

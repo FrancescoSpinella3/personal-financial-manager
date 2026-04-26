@@ -1,4 +1,4 @@
-import { Ban } from "lucide-react";
+import { Ban, ChevronDown } from "lucide-react";
 import { transactions } from "../../../data/transactions";
 import Section from "../../ui/Section";
 import SubNavigation from "./SubNavigation";
@@ -36,7 +36,7 @@ import FilterButton from "../../ui/FilterButton";
 
             ) : (
                 // Transactions
-                <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) rounded-2xl shadow-md p-5">
+                <div className="bg-(--light-bg-container) dark:bg-(--dark-bg-container) border border-(--light-border-color) dark:border-(--dark-border-color) rounded-2xl p-5">
 
                     {/* Time Filter (month/year) */}
                     <div className="flex items-center justify-between mt-1 mb-8">
@@ -51,10 +51,11 @@ import FilterButton from "../../ui/FilterButton";
                     {/* Load more transactions button */}
                     <div className="flex justify-center mt-4">
                         <Button
-                            variant="primary"
+                            variant="border"
                             size="s"
                         >
-                            Mostra più transazioni
+                            Mostra di più
+                            <ChevronDown className="size-5 ml-2" />
                         </Button>
                     </div>
                 </div>

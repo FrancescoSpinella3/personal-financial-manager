@@ -6,6 +6,7 @@ import { transactions } from "../../../data/transactions";
 // import { categories } from "../../../data/categories";
 import { currencyFormatter } from "../../../util/currencyFormatter";
 import ViewAllLink from "../../ui/ViewAllLink";
+import { categories } from "../../../data/categories";
 
 
 export default function SummaryTransactions() {
@@ -34,9 +35,35 @@ export default function SummaryTransactions() {
                             month: 'short',
                         }).format(dateObj);
 
+                        let iconClasses = "text-(--dark-main-color) p-2 rounded-md"
+                        if (transaction.category === 'incomes') {
+                            iconClasses += ' bg-indigo-100 text-indigo-700'
+                        } else if (transaction.category === 'expences') {
+                            iconClasses += ' bg-red-100 text-red-700'
+                        } else if (transaction.category === 'saves') {
+                            iconClasses += ' bg-green-100 text-green-700'
+                        }
+
                         return <li key={transaction.id}>
                             {/* Container transaction */}
                             <div className="flex items-center justify-between px-2 py-4 text-xs md:text-sm text-(--dark-main-color) dark:text-(--light-color)">
+                                {/* Find categoty icon */}
+                                <div className="flex items-center mr-3">
+                                    {(() => {
+                                        // Find the category
+                                        const category = categories.find(c => c.name === transaction.info);
+                                        // if category exist, set and return the icon, otherwise, return null
+                                        if (category) {
+                                            const Icon = LucideIcons[category.icon];
+                                            return Icon 
+                                            ?   <div className={iconClasses}>
+                                                    <Icon className="size-4" />
+                                                </div>
+                                            : null;
+                                        }
+                                        return null;
+                                    })()}
+                                </div>
                                 <div className="flex items-center gap-3 w-32">
                                     {/* Transaction info */}
                                     <p className="font-medium">{transaction.info}</p>
@@ -45,7 +72,9 @@ export default function SummaryTransactions() {
                                 {/* Date */}
                                 <p className="w-28 text-center text-(--dark-second-color) dark:text-(--dark-fourth-color)">{formattedDate}</p>
                                 {/* Amount */}
-                                <p className="font-medium w-28 text-end">{currencyFormatter.format(transaction.amount)}</p>
+                                <p className={`font-medium w-28 text-end ${transaction.category === "expences" ? "text-(--danger-color)" : undefined }`}>
+                                    {currencyFormatter.format(transaction.amount)}
+                                </p>
                             </div>
                         </li>
                     })}

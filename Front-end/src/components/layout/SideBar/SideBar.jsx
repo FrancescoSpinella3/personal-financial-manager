@@ -1,12 +1,12 @@
-import BurgerButton from "../../ui/BurgerButton";
 import ContainerItems from "./ContainerItems";
 import User from "./User";
 import FinestLogo from "../../../../public/finest-logo.png"
 
-export default function SideBar({ isCollapsed, onToggle }) {
+export default function SideBar({ isCollapsed }) {
     
+    // Default sidebr classes
     let sidebarDefaultClasses = "px-3 py-7 bg-(--light-bg-bar) dark:bg-(--dark-bg-bar) fixed top-0 left-0 h-screen z-40 border-r border-(--light-border-color) dark:border-(--dark-border-color) duration-300 hidden xl:block";
-    sidebarDefaultClasses += isCollapsed ? " w-20" : " w-76";
+    sidebarDefaultClasses += isCollapsed ? " w-20" : " w-68";
 
     return (
         <div
@@ -22,7 +22,7 @@ export default function SideBar({ isCollapsed, onToggle }) {
                                 className="h-7 w-auto"
                             />                            
                         </div>
-                    ) : (
+                    ) : (                      
                         <div className="flex items-center gap-3">
                             <img 
                                 src={FinestLogo} alt="Finest Logo"
@@ -33,9 +33,6 @@ export default function SideBar({ isCollapsed, onToggle }) {
                             </h1>
                         </div>
                     )}
-
-                    {/* Burger button */}
-                    <BurgerButton isClicked={isCollapsed} onToggle={onToggle} />
                 </div>
 
                 {/* Items */}

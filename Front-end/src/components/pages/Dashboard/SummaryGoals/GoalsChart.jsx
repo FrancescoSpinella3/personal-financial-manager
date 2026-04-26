@@ -76,7 +76,7 @@ export default function GoalsChart() {
                 </text>
             </svg>
 
-            <p className="text-xs font-medium text-(--dark-main-color) dark:text-(--light-color)">
+            <p className="text-sm font-medium text-(--dark-main-color) dark:text-(--light-color)">
                 Raggiunto vs Target
             </p>
         </div>

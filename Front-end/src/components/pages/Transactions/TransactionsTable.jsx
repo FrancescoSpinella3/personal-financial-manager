@@ -22,7 +22,7 @@ export default function TransactionsTable({ onUpdate }) {
             <table className="min-w-full">
                 {/* Table head */}
                 <thead>
-                    <tr className="bg-(--light-bg-table-head) dark:bg-(--dark-bg-table-head) rounded-md border-b border-blue-100 dark:border-gray-700">
+                    <tr className="bg-(--light-bg-table-head) dark:bg-(--dark-bg-table-head) rounded-md border-b border-(--light-border-color) dark:border-gray-700">
                         <th className={thClasses + ' text-start'}>Info</th>
                         <th className={thClasses}>Categoria</th>
                         <th className={thClasses}>Data</th>
@@ -37,14 +37,18 @@ export default function TransactionsTable({ onUpdate }) {
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
                     {transactions.map(transaction => {
                         // Transaction label classes
-                        let labelClasses = "px-4 py-1 text-xs font-normal rounded-lg";
+                        let labelClasses = "px-4 py-1 text-xs font-medium rounded-full";
+                        let iconClasses = "text-(--dark-main-color) p-2 rounded-md"
 
                         if (transaction.category === 'incomes') {
                             labelClasses += ' bg-indigo-100 text-indigo-700';
+                            iconClasses += ' bg-indigo-100 text-indigo-700'
                         } else if (transaction.category === 'expences') {
                             labelClasses += ' bg-red-100 text-red-700';
+                            iconClasses += ' bg-red-100 text-red-700'
                         } else if (transaction.category === 'saves') {
                             labelClasses += ' bg-green-100 text-green-700';
+                            iconClasses += ' bg-green-100 text-green-700'
                         }
 
                         // Render table row for each transaction
@@ -60,7 +64,7 @@ export default function TransactionsTable({ onUpdate }) {
                                             if (category) {
                                                 const Icon = LucideIcons[category.icon];
                                                 return Icon 
-                                                ?   <div className="bg-blue-200 text-(--fourth-color) p-2 rounded-md">
+                                                ?   <div className={iconClasses}>
                                                         <Icon className="size-5" />
                                                     </div>
                                                 : null;
@@ -82,7 +86,9 @@ export default function TransactionsTable({ onUpdate }) {
                                 {/* Description */}
                                 <td className={`${tdClasses} text-(--dark-second-color) dark:text-(--dark-fourth-color)`}>{transaction.description}</td>
                                 {/* Amount */}
-                                <td className={tdClasses + ' font-medium text-(--dark-main-color) dark:text-(--light-color)'}>{currencyFormatter.format(transaction.amount)}</td>
+                                <td className={`${tdClasses} font-semibold ${transaction.category === "expences" ? "text-(--danger-color)" : "text-(--dark-main-color) dark:text-(--light-color)" }`}>
+                                    {currencyFormatter.format(transaction.amount)}
+                                </td>
                                 {/* Action buttons */}
                                 <td><Actions onUpdate={onUpdate} /></td>
                             </tr>
